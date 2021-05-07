@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0",
+  "$id": "https://smart-data-models.github.io/dataModel.PointOfInterest/MedicalOrganization/schema.json",
+  "title": "- Medical Organization schema",
+  "description": "This entity contains a harmonised geographic description of a Medical Organization",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/dataModel.PointOfInterest/schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MedicalOrganization"
+          ],
+          "description": "Property. NGSI Entity type. It has to be MedicalOrganization"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Dentist", "DiagnosticLab", "Hospital", "MedicalClinic", "Pharmacy", "Physician", "VeterinaryCare", "EyeCare"],
+          "description": "Property. Model:'https://schema.org/Text'. Type of medical organization. Enumerated type."
+        },
+        "hasDriveThroughService": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/hasDriveThroughService'. Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users."
+        },
+        "healthPlanNetworkId": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/healthPlanNetworkId'. Name or unique ID of network."
+        },
+        "isAcceptingNewPatients": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/isAcceptingNewPatients'. Whether the provider is accepting new patients."
+        },
+        "facilities": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "medicalSpeciality": {
+          "type": "string",
+          "enum": ["Anesthesia", "Cardiovascular", "CommunityHealth", "Dentistry", "Dermatology", "DietNutrition", "Emergency", "Endocrine", "Gastroenterologic", "Genetic", "Geriatric", "Gynecologic", "Hematologic", "Infectious", "LaboratoryScience", "Midwifery", "Musculoskeletal", "Neurologic", "Nursing", "Obstetric", "Oncologic", "Optometric", "Otolaryngologic", "Pathology", "Pediatric", "PharmacySpecialty", "Physiotherapy", "PlasticSurgery", "Podiatric", "PrimaryCare", "Psychiatric", "PublicHealth", "Pulmonary", "Radiography", "Renal", "RespiratoryTherapy", "Rheumatologic", "SpeechPathology", "Surgical", "Toxicologic", "Urologic"],
+          "description": "Property. Model:'https://schema.org/MedicalSpecialty'. Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type."
+        },
+        "medicineSystem": {
+          "type": "string",
+          "enum": ["Ayurvedic", "Chiropractic", "Homeopathic", "Osteopathic", "TraditionalChinese", "WesternConventional"],
+          "description": "Property. Model:'https://schema.org/MedicineSystem'. Systems of medical practice. Enumerated type."
+        },
+        "testingFacility": {
+          "type": "string",
+          "enum": ["CovidTesting", "BloodTest"],
+          "description": "Property. Model:'https://schema.org/Text'. Types of tests available. Enumerated type."
+        },
+        "refSeeAlso": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/URL'. List of references to one or more related entities.",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "category",
+    "name"
+  ]
+}
