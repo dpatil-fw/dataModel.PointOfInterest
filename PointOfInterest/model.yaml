@@ -45,7 +45,21 @@ PointOfInterest:
       x-ngsi:
         model: https://schema.org/Text
     contactPoint:
-      description: 'Contact point for the museum.'
+      description: 'The details to contact with the item.'
+      properties:
+        contactType:
+          type: string
+        email:
+          description: 'Property. Email address of owner.'
+          format: idn-email
+          type: string
+        name:
+          type: string
+        telephone:
+          type: string
+        url:
+          format: uri
+          type: string
       type: Property
       x-ngsi:
         model: https://schema.org/ContactPoint
@@ -225,6 +239,39 @@ PointOfInterest:
     name:
       description: 'The name of this item.'
       type: Property
+    openingHours: 
+      type: string
+    openingHoursSpecification:
+      description: 'A structured value providing information about the opening hours of a place or a certain service inside a place'
+      items:
+        properties:
+          closes:
+            format: time
+            type: string
+          dayOfWeek:
+            enum:
+              - Monday
+              - Tuesday
+              - Wednesday
+              - Thursday
+              - Friday
+              - Saturday
+              - Sunday
+              - PublicHolidays
+            type: string
+          opens:
+            format: time
+            type: string
+          validFrom:
+            format: date-time
+            type: string
+          validThrough:
+            format: date-time
+            type: string
+      minItems: 1
+      type: Property
+      x-ngsi:
+        model: https://schema.org/openingHoursSpecification
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
