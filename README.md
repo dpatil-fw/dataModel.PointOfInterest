@@ -4,13 +4,17 @@
 ### List of data models
 
 The following entity types are available:
-- [Beach](https://github.com/smart-data-models/dataModel.PointOfInterest/blob/master/Beach/README.md). This entity contains a harmonised geographic description of a beach.
+- [PointOfInterest](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/README.md). This entity contains a harmonised geographic description of a Point of Interest. This is also the parent class for all other Point of Interest entities like Attraction, FoodEstablishment, Lodging, MedicalOrganization, Store etc
 
-- [Museum](https://github.com/smart-data-models/dataModel.PointOfInterest/blob/master/Museum/README.md). A museum
+- [Attraction](https://github.com/dpatil-fw/dataModel.PointOfInterest/tree/master/Attraction/README.md). Place or tourist attraction that people will visit in any city, like Beach, Museum, Parks etc.
 
-- [PointOfInterest](https://github.com/smart-data-models/dataModel.PointOfInterest/blob/master/PointOfInterest/README.md). This entity contains a harmonised geographic description of a Point of Interest
+- [FoodEstablishment](https://github.com/dpatil-fw/dataModel.PointOfInterest/tree/master/FoodEstablishment/README.md). A place where food is served, like a restaurant, cafe, bakery etc
+- 
+- [Lodging](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Lodging/README.md). This entity Type models places to stay in the city.
 
-- [Store](https://github.com/smart-data-models/dataModel.PointOfInterest/blob/master/Store/README.md). This entity Type models stores/shops in the city.
+- [MedicalOrganization](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganization/README.md). This entity Type models healthcare organizations like Hospitals, Pharmacy etc.
+
+- [Store](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/README.md). This entity Type models stores/shops in the city.
 
 
 
