@@ -9,7 +9,7 @@ The following entity types are available:
 - [Attraction](https://github.com/dpatil-fw/dataModel.PointOfInterest/tree/master/Attraction/README.md). Place or tourist attraction that people will visit in any city, like Beach, Museum, Parks etc.
 
 - [FoodEstablishment](https://github.com/dpatil-fw/dataModel.PointOfInterest/tree/master/FoodEstablishment/README.md). A place where food is served, like a restaurant, cafe, bakery etc
-- 
+
 - [Lodging](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Lodging/README.md). This entity Type models places to stay in the city.
 
 - [MedicalOrganization](https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganization/README.md). This entity Type models healthcare organizations like Hospitals, Pharmacy etc.
