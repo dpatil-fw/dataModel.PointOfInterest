@@ -1,61 +1,41 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "$id": "https://github.com/smart-data-models/dataModel.PointOfInterest/Store/schema.json",
-  "title": "SynchroniCity - Point of Interest Store schema",
-  "description": "This entity Type models stores/shops in the city.",
-  "type": "object",
-  "allOf": [
-    {
-      "$ref": "https://smart-data-models.github.io/dataModel.PointOfInterest/schema.json"
-    },
-    {
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Store"
-          ],
-          "description": "Property. NGSI Entity type. It has to be Store"
+    "$schema":"http://json-schema.org/schema#",
+    "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/schema.json",
+    "title":"SynchroniCity - Point of Interest Store schema",
+    "description":"This entity Type models stores/shops in the city.",
+    "type":"object",
+    "allOf":[
+        {
+            "$ref":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/schema.json"
         },
-        "currenciesAccepted": {
-          "type": "array",
-          "description": "Property. Model:'https://es.wikipedia.org/wiki/ISO_4217'",
-          "items": {
-            "type": "string",
-            "enum": [
-              "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOV", "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MXV", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD", "SSP", "STN", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "USN", "UYI", "UYU", "UYW", "UZS", "VES", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XOF", "XPD", "XPF", "XPT", "XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW", "ZWL"
-            ]
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "paymentAccepted": {
-          "type": "array",
-          "description": "Property. Model:'https://schema.org/Text'. Payment method accepted in this store.",
-          "items": {
-            "type": "string",
-            "enum": ["Cash", "Cheque", "Credit Card", "Cryptocurrency"]
-          }
-        },
-        "logo": {
-          "type": "string",
-          "description": "Property. Model:'https://schema.org/URL'. An associated logo for this store. ",
-          "format": "uri"
-        },
-        "category": {
-          "type": "string",
-          "description": "Property. Model:'https://schema.org/Text'. Category of the store as described in the enumeration",
-          "enum": [
-            "AutoPartsStore", "BikeStore", "BookStore", "ClothingStore", "ComputerStore", "ConvenienceStore", "DepartmentStore", "ElectronicsStore", "Florist", "FurnitureStore", "GardenStore", "GroceryStore", "HardwareStore", "HobbyShop", "HomeGoodsStore", "JewelryStore", "LiquorStore", "MensClothingStore", "MobilePhoneStore", "MovieRentalStore", "MusicStore", "OfficeEquipmentStore", "OutletStore", "PawnShop", "PetStore", "ShoeStore", "SportingGoodsStore", "TireShop", "ToyStore", "WholesaleStore"
-          ]
+        {
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "enum":[
+                        "Store"
+                    ],
+                    "description":"Property. NGSI Entity type. It has to be Store"
+                },
+                "logo":{
+                    "type":"string",
+                    "description":"Property. Model:'https://schema.org/URL'. An associated logo for this store. ",
+                    "format":"uri"
+                },
+                "category":{
+                    "type":"string",
+                    "description":"Property. Model:'https://schema.org/Text'. Category of the store as described in the enumeration",
+                    "enum":[
+                        "AutoPartsStore", "BikeStore", "BookStore", "ClothingStore", "ComputerStore", "ConvenienceStore", "DepartmentStore", "ElectronicsStore", "Florist", "FurnitureStore", "GardenStore", "GroceryStore", "HardwareStore", "HobbyShop", "HomeGoodsStore", "JewelryStore", "LiquorStore", "MensClothingStore", "MobilePhoneStore", "MovieRentalStore", "MusicStore", "OfficeEquipmentStore", "OutletStore", "PawnShop", "PetStore", "ShoeStore", "SportingGoodsStore", "TireShop", "ToyStore", "WholesaleStore"
+                    ]
+                }
+            }
         }
-      }
-    }
-  ],
-  "required": [
-	"id",
-	"type",
-	"category",
-	"name"
-  ]
+    ],
+    "required":[
+        "id",
+        "type",
+        "category",
+        "name"
+    ]
 }
