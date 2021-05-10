@@ -2,48 +2,48 @@ PointOfInterest:
   description: 'This entity contains a harmonised geographic description of a Point of Interest'
   properties:
     address:
-      description: 'The mailing address'
+      description: 'Property. The mailing address. Model:''https://schema.org/address'''
       properties:
         addressCountry:
-          description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
-          type: string
+            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            type: string
         addressLocality:
-          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
-          type: string
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            type: string
         addressRegion:
-          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
-          type: string
+            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            type: string
         areaServed:
-          description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
-          type: string
+            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            type: string
         postOfficeBoxNumber:
-          description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
-          type: string
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            type: string
         postalCode:
-          description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
-          type: string
+            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
+            type: string
         streetAddress:
-          description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
-          type: string
-      type: Property
-      x-ngsi:
-        model: https://schema.org/address
+            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            type: string
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      type: object
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
     alternateName:
-      description: 'An alternative name for this item'
-      type: Property
-    areaServed:
-      description: 'The geographic area where a service or offered item is provided'
-      type: Property
-      x-ngsi:
-        model: https://schema.org/Text
-    category:
-      description: 'Category of this point of interest. Allowed values: Those defined by the [Factual taxonomy](https://github.com/Factual/places/blob/master/categories/factual_taxonomy.json) together with the extended categories described by the specification. For instance the value `113` corresponds to beaches, and the value `311` corresponds to museums.'
-      items:
-        type: string
-      minItems: 1
-      type: Property
-      x-ngsi:
-        model: https://schema.org/Text
+      type: string
+      description: 'Property. An alternative name for this item'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -63,17 +63,204 @@ PointOfInterest:
       type: Property
       x-ngsi:
         model: https://schema.org/ContactPoint
+    currenciesAccepted:
+      description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
+      type: array
+      items:
+        type: string
+        enum:
+            - AED
+            - AFN
+            - ALL
+            - AMD
+            - ANG
+            - AOA
+            - ARS
+            - AUD
+            - AWG
+            - AZN
+            - BAM
+            - BBD
+            - BDT
+            - BGN
+            - BHD
+            - BIF
+            - BMD
+            - BND
+            - BOB
+            - BOV
+            - BRL
+            - BSD
+            - BTN
+            - BWP
+            - BYN
+            - BZD
+            - CAD
+            - CDF
+            - CHE
+            - CHF
+            - CHW
+            - CLF
+            - CLP
+            - CNY
+            - COP
+            - COU
+            - CRC
+            - CUC
+            - CUP
+            - CVE
+            - CZK
+            - DJF
+            - DKK
+            - DOP
+            - DZD
+            - EGP
+            - ERN
+            - ETB
+            - EUR
+            - FJD
+            - FKP
+            - GBP
+            - GEL
+            - GHS
+            - GIP
+            - GMD
+            - GNF
+            - GTQ
+            - GYD
+            - HKD
+            - HNL
+            - HRK
+            - HTG
+            - HUF
+            - IDR
+            - ILS
+            - INR
+            - IQD
+            - IRR
+            - ISK
+            - JMD
+            - JOD
+            - JPY
+            - KES
+            - KGS
+            - KHR
+            - KMF
+            - KPW
+            - KRW
+            - KWD
+            - KYD
+            - KZT
+            - LAK
+            - LBP
+            - LKR
+            - LRD
+            - LSL
+            - LYD
+            - MAD
+            - MDL
+            - MGA
+            - MKD
+            - MMK
+            - MNT
+            - MOP
+            - MRU
+            - MUR
+            - MVR
+            - MWK
+            - MXN
+            - MXV
+            - MYR
+            - MZN
+            - NAD
+            - NGN
+            - NIO
+            - NOK
+            - NPR
+            - NZD
+            - OMR
+            - PAB
+            - PEN
+            - PGK
+            - PHP
+            - PKR
+            - PLN
+            - PYG
+            - QAR
+            - RON
+            - RSD
+            - RUB
+            - RWF
+            - SAR
+            - SBD
+            - SCR
+            - SDG
+            - SEK
+            - SGD
+            - SHP
+            - SLL
+            - SOS
+            - SRD
+            - SSP
+            - STN
+            - SVC
+            - SYP
+            - SZL
+            - THB
+            - TJS
+            - TMT
+            - TND
+            - TOP
+            - TRY
+            - TTD
+            - TWD
+            - TZS
+            - UAH
+            - UGX
+            - USD
+            - USN
+            - UYI
+            - UYU
+            - UYW
+            - UZS
+            - VES
+            - VND
+            - VUV
+            - WST
+            - XAF
+            - XAG
+            - XAU
+            - XBA
+            - XBB
+            - XBC
+            - XBD
+            - XCD
+            - XDR
+            - XOF
+            - XPD
+            - XPF
+            - XPT
+            - XSU
+            - XTS
+            - XUA
+            - XXX
+            - YER
+            - ZAR
+            - ZMW
+            - ZWL
+      minItems: 1
+      uniqueItems: true
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
-      type: Property
+      type: string
     dateCreated:
       description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'
+      type: string
       format: date-time
-      type: Property
     dateModified:
       description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'
+      type: string
       format: date-time
-      type: Property
     description:
       description: 'A description of this item'
       type: Property
@@ -237,9 +424,9 @@ PointOfInterest:
           type: object
       title: 'GeoJSON Geometry'
     name:
-      description: 'The name of this item.'
-      type: Property
-    openingHours: 
+      description: 'Property. The name of this item.'
+      type: string
+    openingHours:
       type: string
     openingHoursSpecification:
       description: 'A structured value providing information about the opening hours of a place or a certain service inside a place'
@@ -269,7 +456,7 @@ PointOfInterest:
             format: date-time
             type: string
       minItems: 1
-      type: Property
+      type: array
       x-ngsi:
         model: https://schema.org/openingHoursSpecification
     owner:
@@ -278,6 +465,17 @@ PointOfInterest:
         anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
+    paymentAccepted:
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
+      items:
+        type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
+      minItems: 1
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
@@ -289,6 +487,38 @@ PointOfInterest:
       uniqueItems: true
       x-ngsi:
         model: https://schema.org/URL
+    review:
+      description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
+      type: array
+      items:
+        properties:
+            author:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The author of this content or rating.'
+            datePublished:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. Date of first broadcast/publication.'
+              format: date-time
+            name:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The name of the item. '
+            reviewBody:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The actual body of the review.'
+            reviewRating:
+              type: object
+              description: 'Property. Model:''https://schema.org/Rating''. A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+              properties:
+                bestRating:
+                  type: integer
+                  description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+                ratingValue:
+                  type: integer
+                  description: 'Property. The rating for the content.'
+                worstRating:
+                  type: integer
+                  description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+      minItems: 1
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
@@ -297,12 +527,10 @@ PointOfInterest:
             type: string
           minItems: 1
           type: array
-        - format: uri
-          type: string
       type: Property
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
-      type: Property
+      type: string
     type:
       description: 'NGSI Entity type. It has to be PointOfInterest'
       enum:
@@ -310,7 +538,7 @@ PointOfInterest:
       type: Property
   required:
     - id
-    - type
     - category
     - name
+    - type
   type: object
