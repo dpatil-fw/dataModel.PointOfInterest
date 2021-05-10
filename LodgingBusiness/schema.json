@@ -20,7 +20,8 @@
                 },
                 "amenityFeature":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/amenityFeature'. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free""items":{
+                    "description":"Property. Model:'https://schema.org/amenityFeature'. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free",
+                    "items":{
                         "type":"string",
                         "enum":[
                             "Wifi", "Laundry", "Gym", "Inhouse Doctor", "Parking", "Breakfast Free"
