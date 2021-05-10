@@ -287,7 +287,7 @@ FoodEstablishment:
       type: string
       description: 'Property. Either the actual menu as as text, or a URL of the menu. Model:''https://schema.org/hasMenu'''
     id:
-      anyOf: &pointofinterest_-_properties_-_owner_-_items_-_anyof
+      anyOf: &foodestablishment_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
@@ -484,7 +484,7 @@ FoodEstablishment:
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
-        anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
+        anyOf: *foodestablishment_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
     paymentAccepted:
