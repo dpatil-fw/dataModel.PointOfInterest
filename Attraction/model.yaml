@@ -268,7 +268,7 @@ Attraction:
       type: string
       description: 'Property. A description of the item. Model:''https://schema.org/description'''
     id:
-      anyOf: &pointofinterest_-_properties_-_owner_-_items_-_anyof
+      anyOf: &attraction_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
@@ -465,7 +465,7 @@ Attraction:
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
-        anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
+        anyOf: *attraction_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
     paymentAccepted:
