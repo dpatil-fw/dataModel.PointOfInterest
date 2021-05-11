@@ -1,43 +1,52 @@
 Store:
-  description: 'This entity Type models stores/shops in the city.'
+  description: 'This entity contains a Store'
   properties:
     address:
-      description: 'The mailing address'
+      description: 'Property. The mailing address. Model:''https://schema.org/address'''
       properties:
         addressCountry:
-          description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
-          type: string
+            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            type: string
         addressLocality:
-          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
-          type: string
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            type: string
         addressRegion:
-          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
-          type: string
+            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            type: string
         areaServed:
-          description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
-          type: string
+            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            type: string
         postOfficeBoxNumber:
-          description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
-          type: string
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            type: string
         postalCode:
-          description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
-          type: string
+            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
+            type: string
         streetAddress:
-          description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
-          type: string
-      type: Property
-      x-ngsi:
-        model: https://schema.org/address
+            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            type: string
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      type: object
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
     alternateName:
-      description: 'An alternative name for this item'
-      type: Property
-    areaServed:
-      description: 'The geographic area where a service or offered item is provided'
-      type: Property
-      x-ngsi:
-        model: https://schema.org/Text
+      type: string
+      description: 'Property. An alternative name for this item'
     category:
-      description: 'Category of the store. Enum:''AutoPartsStore,BikeStore,BookStore,ClothingStore,ComputerStore,ConvenienceStore,DepartmentStore,ElectronicsStore,Florist,FurnitureStore,GardenStore,GroceryStore,HardwareStore,HobbyShop,HomeGoodsStore,JewelryStore,LiquorStore,MensClothingStore,MobilePhoneStore,MovieRentalStore,MusicStore,OfficeEquipmentStore,OutletStore,PawnShop,PetStore,ShoeStore,SportingGoodsStore,TireShop,ToyStore,WholesaleStore'''
+      type: string
+      description: 'Property. Model:''https://schema.org/Text''. Category of the store as described in the enumeration'
       enum:
         - AutoPartsStore
         - BikeStore
@@ -69,218 +78,226 @@ Store:
         - TireShop
         - ToyStore
         - WholesaleStore
+    contactPoint:
+      description: 'The details to contact with the item.'
+      properties:
+        contactType:
+          type: string
+        email:
+          description: 'Property. Email address of owner.'
+          format: idn-email
+          type: string
+        name:
+          type: string
+        telephone:
+          type: string
+        url:
+          format: uri
+          type: string
       type: Property
       x-ngsi:
-        model: https://schema.org/Text
+        model: https://schema.org/ContactPoint
     currenciesAccepted:
-      description: 'Enum:''AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF, BMD, BND, BOB, BOV, BRL, BSD, BTN, BWP, BYN, BZD, CAD, CDF, CHE, CHF, CHW, CLF, CLP, CNY, COP, COU, CRC, CUC, CUP, CVE, CZK, DJF, DKK, DOP, DZD, EGP, ERN, ETB, EUR, FJD, FKP, GBP, GEL, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, IDR, ILS, INR, IQD, IRR, ISK, JMD, JOD, JPY, KES, KGS, KHR, KMF, KPW, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD, LSL, LYD, MAD, MDL, MGA, MKD, MMK, MNT, MOP, MRU, MUR, MVR, MWK, MXN, MXV, MYR, MZN, NAD, NGN, NIO, NOK, NPR, NZD, OMR, PAB, PEN, PGK, PHP, PKR, PLN, PYG, QAR, RON, RSD, RUB, RWF, SAR, SBD, SCR, SDG, SEK, SGD, SHP, SLL, SOS, SRD, SSP, STN, SVC, SYP, SZL, THB, TJS, TMT, TND, TOP, TRY, TTD, TWD, TZS, UAH, UGX, USD, USN, UYI, UYU, UYW, UZS, VES, VND, VUV, WST, XAF, XAG, XAU, XBA, XBB, XBC, XBD, XCD, XDR, XOF, XPD, XPF, XPT, XSU, XTS, XUA, XXX, YER, ZAR, ZMW, ZWL. Currencies accepted in this store. It uses ISO 4217 currency format (e.g. USD, EUR)'
+      description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
+      type: array
       items:
-        enum:
-          - AED
-          - AFN
-          - ALL
-          - AMD
-          - ANG
-          - AOA
-          - ARS
-          - AUD
-          - AWG
-          - AZN
-          - BAM
-          - BBD
-          - BDT
-          - BGN
-          - BHD
-          - BIF
-          - BMD
-          - BND
-          - BOB
-          - BOV
-          - BRL
-          - BSD
-          - BTN
-          - BWP
-          - BYN
-          - BZD
-          - CAD
-          - CDF
-          - CHE
-          - CHF
-          - CHW
-          - CLF
-          - CLP
-          - CNY
-          - COP
-          - COU
-          - CRC
-          - CUC
-          - CUP
-          - CVE
-          - CZK
-          - DJF
-          - DKK
-          - DOP
-          - DZD
-          - EGP
-          - ERN
-          - ETB
-          - EUR
-          - FJD
-          - FKP
-          - GBP
-          - GEL
-          - GHS
-          - GIP
-          - GMD
-          - GNF
-          - GTQ
-          - GYD
-          - HKD
-          - HNL
-          - HRK
-          - HTG
-          - HUF
-          - IDR
-          - ILS
-          - INR
-          - IQD
-          - IRR
-          - ISK
-          - JMD
-          - JOD
-          - JPY
-          - KES
-          - KGS
-          - KHR
-          - KMF
-          - KPW
-          - KRW
-          - KWD
-          - KYD
-          - KZT
-          - LAK
-          - LBP
-          - LKR
-          - LRD
-          - LSL
-          - LYD
-          - MAD
-          - MDL
-          - MGA
-          - MKD
-          - MMK
-          - MNT
-          - MOP
-          - MRU
-          - MUR
-          - MVR
-          - MWK
-          - MXN
-          - MXV
-          - MYR
-          - MZN
-          - NAD
-          - NGN
-          - NIO
-          - NOK
-          - NPR
-          - NZD
-          - OMR
-          - PAB
-          - PEN
-          - PGK
-          - PHP
-          - PKR
-          - PLN
-          - PYG
-          - QAR
-          - RON
-          - RSD
-          - RUB
-          - RWF
-          - SAR
-          - SBD
-          - SCR
-          - SDG
-          - SEK
-          - SGD
-          - SHP
-          - SLL
-          - SOS
-          - SRD
-          - SSP
-          - STN
-          - SVC
-          - SYP
-          - SZL
-          - THB
-          - TJS
-          - TMT
-          - TND
-          - TOP
-          - TRY
-          - TTD
-          - TWD
-          - TZS
-          - UAH
-          - UGX
-          - USD
-          - USN
-          - UYI
-          - UYU
-          - UYW
-          - UZS
-          - VES
-          - VND
-          - VUV
-          - WST
-          - XAF
-          - XAG
-          - XAU
-          - XBA
-          - XBB
-          - XBC
-          - XBD
-          - XCD
-          - XDR
-          - XOF
-          - XPD
-          - XPF
-          - XPT
-          - XSU
-          - XTS
-          - XUA
-          - XXX
-          - YER
-          - ZAR
-          - ZMW
-          - ZWL
         type: string
+        enum:
+            - AED
+            - AFN
+            - ALL
+            - AMD
+            - ANG
+            - AOA
+            - ARS
+            - AUD
+            - AWG
+            - AZN
+            - BAM
+            - BBD
+            - BDT
+            - BGN
+            - BHD
+            - BIF
+            - BMD
+            - BND
+            - BOB
+            - BOV
+            - BRL
+            - BSD
+            - BTN
+            - BWP
+            - BYN
+            - BZD
+            - CAD
+            - CDF
+            - CHE
+            - CHF
+            - CHW
+            - CLF
+            - CLP
+            - CNY
+            - COP
+            - COU
+            - CRC
+            - CUC
+            - CUP
+            - CVE
+            - CZK
+            - DJF
+            - DKK
+            - DOP
+            - DZD
+            - EGP
+            - ERN
+            - ETB
+            - EUR
+            - FJD
+            - FKP
+            - GBP
+            - GEL
+            - GHS
+            - GIP
+            - GMD
+            - GNF
+            - GTQ
+            - GYD
+            - HKD
+            - HNL
+            - HRK
+            - HTG
+            - HUF
+            - IDR
+            - ILS
+            - INR
+            - IQD
+            - IRR
+            - ISK
+            - JMD
+            - JOD
+            - JPY
+            - KES
+            - KGS
+            - KHR
+            - KMF
+            - KPW
+            - KRW
+            - KWD
+            - KYD
+            - KZT
+            - LAK
+            - LBP
+            - LKR
+            - LRD
+            - LSL
+            - LYD
+            - MAD
+            - MDL
+            - MGA
+            - MKD
+            - MMK
+            - MNT
+            - MOP
+            - MRU
+            - MUR
+            - MVR
+            - MWK
+            - MXN
+            - MXV
+            - MYR
+            - MZN
+            - NAD
+            - NGN
+            - NIO
+            - NOK
+            - NPR
+            - NZD
+            - OMR
+            - PAB
+            - PEN
+            - PGK
+            - PHP
+            - PKR
+            - PLN
+            - PYG
+            - QAR
+            - RON
+            - RSD
+            - RUB
+            - RWF
+            - SAR
+            - SBD
+            - SCR
+            - SDG
+            - SEK
+            - SGD
+            - SHP
+            - SLL
+            - SOS
+            - SRD
+            - SSP
+            - STN
+            - SVC
+            - SYP
+            - SZL
+            - THB
+            - TJS
+            - TMT
+            - TND
+            - TOP
+            - TRY
+            - TTD
+            - TWD
+            - TZS
+            - UAH
+            - UGX
+            - USD
+            - USN
+            - UYI
+            - UYU
+            - UYW
+            - UZS
+            - VES
+            - VND
+            - VUV
+            - WST
+            - XAF
+            - XAG
+            - XAU
+            - XBA
+            - XBB
+            - XBC
+            - XBD
+            - XCD
+            - XDR
+            - XOF
+            - XPD
+            - XPF
+            - XPT
+            - XSU
+            - XTS
+            - XUA
+            - XXX
+            - YER
+            - ZAR
+            - ZMW
+            - ZWL
       minItems: 1
-      type: Property
       uniqueItems: true
-      x-ngsi:
-        model: https://es.wikipedia.org/wiki/ISO_4217
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
-      type: Property
+      type: string
     dateCreated:
       description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'
+      type: string
       format: date-time
-      type: Property
     dateModified:
       description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'
+      type: string
       format: date-time
-      type: Property
     description:
       description: 'A description of this item'
       type: Property
-    email:
-      description: 'The email address of this store.'
-      format: email
-      type: Property
-      x-ngsi:
-        model: https://schema.org/Text
     id:
       anyOf: &store_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'
@@ -441,14 +458,14 @@ Store:
           type: object
       title: 'GeoJSON Geometry'
     logo:
-      description: 'An associated logo for this store. '
+      type: string
+      description: 'Property. Model:''https://schema.org/URL''. An associated logo for this store.'
       format: uri
-      type: Property
-      x-ngsi:
-        model: https://schema.org/URL
     name:
-      description: 'The name of this item.'
-      type: Property
+      description: 'Property. The name of this item.'
+      type: string
+    openingHours:
+      type: string
     openingHoursSpecification:
       description: 'A structured value providing information about the opening hours of a place or a certain service inside a place'
       items:
@@ -477,7 +494,7 @@ Store:
             format: date-time
             type: string
       minItems: 1
-      type: Property
+      type: array
       x-ngsi:
         model: https://schema.org/openingHoursSpecification
     owner:
@@ -487,12 +504,59 @@ Store:
         description: 'Property. Unique identifier of the entity'
       type: Property
     paymentAccepted:
-      description: 'Payment method accepted in this store.'
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
       items:
         type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
+      minItems: 1
+    refSeeAlso:
+      description: 'List of references to one or more related entities.'
+      items:
+        anyOf:
+          - anyOf: *store_-_properties_-_owner_-_items_-_anyof
+            description: 'Property. Unique identifier of the entity'
+      minItems: 1
       type: Property
+      uniqueItems: true
       x-ngsi:
-        model: https://schema.org/Text
+        model: https://schema.org/URL
+    review:
+      description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
+      type: array
+      items:
+        properties:
+            author:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The author of this content or rating.'
+            datePublished:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. Date of first broadcast/publication.'
+              format: date-time
+            name:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The name of the item. '
+            reviewBody:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The actual body of the review.'
+            reviewRating:
+              type: object
+              description: 'Property. Model:''https://schema.org/Rating''. A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+              properties:
+                bestRating:
+                  type: integer
+                  description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+                ratingValue:
+                  type: integer
+                  description: 'Property. The rating for the content.'
+                worstRating:
+                  type: integer
+                  description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+      minItems: 1
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
@@ -501,31 +565,18 @@ Store:
             type: string
           minItems: 1
           type: array
-        - format: uri
-          type: string
       type: Property
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
-      type: Property
-    telephone:
-      description: 'The telephone number of this store.'
-      type: Property
-      x-ngsi:
-        model: https://schema.org/Text
+      type: string
     type:
       description: 'NGSI Entity type. It has to be Store'
       enum:
         - Store
       type: Property
-    url:
-      description: 'Website with information about the store.'
-      format: uri
-      type: Property
-      x-ngsi:
-        model: https://schema.org/URL
   required:
     - id
-    - type
+    - category
     - name
-    - description
+    - type
   type: object
