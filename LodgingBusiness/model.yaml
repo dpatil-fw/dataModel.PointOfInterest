@@ -1,453 +1,444 @@
---- 
-LodgingBusiness: 
-  description: "This entity contains a harmonised geographic description of a Lodging Business"
-  properties: 
-    acceptsReservations: 
-      description: "Property. Model:'https://schema.org/acceptsReservations'. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made"
+LodgingBusiness:
+  description: 'This entity type models places to stay in the city.'
+  properties:
+    acceptsReservations:
+      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made'
       type: string
-    address: 
-      description: "Property. The mailing address. Model:'https://schema.org/address'"
-      properties: 
-        addressCountry: 
-          description: "Property. The country. For example, Spain. Model:'https://schema.org/addressCountry'"
-          type: string
-        addressLocality: 
-          description: "Property. The locality in which the street address is, and which is in the region. Model:'https://schema.org/addressLocality'"
-          type: string
-        addressRegion: 
-          description: "Property. The region in which the locality is, and which is in the country. Model:'https://schema.org/addressRegion'"
-          type: string
-        areaServed: 
-          description: "Property. The geographic area where a service or offered item is provided. Model:'https://schema.org/areaServed'"
-          type: string
-        postOfficeBoxNumber: 
-          description: "Property. The post office box number for PO box addresses. For example, 03578. Model:'https://schema.org/postOfficeBoxNumber'"
-          type: string
-        postalCode: 
-          description: "Property. The postal code. For example, 24004. Model:'https://schema.org/https://schema.org/postalCode'"
-          type: string
-        streetAddress: 
-          description: "Property. The street address. Model:'https://schema.org/streetAddress'"
-          type: string
-    aggregateRating: 
-      description: "Property. Model:'https://schema.org/AggregateRating'. The average rating based on multiple ratings or reviews."
-      properties: 
-        bestRating: 
-          description: "Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed."
-          type: integer
-        ratingCount: 
-          description: "Property. The count of total number of ratings."
-          type: integer
-        ratingValue: 
-          description: "Property. The rating for the content."
-          type: integer
-        worstRating: 
-          description: "Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed."
-          type: integer
+    address:
+      description: 'Property. The mailing address. Model:''https://schema.org/address'''
+      properties:
+        addressCountry:
+            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            type: string
+        addressLocality:
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            type: string
+        addressRegion:
+            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            type: string
+        areaServed:
+            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            type: string
+        postOfficeBoxNumber:
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            type: string
+        postalCode:
+            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
+            type: string
+        streetAddress:
+            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            type: string
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
       type: object
-    alternateName: 
-      description: "Property. An alternative name for this item"
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
+    alternateName:
       type: string
-    amenityFeature: 
-      description: "Property. Model:'https://schema.org/amenityFeature'. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free"
-      items: 
-        enum: 
+      description: 'Property. An alternative name for this item'
+    amenityFeature:
+      type: array
+      description: 'Property. Model:''https://schema.org/amenityFeature''. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free'
+      items:
+        type: string
+        enum:
           - Wifi
           - Laundry
           - Gym
-          - "Inhouse Doctor"
+          - Inhouse Doctor
           - Parking
-          - "Breakfast Free"
-        type: string
-      type: array
-    category: 
-      description: "Property. Model:'https://schema.org/Text'. Type of Lodging Business. Enumerated type."
-      enum: 
+          - Breakfast Free
+    category:
+      type: string
+      enum:
         - BedAndBreakfast
         - Campground
         - Hostel
         - Hotel
         - Motel
         - Resort
+      description: 'Property. Model:''https://schema.org/Text''. Type of Lodging Business. Enumerated type.'
+    checkinTime:
       type: string
-    checkinTime: 
-      description: "Property. Model:'https://schema.org/checkinTime'. The earliest someone may check into a lodging establishment."
       format: date-time
+      description: 'Property. Model:''https://schema.org/checkinTime''. The earliest someone may check into a lodging establishment.'
+    checkoutTime:
       type: string
-    checkoutTime: 
-      description: "Property. Model:'https://schema.org/checkoutTime'. The latest someone may check out of a lodging establishment."
       format: date-time
-      type: string
-    contactPoint: 
-      description: "The details to contact with the item."
-      properties: 
-        contactType: 
+      description: 'Property. Model:''https://schema.org/checkoutTime''. The latest someone may check out of a lodging establishment.'
+    contactPoint:
+      description: 'The details to contact with the item.'
+      properties:
+        contactType:
           type: string
-        email: 
-          description: "Property. Email address of owner."
+        email:
+          description: 'Property. Email address of owner.'
           format: idn-email
           type: string
-        name: 
+        name:
           type: string
-        telephone: 
+        telephone:
           type: string
-        url: 
+        url:
           format: uri
           type: string
       type: Property
-      x-ngsi: 
-        model: "https://schema.org/ContactPoint"
-    currenciesAccepted: 
-      description: "Property. Model:'https://es.wikipedia.org/wiki/ISO_4217'"
-      items: 
-        enum: 
-          - AED
-          - AFN
-          - ALL
-          - AMD
-          - ANG
-          - AOA
-          - ARS
-          - AUD
-          - AWG
-          - AZN
-          - BAM
-          - BBD
-          - BDT
-          - BGN
-          - BHD
-          - BIF
-          - BMD
-          - BND
-          - BOB
-          - BOV
-          - BRL
-          - BSD
-          - BTN
-          - BWP
-          - BYN
-          - BZD
-          - CAD
-          - CDF
-          - CHE
-          - CHF
-          - CHW
-          - CLF
-          - CLP
-          - CNY
-          - COP
-          - COU
-          - CRC
-          - CUC
-          - CUP
-          - CVE
-          - CZK
-          - DJF
-          - DKK
-          - DOP
-          - DZD
-          - EGP
-          - ERN
-          - ETB
-          - EUR
-          - FJD
-          - FKP
-          - GBP
-          - GEL
-          - GHS
-          - GIP
-          - GMD
-          - GNF
-          - GTQ
-          - GYD
-          - HKD
-          - HNL
-          - HRK
-          - HTG
-          - HUF
-          - IDR
-          - ILS
-          - INR
-          - IQD
-          - IRR
-          - ISK
-          - JMD
-          - JOD
-          - JPY
-          - KES
-          - KGS
-          - KHR
-          - KMF
-          - KPW
-          - KRW
-          - KWD
-          - KYD
-          - KZT
-          - LAK
-          - LBP
-          - LKR
-          - LRD
-          - LSL
-          - LYD
-          - MAD
-          - MDL
-          - MGA
-          - MKD
-          - MMK
-          - MNT
-          - MOP
-          - MRU
-          - MUR
-          - MVR
-          - MWK
-          - MXN
-          - MXV
-          - MYR
-          - MZN
-          - NAD
-          - NGN
-          - NIO
-          - NOK
-          - NPR
-          - NZD
-          - OMR
-          - PAB
-          - PEN
-          - PGK
-          - PHP
-          - PKR
-          - PLN
-          - PYG
-          - QAR
-          - RON
-          - RSD
-          - RUB
-          - RWF
-          - SAR
-          - SBD
-          - SCR
-          - SDG
-          - SEK
-          - SGD
-          - SHP
-          - SLL
-          - SOS
-          - SRD
-          - SSP
-          - STN
-          - SVC
-          - SYP
-          - SZL
-          - THB
-          - TJS
-          - TMT
-          - TND
-          - TOP
-          - TRY
-          - TTD
-          - TWD
-          - TZS
-          - UAH
-          - UGX
-          - USD
-          - USN
-          - UYI
-          - UYU
-          - UYW
-          - UZS
-          - VES
-          - VND
-          - VUV
-          - WST
-          - XAF
-          - XAG
-          - XAU
-          - XBA
-          - XBB
-          - XBC
-          - XBD
-          - XCD
-          - XDR
-          - XOF
-          - XPD
-          - XPF
-          - XPT
-          - XSU
-          - XTS
-          - XUA
-          - XXX
-          - YER
-          - ZAR
-          - ZMW
-          - ZWL
-        type: string
-      minItems: 1
+      x-ngsi:
+        model: https://schema.org/ContactPoint
+    currenciesAccepted:
+      description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
       type: array
+      items:
+        type: string
+        enum:
+            - AED
+            - AFN
+            - ALL
+            - AMD
+            - ANG
+            - AOA
+            - ARS
+            - AUD
+            - AWG
+            - AZN
+            - BAM
+            - BBD
+            - BDT
+            - BGN
+            - BHD
+            - BIF
+            - BMD
+            - BND
+            - BOB
+            - BOV
+            - BRL
+            - BSD
+            - BTN
+            - BWP
+            - BYN
+            - BZD
+            - CAD
+            - CDF
+            - CHE
+            - CHF
+            - CHW
+            - CLF
+            - CLP
+            - CNY
+            - COP
+            - COU
+            - CRC
+            - CUC
+            - CUP
+            - CVE
+            - CZK
+            - DJF
+            - DKK
+            - DOP
+            - DZD
+            - EGP
+            - ERN
+            - ETB
+            - EUR
+            - FJD
+            - FKP
+            - GBP
+            - GEL
+            - GHS
+            - GIP
+            - GMD
+            - GNF
+            - GTQ
+            - GYD
+            - HKD
+            - HNL
+            - HRK
+            - HTG
+            - HUF
+            - IDR
+            - ILS
+            - INR
+            - IQD
+            - IRR
+            - ISK
+            - JMD
+            - JOD
+            - JPY
+            - KES
+            - KGS
+            - KHR
+            - KMF
+            - KPW
+            - KRW
+            - KWD
+            - KYD
+            - KZT
+            - LAK
+            - LBP
+            - LKR
+            - LRD
+            - LSL
+            - LYD
+            - MAD
+            - MDL
+            - MGA
+            - MKD
+            - MMK
+            - MNT
+            - MOP
+            - MRU
+            - MUR
+            - MVR
+            - MWK
+            - MXN
+            - MXV
+            - MYR
+            - MZN
+            - NAD
+            - NGN
+            - NIO
+            - NOK
+            - NPR
+            - NZD
+            - OMR
+            - PAB
+            - PEN
+            - PGK
+            - PHP
+            - PKR
+            - PLN
+            - PYG
+            - QAR
+            - RON
+            - RSD
+            - RUB
+            - RWF
+            - SAR
+            - SBD
+            - SCR
+            - SDG
+            - SEK
+            - SGD
+            - SHP
+            - SLL
+            - SOS
+            - SRD
+            - SSP
+            - STN
+            - SVC
+            - SYP
+            - SZL
+            - THB
+            - TJS
+            - TMT
+            - TND
+            - TOP
+            - TRY
+            - TTD
+            - TWD
+            - TZS
+            - UAH
+            - UGX
+            - USD
+            - USN
+            - UYI
+            - UYU
+            - UYW
+            - UZS
+            - VES
+            - VND
+            - VUV
+            - WST
+            - XAF
+            - XAG
+            - XAU
+            - XBA
+            - XBB
+            - XBC
+            - XBD
+            - XCD
+            - XDR
+            - XOF
+            - XPD
+            - XPF
+            - XPT
+            - XSU
+            - XTS
+            - XUA
+            - XXX
+            - YER
+            - ZAR
+            - ZMW
+            - ZWL
+      minItems: 1
       uniqueItems: true
-    dataProvider: 
-      description: "A sequence of characters identifying the provider of the harmonised data entity."
+    dataProvider:
+      description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
-    dateCreated: 
-      description: "Entity creation timestamp. This will usually be allocated by the storage platform."
+    dateCreated:
+      description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'
+      type: string
       format: date-time
+    dateModified:
+      description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'
       type: string
-    dateModified: 
-      description: "Timestamp of the last modification of the entity. This will usually be allocated by the storage platform."
       format: date-time
-      type: string
-    description: 
-      description: "A description of this item"
+    description:
+      description: 'A description of this item'
       type: Property
-    id: 
-      anyOf: 
-        - 
-          description: "Property. Identifier format of any NGSI entity"
+    id:
+      anyOf: &lodgingbusiness_-_properties_-_owner_-_items_-_anyof
+        - description: 'Property. Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
-          pattern: "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - 
-          description: "Property. Identifier format of any NGSI entity"
+        - description: 'Property. Identifier format of any NGSI entity'
           format: uri
           type: string
-      description: "Unique identifier of the entity"
+      description: 'Unique identifier of the entity'
       type: Property
-    location: 
-      $id: "https://geojson.org/schema/Geometry.json"
+    location:
+      $id: https://geojson.org/schema/Geometry.json
       $schema: "http://json-schema.org/draft-07/schema#"
-      oneOf: 
-        - 
-          properties: 
-            bbox: 
-              items: 
+      oneOf:
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
+            coordinates:
+              items:
                 type: number
               minItems: 2
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - Point
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON Point"
+          title: 'GeoJSON Point'
           type: object
-        - 
-          properties: 
-            bbox: 
-              items: 
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
-                items: 
+            coordinates:
+              items:
+                items:
                   type: number
                 minItems: 2
                 type: array
               minItems: 2
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - LineString
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON LineString"
+          title: 'GeoJSON LineString'
           type: object
-        - 
-          properties: 
-            bbox: 
-              items: 
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
-                items: 
-                  items: 
+            coordinates:
+              items:
+                items:
+                  items:
                     type: number
                   minItems: 2
                   type: array
                 minItems: 4
                 type: array
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - Polygon
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON Polygon"
+          title: 'GeoJSON Polygon'
           type: object
-        - 
-          properties: 
-            bbox: 
-              items: 
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
-                items: 
+            coordinates:
+              items:
+                items:
                   type: number
                 minItems: 2
                 type: array
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - MultiPoint
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON MultiPoint"
+          title: 'GeoJSON MultiPoint'
           type: object
-        - 
-          properties: 
-            bbox: 
-              items: 
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
-                items: 
-                  items: 
+            coordinates:
+              items:
+                items:
+                  items:
                     type: number
                   minItems: 2
                   type: array
                 minItems: 2
                 type: array
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - MultiLineString
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON MultiLineString"
+          title: 'GeoJSON MultiLineString'
           type: object
-        - 
-          properties: 
-            bbox: 
-              items: 
+        - properties:
+            bbox:
+              items:
                 type: number
               minItems: 4
               type: array
-            coordinates: 
-              items: 
-                items: 
-                  items: 
-                    items: 
+            coordinates:
+              items:
+                items:
+                  items:
+                    items:
                       type: number
                     minItems: 2
                     type: array
@@ -455,33 +446,33 @@ LodgingBusiness:
                   type: array
                 type: array
               type: array
-            type: 
-              enum: 
+            type:
+              enum:
                 - MultiPolygon
               type: string
-          required: 
+          required:
             - type
             - coordinates
-          title: "GeoJSON MultiPolygon"
+          title: 'GeoJSON MultiPolygon'
           type: object
-      title: "GeoJSON Geometry"
-    name: 
-      description: "Property. The name of this item."
+      title: 'GeoJSON Geometry'
+    name:
+      description: 'Property. The name of this item.'
       type: string
-    numberOfRooms: 
-      description: "Property. Model:'https://schema.org/numberOfRooms'. The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business."
+    numberOfRooms:
       type: number
-    openingHours: 
+      description: 'Property. Model:''https://schema.org/numberOfRooms''. The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.'
+    openingHours:
       type: string
-    openingHoursSpecification: 
-      description: "A structured value providing information about the opening hours of a place or a certain service inside a place"
-      items: 
-        properties: 
-          closes: 
+    openingHoursSpecification:
+      description: 'A structured value providing information about the opening hours of a place or a certain service inside a place'
+      items:
+        properties:
+          closes:
             format: time
             type: string
-          dayOfWeek: 
-            enum: 
+          dayOfWeek:
+            enum:
               - Monday
               - Tuesday
               - Wednesday
@@ -491,103 +482,105 @@ LodgingBusiness:
               - Sunday
               - PublicHolidays
             type: string
-          opens: 
+          opens:
             format: time
             type: string
-          validFrom: 
+          validFrom:
             format: date-time
             type: string
-          validThrough: 
+          validThrough:
             format: date-time
             type: string
       minItems: 1
       type: array
-      x-ngsi: 
-        model: "https://schema.org/openingHoursSpecification"
-    owner: 
-      description: "A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)"
-      items: 
-        anyOf: 
-          - 
-            description: "Property. Identifier format of any NGSI entity"
-            maxLength: 256
-            minLength: 1
-            pattern: "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$"
-            type: string
-          - 
-            description: "Property. Identifier format of any NGSI entity"
-            format: uri
-            type: string
-        description: "Property. Unique identifier of the entity"
+      x-ngsi:
+        model: https://schema.org/openingHoursSpecification
+    owner:
+      description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
+      items:
+        anyOf: *lodgingbusiness_-_properties_-_owner_-_items_-_anyof
+        description: 'Property. Unique identifier of the entity'
       type: Property
-    paymentAccepted: 
-      description: "Property. Model:'https://schema.org/Text'. Payment method accepted in this store."
-      items: 
-        enum: 
-          - Cash
-          - Cheque
-          - "Credit Card"
-          - Cryptocurrency
+    paymentAccepted:
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
+      items:
         type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
       minItems: 1
-      type: array
-    petsAllowed: 
-      description: "Property. Model:'https://schema.org/petsAllowed'. Indicates whether pets are allowed to enter the accommodation or lodging business."
+    petsAllowed:
       type: boolean
-    priceRange: 
-      description: "Property. The price range of the business, for example $$$. Model:'https://schema.org/priceRange'"
+      description: 'Property. Model:''https://schema.org/petsAllowed''. Indicates whether pets are allowed to enter the accommodation or lodging business.'
+    priceRange:
       type: string
-    review: 
-      description: "Property. Model:'https://schema.org/Review'. A review of an item - for example, of a restaurant, movie, or store."
-      items: 
-        properties: 
-          author: 
-            description: "Property. Model:'https://schema.org/Text'. The author of this content or rating."
-            type: string
-          datePublished: 
-            description: "Property. Model:'https://schema.org/Text'. Date of first broadcast/publication."
-            format: date-time
-            type: string
-          name: 
-            description: "Property. Model:'https://schema.org/Text'. The name of the item. "
-            type: string
-          reviewBody: 
-            description: "Property. Model:'https://schema.org/Text'. The actual body of the review."
-            type: string
-          reviewRating: 
-            description: "Property. Model:'https://schema.org/Rating'. A rating is an evaluation on a numeric scale, such as 1 to 5 stars."
-            properties: 
-              bestRating: 
-                description: "Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed."
-                type: integer
-              ratingValue: 
-                description: "Property. The rating for the content."
-                type: integer
-              worstRating: 
-                description: "Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed."
-                type: integer
-            type: object
+      description: 'Property. The price range of the business, for example $$$. Model:''https://schema.org/priceRange'''
+    refSeeAlso:
+      description: 'List of references to one or more related entities.'
+      items:
+        anyOf:
+          - anyOf: *lodgingbusiness_-_properties_-_owner_-_items_-_anyof
+            description: 'Property. Unique identifier of the entity'
       minItems: 1
+      type: Property
+      uniqueItems: true
+      x-ngsi:
+        model: https://schema.org/URL
+    review:
+      description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
-    seeAlso: 
-      description: "list of uri pointing to additional resources about the item"
-      oneOf: 
-        - 
-          items: 
-            format: uri
-            type: string
+      items:
+        properties:
+            author:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The author of this content or rating.'
+            datePublished:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. Date of first broadcast/publication.'
+              format: date-time
+            name:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The name of the item. '
+            reviewBody:
+              type: string
+              description: 'Property. Model:''https://schema.org/Text''. The actual body of the review.'
+            reviewRating:
+              type: object
+              description: 'Property. Model:''https://schema.org/Rating''. A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+              properties:
+                bestRating:
+                  type: integer
+                  description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+                ratingValue:
+                  type: integer
+                  description: 'Property. The rating for the content.'
+                worstRating:
+                  type: integer
+                  description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+      minItems: 1
+    seeAlso:
+      description: 'list of uri pointing to additional resources about the item'
+      oneOf:
+        - items:
+            - format: uri
+              type: string
           minItems: 1
           type: array
+        - format: uri
+          type: string
       type: Property
-    source: 
-      description: "A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object."
+    source:
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
-    type: 
-      description: "NGSI Entity type. It has to be LodgingBusiness"
-      enum: 
+    type:
+      description: 'NGSI Entity type. It has to be LodgingBusiness'
+      enum:
         - LodgingBusiness
       type: Property
-  required: 
+  required:
     - id
     - category
     - name
