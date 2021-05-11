@@ -1,8 +1,9 @@
 {
     "$schema":"http://json-schema.org/schema#",
+    "$schemaVersion":"0.0.1",
     "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/schema.json",
-    "title":"SynchroniCity - Point of Interest Store schema",
-    "description":"This entity Type models stores/shops in the city.",
+    "title":"Store schema",
+    "description":"This entity type models stores/shops in the city.",
     "type":"object",
     "allOf":[
         {
