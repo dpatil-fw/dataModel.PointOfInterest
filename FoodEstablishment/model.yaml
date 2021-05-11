@@ -1,5 +1,5 @@
 FoodEstablishment:
-  description: 'This entity contains a harmonised geographic description of an FoodEstablishment'
+  description: 'A place where food is served, like a restaurant, cafe, bakery etc'
   properties:
     acceptsReservations:
       type: string
