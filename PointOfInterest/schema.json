@@ -1,8 +1,8 @@
 {
     "$schema":"http://json-schema.org/schema#",
-    "$schemaVersion":"0.0",
+    "$schemaVersion":"0.0.1",
     "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/schema.json",
-    "title":"- Point of Interest schema",
+    "title":"Point of Interest schema",
     "description":"This entity contains a harmonised geographic description of a Point of Interest",
     "type":"object",
     "allOf":[
