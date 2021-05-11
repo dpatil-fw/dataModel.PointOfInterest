@@ -1,5 +1,5 @@
 Attraction:
-  description: 'This entity contains a harmonised geographic description of an Attraction'
+  description: 'A place or a tourist attraction in a city'
   properties:
     address:
       description: 'Property. The mailing address. Model:''https://schema.org/address'''
