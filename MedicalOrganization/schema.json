@@ -1,9 +1,9 @@
 {
     "$schema":"http://json-schema.org/schema#",
-    "$schemaVersion":"0.0",
+    "$schemaVersion":"0.0.1",
     "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganization/schema.json",
-    "title":"- Medical Organization schema",
-    "description":"This entity contains a harmonised geographic description of a Medical Organization",
+    "title":"Medical Organization schema",
+    "description":"This entity type models healthcare organizations like Hospitals, Pharmacy etc.",
     "type":"object",
     "allOf":[
         {
