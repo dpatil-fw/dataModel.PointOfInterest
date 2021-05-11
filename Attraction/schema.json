@@ -1,9 +1,9 @@
 {
     "$schema":"http://json-schema.org/schema#",
-    "$schemaVersion":"0.0",
+    "$schemaVersion":"0.0.1",
     "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Attraction/schema.json",
-    "title":"- Attraction schema",
-    "description":"This entity contains a harmonised geographic description of an Attraction",
+    "title":"Attraction schema",
+    "description":"A place or a tourist attraction in a city",
     "type":"object",
     "allOf":[
         {
@@ -25,10 +25,6 @@
                 "publicAccess":{
                     "type":"boolean",
                     "description":"Property. Model:'https://schema.org/publicAccess'. A flag to signal that the Place is open to public visitors."
-                },
-                "description":{
-                    "type":"string",
-                    "description":"Property. A description of the item. Model:'https://schema.org/description'"
                 },
                 "photo":{
                     "type":"string",
