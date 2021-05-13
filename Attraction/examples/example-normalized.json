@@ -1,0 +1,83 @@
+{
+    "id": "Attraction-MysorePalace-123456",
+    "type": "Attraction",
+    "category": {
+        "value": "Monument"
+    },
+    "name": {
+        "value": "MysorePalace"
+    },
+    "address": {
+        "value": {
+            "addressLocality": "Mysuru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN",
+            "postalCode": "570001",
+            "streetAddress": "Sayyaji Rao Rd, Agrahara, Chamrajpura"
+        },
+        "type": "PostalAddress"
+    },
+    "aggregateRating": {
+        "value": {
+            "bestRating": 5,
+            "ratingCount": 24,
+            "ratingValue": 4,
+            "worstRating": 1
+        }
+    },
+    "currenciesAccepted": {
+        "value": [
+            "INR",
+            "USD",
+            "EUR"
+        ]
+    },
+    "publicAccess": {
+        "value": true
+    },
+    "photo": {
+        "value": "https://en.wikipedia.org/wiki/File:Mysore_Palace_Morning.jpg"
+    },
+    "description": {
+        "value": "Beautiful three-storied palace features highlights such as its elegant square towers and domes; the many ornate ceilings and pillars in Durbar Hall; and the splendid Marriage Pavilion, with its glazed floor tiles, stunning stained glass, artworks, and displays of jewelry"
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                12.305,
+                76.655
+            ]
+        },
+        "type": "geo:json"
+    },
+    "openingHours": {
+        "value": [
+            "Su-Sa 9:00-18:30"
+        ]
+    },
+    "paymentAccepted": {
+        "value": [
+            "CreditCard",
+            "Cash"
+        ]
+    },
+    "review": {
+        "value": [
+            {
+                "author": "Rama K",
+                "datePublished": "2021-05-04",
+                "name": "Best Palace",
+                "reviewBody": "Wonderful display of art work",
+                "reviewRating": {
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingValue": "5"
+                }
+            }
+        ]
+    },
+    "source": {
+        "value": "http://www.mysorepalce.com"
+    }
+}
