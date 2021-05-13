@@ -1,0 +1,50 @@
+{
+    "id": "Attraction-MysorePalace-123456",
+    "type": "Attraction",
+    "category": "Monument",
+    "name": "MysorePalace",
+    "address": {
+      "addressLocality": "Mysuru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN",
+      "postalCode": "570001",
+      "streetAddress": "Sayyaji Rao Rd, Agrahara, Chamrajpura"
+    },
+    "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 24,
+      "ratingValue": 4,
+      "worstRating": 1
+    },
+    "currenciesAccepted": [
+        "INR",
+        "USD",
+        "EUR"
+    ],
+    "publicAccess": true,
+    "photo": "https://en.wikipedia.org/wiki/File:Mysore_Palace_Morning.jpg",
+    "description": "Beautiful three-storied palace features highlights such as its elegant square towers and domes; the many ornate ceilings and pillars in Durbar Hall; and the splendid Marriage Pavilion, with its glazed floor tiles, stunning stained glass, artworks, and displays of jewelry",
+    "location": {
+        "type": "Point",
+        "coordinates": [12.305, 76.655]
+    },
+    "openingHours": [
+      "Su-Sa 9:00-18:30"
+    ],
+    "paymentAccepted": [
+        "CreditCard", "Cash"
+    ],
+    "review": [{
+            "author": "Rama K",
+            "datePublished": "2021-05-04",
+            "name": "Best Palace",
+            "reviewBody": "Wonderful display of art work",
+            "reviewRating": {
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingValue": "5"
+            }
+        }
+    ],
+    "source": "http://www.mysorepalce.com"
+}
