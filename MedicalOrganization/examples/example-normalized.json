@@ -1,0 +1,98 @@
+{
+    "id": "MedicalOrganization-ApolloHospital-123456",
+    "type": "MedicalOrganization",
+    "category": {
+        "value": "Hospital"
+    },
+    "name": {
+        "value": "Apollo Hospital"
+    },
+    "address": {
+        "value": {
+            "addressCountry": "IN",
+            "addressLocality": "Chennai",
+            "postalCode": "600006",
+            "streetAddress": "21 Greams Lane, Off, Greams Road, Thousand Lights"
+        },
+        "type": "PostalAddress"
+    },
+    "aggregateRating": {
+        "value": {
+            "bestRating": 5,
+            "ratingCount": 240,
+            "ratingValue": 3,
+            "worstRating": 1
+        }
+    },
+    "contactPoint": {
+        "value": {
+            "email": "contact@apollohospital.com",
+            "contactType": "admin",
+            "telephone": "1860-500-1066",
+            "name": "Deepa S"
+        }
+    },
+    "currenciesAccepted": {
+        "value": [
+            "INR"
+        ]
+    },
+    "description": {
+        "value": "Apollo Hospitals is the leading multispecialty health care unit with best in class treatments"
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                13.0827,
+                80.2707
+            ]
+        },
+        "type": "geo:json"
+    },
+    "paymentAccepted": {
+        "value": [
+            "CreditCard",
+            "Cash"
+        ]
+    },
+    "facilities": {
+        "value": [
+            "Laboratory Services",
+            "ECG Services",
+            "Pharmacy",
+            "OT"
+        ]
+    },
+    "medicalSpeciality": {
+        "value": [
+            "Cardiovascular",
+            "CommunityHealth"
+        ]
+    },
+    "review": {
+        "value": [
+            {
+                "author": "Seetharaman",
+                "datePublished": "2021-05-04",
+                "name": "Good treatment",
+                "reviewBody": "I underwent surgery here and was well taken care of by the staff",
+                "reviewRating": {
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingValue": "4"
+                }
+            }
+        ]
+    },
+    "hasDriveThroughService": {
+        "value": "true",
+        "type": "Relationship"
+    },
+    "isAcceptingNewPatients": {
+        "value": "true"
+    },
+    "source": {
+        "value": "http://www.apollohospital.com"
+    }
+}
