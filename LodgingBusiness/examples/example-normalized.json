@@ -1,0 +1,104 @@
+{
+    "id": "LodgingBusiness-ACME-Hotel-123456",
+    "type": "LodgingBusiness",
+    "category": {
+        "value": "Hotel"
+    },
+    "name": {
+        "value": "ACME Hotel"
+    },
+    "address": {
+        "value": {
+            "addressCountry": "AT",
+            "addressLocality": "Innsbruck",
+            "addressRegion": "Tyrol",
+            "postalCode": "6020",
+            "streetAddress": "Technikerstrasse 21"
+        },
+        "type": "PostalAddress"
+    },
+    "aggregateRating": {
+        "value": {
+            "bestRating": 5,
+            "ratingCount": 24,
+            "ratingValue": 4,
+            "worstRating": 1
+        }
+    },
+    "contactPoint": {
+        "value": {
+            "email": "manager@acmehotel.com",
+            "contactType": "manager",
+            "telephone": "+43 512 8000-0",
+            "name": "Ryan Black"
+        }
+    },
+    "currenciesAccepted": {
+        "value": [
+            "EUR"
+        ]
+    },
+    "description": {
+        "value": "A beautifully located business hotel right in the heart of the alps. Watch the sun rise over the scenic Inn valley while enjoying your morning coffee."
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -8.768460000000001,
+                42.60214472222222
+            ]
+        },
+        "type": "geo:json"
+    },
+    "paymentAccepted": {
+        "value": [
+            "CreditCard",
+            "Cash"
+        ]
+    },
+    "review": {
+        "value": [
+            {
+                "author": "John Doe",
+                "datePublished": "2021-05-04",
+                "name": "Best Stay",
+                "reviewBody": "I really enjoyed my stay. Very clean and well maintained hotel.",
+                "reviewRating": {
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingValue": "5"
+                }
+            }
+        ]
+    },
+    "amenityFeature": {
+        "value": [
+            "Wifi",
+            "Laundry",
+            "Gym"
+        ]
+    },
+    "acceptsReservations": {
+        "value": "true"
+    },
+    "checkinTime": {
+        "value": "2021-07-11T16:00:00-08:00"
+    },
+    "checkoutTime": {
+        "value": "2021-07-13T11:00:00-08:00"
+    },
+    "hasMenu": {
+        "value": "true",
+        "type": "Relationship"
+    },
+    "numberOfRooms": {
+        "value": "45"
+    },
+    "priceRange": {
+        "value": "$100 - $240"
+    },
+    "source": {
+        "value": "http://www.acmehotel.com"
+    }
+}
