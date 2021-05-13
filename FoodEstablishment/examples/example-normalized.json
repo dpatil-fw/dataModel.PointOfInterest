@@ -1,0 +1,112 @@
+{
+    "id": "FoodEstablishment-GreatFood-123456",
+    "type": "FoodEstablishment",
+    "category": {
+        "value": "Restaurant"
+    },
+    "name": {
+        "value": "GreatFood"
+    },
+    "address": {
+        "value": {
+            "addressLocality": "Sunnyvale",
+            "addressRegion": "CA",
+            "addressCountry": "US",
+            "postalCode": "94087",
+            "streetAddress": "575 E Remington Dr"
+        },
+        "type": "PostalAddress"
+    },
+    "aggregateRating": {
+        "value": {
+            "bestRating": 5,
+            "ratingCount": 24,
+            "ratingValue": 4,
+            "worstRating": 1
+        }
+    },
+    "currenciesAccepted": {
+        "value": [
+            "USD",
+            "EUR"
+        ]
+    },
+    "description": {
+        "value": "Restaurant offering delicious Mexican food."
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -8.768460000000001,
+                42.60214472222222
+            ]
+        },
+        "type": "geo:json"
+    },
+    "openingHoursSpecification": {
+        "value": [
+            {
+                "opens": "11:00:00",
+                "closes": "14:30:00",
+                "dayOfWeek": "Friday"
+            },
+            {
+                "opens": "17:00:00",
+                "closes": "22:30:00",
+                "dayOfWeek": "Saturday"
+            },
+            {
+                "opens": "17:00:00",
+                "closes": "22:30:00",
+                "dayOfWeek": "Sunday"
+            }
+        ]
+    },
+    "paymentAccepted": {
+        "value": [
+            "Credit Card",
+            "Cash"
+        ]
+    },
+    "review": {
+        "value": [
+            {
+                "author": "John Doe",
+                "datePublished": "2021-05-04",
+                "name": "Best Food",
+                "reviewBody": "I really enjoyed eating at this restaurant",
+                "reviewRating": {
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingValue": "5"
+                }
+            },
+            {
+                "author": "Bob Smith",
+                "datePublished": "2021-06-15",
+                "name": "Nice Tacos",
+                "reviewBody": "Tacos were excellento!",
+                "reviewRating": {
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingValue": "4"
+                }
+            }
+        ]
+    },
+    "hasDriveThroughService": {
+        "value": "true",
+        "type": "Relationship"
+    },
+    "hasMenu": {
+        "value": "true",
+        "type": "Relationship"
+    },
+    "servesCuisine": {
+        "value": "Mexican"
+    },
+    "source": {
+        "value": "http://www.greatfood.com"
+    }
+}
