@@ -6,7 +6,7 @@
 components:
   schemas: 
     PointOfInterest: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/model.yaml#/PointOfInterest"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/model.yaml#/PointOfInterest"
 info:
   description:  |
     This entity contains a harmonised geographic description of a Point of Interest

@@ -6,7 +6,7 @@
 components:
   schemas: 
     LodgingBusiness: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/model.yaml#/LodgingBusiness"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/model.yaml#/LodgingBusiness"
 info:
   description:  |
     This entity Type models Lodging Business in the city.
@@ -37,12 +37,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/examples/example.json"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/examples/example-normalized.jsonld"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld

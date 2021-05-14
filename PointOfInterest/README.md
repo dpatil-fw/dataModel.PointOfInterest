@@ -9,11 +9,6 @@ Link to the [interactive specification](https://swagger.lab.fiware.org/?url=http
 
 Link to the [specification](https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/doc/spec.md)
 
-Link to the [specification in Spanish](https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/doc/spec_ES.md)
-
-Link to the [specification in French](https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/doc/spec_FR.md)
-
-Link to the [specification in German](https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/doc/spec_DE.md)
 ### Examples
 
 Link to the [example](https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/examples/example.json) (keyvalues) for NGSI v2

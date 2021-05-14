@@ -6,7 +6,7 @@
 components:
   schemas: 
     MedicalOrganiztion: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/model.yaml#/MedicalOrganiztion"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/model.yaml#/MedicalOrganiztion"
 info:
   description:  |
     This entity Type models Medical Organizations in the city.
@@ -37,12 +37,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/examples/example.json"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/examples/example-normalized.jsonld"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld

@@ -286,14 +286,6 @@ LodgingBusiness:
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
-    dateCreated:
-      description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'
-      type: string
-      format: date-time
-    dateModified:
-      description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'
-      type: string
-      format: date-time
     description:
       description: 'A description of this item'
       type: Property
