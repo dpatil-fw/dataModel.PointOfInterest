@@ -6,7 +6,7 @@
 components:
   schemas: 
     Store: 
-      $ref: "https://smart-data-models.github.io/dataModel.PointOfInterest/Store/model.yaml#/Store"
+      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/model.yaml#/Store"
 info:
   description:  |
     This entity Type models stores/shops in the city.
@@ -37,12 +37,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://smart-data-models.github.io/dataModel.PointOfInterest/Store/examples/example.json"
+                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://smart-data-models.github.io/dataModel.PointOfInterest/Store/examples/example-normalized.jsonld"
+                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld
