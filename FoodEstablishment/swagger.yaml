@@ -6,7 +6,7 @@
 components:
   schemas: 
     FoodEstablishment: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/FoodEstablishment/model.yaml#/FoodEstablishment"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/model.yaml#/FoodEstablishment"
 info:
   description:  |
     This entity Type models Food Establishments in the city.
@@ -37,12 +37,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/FoodEstablishment/examples/example.json"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/FoodEstablishment/examples/example-normalized.jsonld"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld

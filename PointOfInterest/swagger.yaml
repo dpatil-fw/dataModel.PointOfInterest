@@ -6,7 +6,7 @@
 components:
   schemas: 
     PointOfInterest: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/model.yaml#/PointOfInterest"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/model.yaml#/PointOfInterest"
 info:
   description:  |
     This entity contains a harmonised geographic description of a Point of Interest
@@ -37,12 +37,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/examples/example.json"
+                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/examples/example-normalized.jsonld"
+                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld
