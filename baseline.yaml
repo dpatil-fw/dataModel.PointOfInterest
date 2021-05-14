@@ -16,9 +16,9 @@ components:
     # This is a base definition of a City LodgingBusiness
     LodgingBusiness: 
       $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/model.yaml#/LodgingBusiness"
-    # This is a base definition of a City MedicalOrganiztion
-    MedicalOrganiztion: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganiztion/model.yaml#/MedicalOrganiztion"
+    # This is a base definition of a City MedicalOrganization
+    MedicalOrganization: 
+      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganization/model.yaml#/MedicalOrganization"
     # This is a base definition of a City Store
     Store: 
       $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/model.yaml#/Store"
