@@ -1,23 +1,26 @@
 {
-    "id": "FoodEstablishment-GreatFood-123456",
+    "id": "urn:ngsi-ld:FoodEstablishment:FoodEstablishment-GreatFood-123456",
     "type": "FoodEstablishment",
     "category": {
+        "type": "Property",
         "value": "Restaurant"
     },
     "name": {
+        "type": "Property",
         "value": "GreatFood"
     },
     "address": {
+        "type": "Property",
         "value": {
             "addressLocality": "Sunnyvale",
             "addressRegion": "CA",
             "addressCountry": "US",
             "postalCode": "94087",
             "streetAddress": "575 E Remington Dr"
-        },
-        "type": "PostalAddress"
+        }
     },
     "aggregateRating": {
+        "type": "Property",
         "value": {
             "bestRating": 5,
             "ratingCount": 24,
@@ -26,25 +29,28 @@
         }
     },
     "currenciesAccepted": {
+        "type": "Property",
         "value": [
             "USD",
             "EUR"
         ]
     },
     "description": {
+        "type": "Property",
         "value": "Restaurant offering delicious Mexican food."
     },
     "location": {
+        "type": "GeoProperty",
         "value": {
             "type": "Point",
             "coordinates": [
                 -8.768460000000001,
                 42.60214472222222
             ]
-        },
-        "type": "geo:json"
+        }
     },
     "openingHoursSpecification": {
+        "type": "Property",
         "value": [
             {
                 "opens": "11:00:00",
@@ -64,12 +70,14 @@
         ]
     },
     "paymentAccepted": {
+        "type": "Property",
         "value": [
             "Credit Card",
             "Cash"
         ]
     },
     "review": {
+        "type": "Property",
         "value": [
             {
                 "author": "John Doe",
@@ -96,15 +104,23 @@
         ]
     },
     "hasDriveThroughService": {
+        "type": "Property",
         "value": "true"
     },
     "hasMenu": {
+        "type": "Property",
         "value": "true"
     },
     "servesCuisine": {
+        "type": "Property",
         "value": "Mexican"
     },
     "source": {
+        "type": "Property",
         "value": "http://www.greatfood.com"
-    }
+    },
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
 }

@@ -1,22 +1,25 @@
 {
-    "id": "MedicalOrganization-ApolloHospital-123456",
+    "id": "urn:ngsi-ld:MedicalOrganization:MedicalOrganization-ApolloHospital-123456",
     "type": "MedicalOrganization",
     "category": {
+        "type": "Property",
         "value": "Hospital"
     },
     "name": {
+        "type": "Property",
         "value": "Apollo Hospital"
     },
     "address": {
+        "type": "Property",
         "value": {
             "addressCountry": "IN",
             "addressLocality": "Chennai",
             "postalCode": "600006",
             "streetAddress": "21 Greams Lane, Off, Greams Road, Thousand Lights"
-        },
-        "type": "PostalAddress"
+        }
     },
     "aggregateRating": {
+        "type": "Property",
         "value": {
             "bestRating": 5,
             "ratingCount": 240,
@@ -25,6 +28,7 @@
         }
     },
     "contactPoint": {
+        "type": "Property",
         "value": {
             "email": "contact@apollohospital.com",
             "contactType": "admin",
@@ -33,30 +37,34 @@
         }
     },
     "currenciesAccepted": {
+        "type": "Property",
         "value": [
             "INR"
         ]
     },
     "description": {
+        "type": "Property",
         "value": "Apollo Hospitals is the leading multispecialty health care unit with best in class treatments"
     },
     "location": {
+        "type": "GeoProperty",
         "value": {
             "type": "Point",
             "coordinates": [
                 13.0827,
                 80.2707
             ]
-        },
-        "type": "geo:json"
+        }
     },
     "paymentAccepted": {
+        "type": "Property",
         "value": [
             "CreditCard",
             "Cash"
         ]
     },
     "facilities": {
+        "type": "Property",
         "value": [
             "Laboratory Services",
             "ECG Services",
@@ -65,12 +73,14 @@
         ]
     },
     "medicalSpeciality": {
+        "type": "Property",
         "value": [
             "Cardiovascular",
             "CommunityHealth"
         ]
     },
     "review": {
+        "type": "Property",
         "value": [
             {
                 "author": "Seetharaman",
@@ -86,12 +96,19 @@
         ]
     },
     "hasDriveThroughService": {
+        "type": "Property",
         "value": "true"
     },
     "isAcceptingNewPatients": {
+        "type": "Property",
         "value": "true"
     },
     "source": {
+        "type": "Property",
         "value": "http://www.apollohospital.com"
-    }
+    },
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
 }

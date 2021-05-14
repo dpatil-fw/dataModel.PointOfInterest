@@ -1,29 +1,52 @@
 {
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld",
-    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-  ],
-  "address": {
-    "addressCountry": "ES",
-    "addressLocality": "Vilagarc\u00eda de Arousa",
-    "type": "PostalAddress"
-  },
-  "category": [
-    "113"
-  ],
-  "description": "La Playa de A Concha se presenta como una continuaci\u00f3n de la Playa de Compostela, una de las m\u00e1s frecuentadas de Vilagarc\u00eda.",
-  "id": "urn:ngsi-ld:PointOfInterest:PointOfInterest-A-Concha-123456",
-  "location": {
-    "coordinates": [
-      -8.768460000000001,
-      42.60214472222222
-    ],
-    "type": "Point"
-  },
-  "name": "Playa de a Concha",
-  "refSeeAlso": [
-    "urn:ngsi-ld:SeeAlso:Beach-A-Concha-123456"
-  ],
-  "source": "http://www.tourspain.es",
-  "type": "PointOfInterest"
+    "id": "urn:ngsi-ld:PointOfInterest:PointOfInterest-A-Concha-123456",
+    "type": "PointOfInterest",
+    "name": {
+        "type": "Property",
+        "value": "Playa de a Concha"
+    },
+    "description": {
+        "type": "Property",
+        "value": "A Concha Beach is presented as a continuation of Compostela Beach, one of the most frequented in Vilagarc\u00eda."
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry": "ES",
+            "addressLocality": "Vilagarc\u00eda de Arousa"
+        }
+    },
+    "aggregateRating": {
+        "type": "Property",
+        "value": {
+            "bestRating": 5,
+            "ratingCount": 24,
+            "ratingValue": 4,
+            "worstRating": 1
+        }
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -8.768460000000001,
+                42.60214472222222
+            ]
+        }
+    },
+    "source": {
+        "type": "Property",
+        "value": "http://www.tourspain.es"
+    },
+    "refSeeAlso": {
+        "value": [
+            "urn:ngsi-ld:Beach:Beach-A-Concha-123456"
+        ],
+        "type": "Relationship"
+    },
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
 }
