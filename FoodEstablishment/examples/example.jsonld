@@ -1,0 +1,78 @@
+{
+    "id": "urn:ngsi-ld:FoodEstablishment:FoodEstablishment-GreatFood-123456",
+    "type": "FoodEstablishment", 
+    "category": "Restaurant", 
+    "name": "GreatFood",
+    "address": {
+      "addressLocality": "Sunnyvale",
+      "addressRegion": "CA",
+      "addressCountry": "US",
+      "postalCode": "94087",
+      "streetAddress": "575 E Remington Dr"
+    },
+    "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 24,
+      "ratingValue": 4,
+      "worstRating": 1
+    },
+    "currenciesAccepted": [
+        "USD",
+        "EUR"
+    ],
+    "description": "Restaurant offering delicious Mexican food.",
+    "location": {
+        "type": "Point",
+        "coordinates": [-8.768460000000001, 42.60214472222222]
+    },
+    "openingHoursSpecification": [{
+            "opens": "11:00:00",
+            "closes": "14:30:00",
+            "dayOfWeek": "Friday"
+        },
+        {
+            "opens": "17:00:00",
+            "closes": "22:30:00",
+            "dayOfWeek": "Saturday"
+        },
+        {
+            "opens": "17:00:00",
+            "closes": "22:30:00",
+            "dayOfWeek": "Sunday"
+        }
+    ],
+    "paymentAccepted": [
+        "Credit Card", "Cash"
+    ],
+    "review": [{
+            "author": "John Doe",
+            "datePublished": "2021-05-04",
+            "name": "Best Food",
+            "reviewBody": "I really enjoyed eating at this restaurant",
+            "reviewRating": {
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingValue": "5"
+            }
+        },
+        {
+            "author": "Bob Smith",
+            "datePublished": "2021-06-15",
+            "name": "Nice Tacos",
+            "reviewBody": "Tacos were excellento!",
+            "reviewRating": {
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingValue": "4"
+            }
+        }
+    ],
+    "hasDriveThroughService": "true",
+    "hasMenu": "true",
+    "servesCuisine": "Mexican",
+    "source": "http://www.greatfood.com",
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

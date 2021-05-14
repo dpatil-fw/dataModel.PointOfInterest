@@ -1,0 +1,62 @@
+{
+    "id": "urn:ngsi-ld:LodgingBusiness:LodgingBusiness-ACME-Hotel-123456",
+    "type": "LodgingBusiness", 
+    "category": "Hotel", 
+    "name": "ACME Hotel",
+    "address": {
+        "addressCountry": "AT",
+        "addressLocality": "Innsbruck",
+        "addressRegion": "Tyrol",
+        "postalCode": "6020",
+        "streetAddress": "Technikerstrasse 21"
+    },
+    "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 24,
+      "ratingValue": 4,
+      "worstRating": 1
+    },
+    "contactPoint": {
+        "email": "manager@acmehotel.com",
+        "contactType": "manager",
+        "telephone": "+43 512 8000-0",
+        "name": "Ryan Black"
+    },
+    "currenciesAccepted": [
+        "EUR"
+    ],
+    "description": "A beautifully located business hotel right in the heart of the alps. Watch the sun rise over the scenic Inn valley while enjoying your morning coffee.",
+    "location": {
+        "type": "Point",
+        "coordinates": [-8.768460000000001, 42.60214472222222]
+    },
+    "paymentAccepted": [
+        "CreditCard", "Cash"
+    ],
+    "review": [{
+            "author": "John Doe",
+            "datePublished": "2021-05-04",
+            "name": "Best Stay",
+            "reviewBody": "I really enjoyed my stay. Very clean and well maintained hotel.",
+            "reviewRating": {
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingValue": "5"
+            }
+        }
+    ],
+    "amenityFeature": [
+        "Wifi", "Laundry", "Gym"
+    ],
+    "acceptsReservations": "true",
+    "checkinTime": "2021-07-11T16:00:00-08:00",
+    "checkoutTime": "2021-07-13T11:00:00-08:00",
+    "hasMenu": "true",
+    "numberOfRooms": "45",
+    "priceRange": "$100 - $240",
+    "source": "http://www.acmehotel.com",
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

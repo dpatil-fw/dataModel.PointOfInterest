@@ -1,0 +1,60 @@
+{
+    "id": "urn:ngsi-ld:MedicalOrganization:MedicalOrganization-ApolloHospital-123456",
+    "type": "MedicalOrganization", 
+    "category": "Hospital", 
+    "name": "Apollo Hospital",
+    "address": {
+        "addressCountry": "IN",
+        "addressLocality": "Chennai",
+        "postalCode": "600006",
+        "streetAddress": "21 Greams Lane, Off, Greams Road, Thousand Lights"
+    },
+    "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 240,
+      "ratingValue": 3,
+      "worstRating": 1
+    },
+    "contactPoint": {
+        "email": "contact@apollohospital.com",
+        "contactType": "admin",
+        "telephone": "1860-500-1066",
+        "name": "Deepa S"
+    },
+    "currenciesAccepted": [
+        "INR"
+    ],
+    "description": "Apollo Hospitals is the leading multispecialty health care unit with best in class treatments",
+    "location": {
+        "type": "Point",
+        "coordinates": [13.0827, 80.2707] 
+    },
+    "paymentAccepted": [
+        "CreditCard", "Cash"
+    ],
+    "facilities": [
+        "Laboratory Services", "ECG Services", "Pharmacy", "OT"
+    ],
+    "medicalSpeciality": [
+        "Cardiovascular", "CommunityHealth"
+    ],
+    "review": [{
+            "author": "Seetharaman",
+            "datePublished": "2021-05-04",
+            "name": "Good treatment",
+            "reviewBody": "I underwent surgery here and was well taken care of by the staff",
+            "reviewRating": {
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingValue": "4"
+            }
+        }
+    ],
+    "hasDriveThroughService": "true",
+    "isAcceptingNewPatients": "true",
+    "source": "http://www.apollohospital.com",
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}
