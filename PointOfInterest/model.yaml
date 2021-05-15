@@ -529,7 +529,7 @@ PointOfInterest:
       description: 'NGSI Entity type. It has to be PointOfInterest'
       enum:
         - PointOfInterest
-      type: Property
+      type: string
   required:
     - id
     - category
