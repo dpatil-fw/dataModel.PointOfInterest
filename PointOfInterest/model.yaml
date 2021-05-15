@@ -529,4 +529,3 @@ PointOfInterest:
     - id
     - category
     - name
-  type: object
