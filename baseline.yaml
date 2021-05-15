@@ -4,24 +4,24 @@ components:
 
     # This is the base definition of a PointOfInterest
     PointOfInterest: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/model.yaml#/PointOfInterest"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/model.yaml#/PointOfInterest"
 
 
     # This is a base definition of a City Attraction
     Attraction: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Attraction/model.yaml#/Attraction"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Attraction/model.yaml#/Attraction"
     # This is a base definition of a City FoodEstablishment
     FoodEstablishment: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/FoodEstablishment/model.yaml#/FoodEstablishment"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/model.yaml#/FoodEstablishment"
     # This is a base definition of a City LodgingBusiness
     LodgingBusiness: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/LodgingBusiness/model.yaml#/LodgingBusiness"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/LodgingBusiness/model.yaml#/LodgingBusiness"
     # This is a base definition of a City MedicalOrganization
     MedicalOrganization: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/MedicalOrganization/model.yaml#/MedicalOrganization"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/MedicalOrganization/model.yaml#/MedicalOrganization"
     # This is a base definition of a City Store
     Store: 
-      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Store/model.yaml#/Store"
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/model.yaml#/Store"
 
 info: 
   description: "Base Model Definitions from Smart Data Models"
