@@ -255,7 +255,7 @@ PointOfInterest:
       type: string
     description:
       description: 'A description of this item'
-      type: Property
+      type: string
     id:
       anyOf: &pointofinterest_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'

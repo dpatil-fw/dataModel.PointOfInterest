@@ -267,7 +267,7 @@ MedicalOrganization:
       type: string
     description:
       description: 'A description of this item'
-      type: Property
+      type: string
     facilities:
       type: array
       description: 'Property. Model:''https://schema.org/Text''. Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT'
