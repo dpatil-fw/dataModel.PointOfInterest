@@ -1,49 +1,9 @@
 MedicalOrganization:
   description: 'This entity type models healthcare organizations like Hospitals, Pharmacy etc.'
   properties:
-    address:
-      description: 'Property. The mailing address. Model:''https://schema.org/address'''
-      properties:
-        addressCountry:
-            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
-            type: string
-        addressLocality:
-            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
-            type: string
-        addressRegion:
-            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
-            type: string
-        areaServed:
-            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
-            type: string
-        postOfficeBoxNumber:
-            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
-            type: string
-        postalCode:
-            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
-            type: string
-        streetAddress:
-            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
-            type: string
-    aggregateRating:
-      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
-      type: object
-      properties:
-        bestRating:
-            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
-            type: integer
-        ratingCount:
-            description: 'Property. The count of total number of ratings.'
-            type: integer
-        ratingValue:
-            description: 'Property. The rating for the content.'
-            type: integer
-        worstRating:
-            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
-            type: integer
-    alternateName:
+    name:
+      description: 'Property. The name of this item.'
       type: string
-      description: 'Property. An alternative name for this item'
     category:
       type: string
       enum:
@@ -75,6 +35,112 @@ MedicalOrganization:
       type: Property
       x-ngsi:
         model: https://schema.org/ContactPoint
+    address:
+      description: 'Property. The mailing address. Model:''https://schema.org/address'''
+      properties:
+        addressCountry:
+            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            type: string
+        addressLocality:
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            type: string
+        addressRegion:
+            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            type: string
+        areaServed:
+            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            type: string
+        postOfficeBoxNumber:
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            type: string
+        postalCode:
+            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
+            type: string
+        streetAddress:
+            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            type: string
+    description:
+      description: 'A description of this item'
+      type: string
+    source:
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
+      type: string
+    facilities:
+      type: array
+      description: 'Property. Model:''https://schema.org/Text''. Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT'
+      items:
+        type: string
+      minItems: 1
+    hasDriveThroughService:
+      description: 'Property. Model:''https://schema.org/hasDriveThroughService''. Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.'
+      type: boolean
+    healthPlanNetworkId:
+      description: 'Property. Model:''https://schema.org/healthPlanNetworkId''. Name or unique ID of network.'
+      type: string
+    isAcceptingNewPatients:
+      description: 'Property. Model:''https://schema.org/isAcceptingNewPatients''. Whether the provider is accepting new patients.'
+      type: boolean
+    medicalSpeciality:
+      description: 'Property. Model:''https://schema.org/MedicalSpecialty''. Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.'
+      type: string
+      enum:
+        - Anesthesia
+        - Cardiovascular
+        - CommunityHealth
+        - Dentistry
+        - Dermatology
+        - DietNutrition
+        - Emergency
+        - Endocrine
+        - Gastroenterologic
+        - Genetic
+        - Geriatric
+        - Gynecologic
+        - Hematologic
+        - Infectious
+        - LaboratoryScience
+        - Midwifery
+        - Musculoskeletal
+        - Neurologic
+        - Nursing
+        - Obstetric
+        - Oncologic
+        - Optometric
+        - Otolaryngologic
+        - Pathology
+        - Pediatric
+        - PharmacySpecialty
+        - Physiotherapy
+        - PlasticSurgery
+        - Podiatric
+        - PrimaryCare
+        - Psychiatric
+        - PublicHealth
+        - Pulmonary
+        - Radiography
+        - Renal
+        - RespiratoryTherapy
+        - Rheumatologic
+        - SpeechPathology
+        - Surgical
+        - Toxicologic
+        - Urologic
+    medicineSystem:
+      description: 'Property. Model:''https://schema.org/MedicineSystem''. Systems of medical practice. Enumerated type.'
+      type: string
+      enum:
+        - Ayurvedic
+        - Chiropractic
+        - Homeopathic
+        - Osteopathic
+        - TraditionalChinese
+        - WesternConventional
+    testingFacility:
+      type: array
+      description: 'Property. Model:''https://schema.org/Text''. Types of tests available - CovidTesting, Blood Test'
+      items:
+        type: string
+      minItems: 1
     currenciesAccepted:
       description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
       type: array
@@ -262,39 +328,20 @@ MedicalOrganization:
             - ZWL
       minItems: 1
       uniqueItems: true
+    paymentAccepted:
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
+      items:
+        type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
+      minItems: 1
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
-    description:
-      description: 'A description of this item'
-      type: string
-    facilities:
-      type: array
-      description: 'Property. Model:''https://schema.org/Text''. Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT'
-      items:
-        type: string
-      minItems: 1
-    hasDriveThroughService:
-      description: 'Property. Model:''https://schema.org/hasDriveThroughService''. Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.'
-      type: boolean
-    healthPlanNetworkId:
-      description: 'Property. Model:''https://schema.org/healthPlanNetworkId''. Name or unique ID of network.'
-      type: string
-    id:
-      anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
-        - description: 'Property. Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Property. Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Unique identifier of the entity'
-      type: Property
-    isAcceptingNewPatients:
-      description: 'Property. Model:''https://schema.org/isAcceptingNewPatients''. Whether the provider is accepting new patients.'
-      type: boolean
     location:
       $id: https://geojson.org/schema/Geometry.json
       $schema: "http://json-schema.org/draft-07/schema#"
@@ -442,64 +489,6 @@ MedicalOrganization:
           title: 'GeoJSON MultiPolygon'
           type: object
       title: 'GeoJSON Geometry'
-    medicalSpeciality:
-      description: 'Property. Model:''https://schema.org/MedicalSpecialty''. Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.'
-      type: string
-      enum:
-        - Anesthesia
-        - Cardiovascular
-        - CommunityHealth
-        - Dentistry
-        - Dermatology
-        - DietNutrition
-        - Emergency
-        - Endocrine
-        - Gastroenterologic
-        - Genetic
-        - Geriatric
-        - Gynecologic
-        - Hematologic
-        - Infectious
-        - LaboratoryScience
-        - Midwifery
-        - Musculoskeletal
-        - Neurologic
-        - Nursing
-        - Obstetric
-        - Oncologic
-        - Optometric
-        - Otolaryngologic
-        - Pathology
-        - Pediatric
-        - PharmacySpecialty
-        - Physiotherapy
-        - PlasticSurgery
-        - Podiatric
-        - PrimaryCare
-        - Psychiatric
-        - PublicHealth
-        - Pulmonary
-        - Radiography
-        - Renal
-        - RespiratoryTherapy
-        - Rheumatologic
-        - SpeechPathology
-        - Surgical
-        - Toxicologic
-        - Urologic
-    medicineSystem:
-      description: 'Property. Model:''https://schema.org/MedicineSystem''. Systems of medical practice. Enumerated type.'
-      type: string
-      enum:
-        - Ayurvedic
-        - Chiropractic
-        - Homeopathic
-        - Osteopathic
-        - TraditionalChinese
-        - WesternConventional
-    name:
-      description: 'Property. The name of this item.'
-      type: string
     openingHours:
       type: string
     openingHoursSpecification:
@@ -533,34 +522,43 @@ MedicalOrganization:
       type: array
       x-ngsi:
         model: https://schema.org/openingHoursSpecification
+    id:
+      anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Unique identifier of the entity'
+      type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
-    paymentAccepted:
-      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
-      type: array
-      items:
-        type: string
-        enum:
-            - Cash
-            - Cheque
-            - Credit Card
-            - Cryptocurrency
-      minItems: 1
-    refSeeAlso:
-      description: 'List of references to one or more related entities.'
-      items:
-        anyOf:
-          - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
-            description: 'Property. Unique identifier of the entity'
-      minItems: 1
-      type: Property
-      uniqueItems: true
-      x-ngsi:
-        model: https://schema.org/URL
+    alternateName:
+      type: string
+      description: 'Property. An alternative name for this item'
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      type: object
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
     review:
       description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
@@ -604,15 +602,17 @@ MedicalOrganization:
         - format: uri
           type: string
       type: Property
-    source:
-      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
-      type: string
-    testingFacility:
-      type: array
-      description: 'Property. Model:''https://schema.org/Text''. Types of tests available - CovidTesting, Blood Test'
+    refSeeAlso:
+      description: 'List of references to one or more related entities.'
       items:
-        type: string
+        anyOf:
+          - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
+            description: 'Property. Unique identifier of the entity'
       minItems: 1
+      type: Property
+      uniqueItems: true
+      x-ngsi:
+        model: https://schema.org/URL
     type:
       description: 'NGSI Entity type. It has to be MedicalOrganization'
       enum:

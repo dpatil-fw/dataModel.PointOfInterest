@@ -1,52 +1,9 @@
 FoodEstablishment:
   description: 'A place where food is served, like a restaurant, cafe, bakery etc'
   properties:
-    acceptsReservations:
+    name:
+      description: 'Property. The name of this item.'
       type: string
-      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made'
-    address:
-      description: 'Property. The mailing address. Model:''https://schema.org/address'''
-      properties:
-        addressCountry:
-            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
-            type: string
-        addressLocality:
-            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
-            type: string
-        addressRegion:
-            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
-            type: string
-        areaServed:
-            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
-            type: string
-        postOfficeBoxNumber:
-            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
-            type: string
-        postalCode:
-            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
-            type: string
-        streetAddress:
-            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
-            type: string
-    aggregateRating:
-      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
-      type: object
-      properties:
-        bestRating:
-            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
-            type: integer
-        ratingCount:
-            description: 'Property. The count of total number of ratings.'
-            type: integer
-        ratingValue:
-            description: 'Property. The rating for the content.'
-            type: integer
-        worstRating:
-            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
-            type: integer
-    alternateName:
-      type: string
-      description: 'Property. An alternative name for this item'
     category:
       type: string
       enum:
@@ -79,6 +36,62 @@ FoodEstablishment:
       type: Property
       x-ngsi:
         model: https://schema.org/ContactPoint
+    address:
+      description: 'Property. The mailing address. Model:''https://schema.org/address'''
+      properties:
+        addressCountry:
+            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            type: string
+        addressLocality:
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            type: string
+        addressRegion:
+            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            type: string
+        areaServed:
+            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            type: string
+        postOfficeBoxNumber:
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            type: string
+        postalCode:
+            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''
+            type: string
+        streetAddress:
+            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            type: string
+    description:
+      description: 'A description of this item'
+      type: string
+    source:
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
+      type: string
+    acceptsReservations:
+      type: string
+      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made'
+    hasDriveThroughService:
+      type: boolean
+      description: 'Property. Model:''https://schema.org/hasDriveThroughService''. Indicates whether some facility offers a service that can be used by driving through in a car.'
+    hasMenu:
+      type: string
+      description: 'Property. Either the actual menu as as text, or a URL of the menu. Model:''https://schema.org/hasMenu'''
+    photo:
+      type: string
+      format: uri
+      description: 'Property. URL of the image of the place. Model:''https://schema.org/URL'''
+    publicAccess:
+      type: boolean
+      description: 'Property. Model:''https://schema.org/publicAccess''. A flag to signal that the Place is open to public visitors.'
+    servesCuisine:
+      type: string
+      description: 'Property. The cuisine of the restaurant. Model:''https://schema.org/servesCuisine'''
+    video:
+      type: string
+      format: uri
+      description: 'Property. URL of the video of the place. Model:''https://schema.org/URL'''
+    recommendedItems:
+      type: string
+      description: 'Property. Speciality food recommendations at the facility. Model:''https://schema.org/hasMenu'''
     currenciesAccepted:
       description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
       type: array
@@ -266,30 +279,20 @@ FoodEstablishment:
             - ZWL
       minItems: 1
       uniqueItems: true
+    paymentAccepted:
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
+      items:
+        type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
+      minItems: 1
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
-    description:
-      type: string
-      description: 'Property. A description of the item. Model:''https://schema.org/description'''
-    hasDriveThroughService:
-      type: boolean
-      description: 'Property. Model:''https://schema.org/hasDriveThroughService''. Indicates whether some facility offers a service that can be used by driving through in a car.'
-    hasMenu:
-      type: string
-      description: 'Property. Either the actual menu as as text, or a URL of the menu. Model:''https://schema.org/hasMenu'''
-    id:
-      anyOf: &foodestablishment_-_properties_-_owner_-_items_-_anyof
-        - description: 'Property. Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Property. Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Unique identifier of the entity'
-      type: Property
     location:
       $id: https://geojson.org/schema/Geometry.json
       $schema: "http://json-schema.org/draft-07/schema#"
@@ -437,9 +440,6 @@ FoodEstablishment:
           title: 'GeoJSON MultiPolygon'
           type: object
       title: 'GeoJSON Geometry'
-    name:
-      description: 'Property. The name of this item.'
-      type: string
     openingHours:
       type: string
     openingHoursSpecification:
@@ -473,44 +473,43 @@ FoodEstablishment:
       type: array
       x-ngsi:
         model: https://schema.org/openingHoursSpecification
+    id:
+      anyOf: &foodestablishment_-_properties_-_owner_-_items_-_anyof
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Unique identifier of the entity'
+      type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *foodestablishment_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
-    paymentAccepted:
-      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
-      type: array
-      items:
-        type: string
-        enum:
-            - Cash
-            - Cheque
-            - Credit Card
-            - Cryptocurrency
-      minItems: 1
-    photo:
+    alternateName:
       type: string
-      format: uri
-      description: 'Property. URL of the image of the place. Model:''https://schema.org/URL'''
-    publicAccess:
-      type: boolean
-      description: 'Property. Model:''https://schema.org/publicAccess''. A flag to signal that the Place is open to public visitors.'
-    recommendedItems:
-      type: string
-      description: 'Property. Speciality food recommendations at the facility. Model:''https://schema.org/hasMenu'''
-    refSeeAlso:
-      description: 'List of references to one or more related entities.'
-      items:
-        anyOf:
-          - anyOf: *foodestablishment_-_properties_-_owner_-_items_-_anyof
-            description: 'Property. Unique identifier of the entity'
-      minItems: 1
-      type: Property
-      uniqueItems: true
-      x-ngsi:
-        model: https://schema.org/URL
+      description: 'Property. An alternative name for this item'
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      type: object
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
     review:
       description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
@@ -554,21 +553,22 @@ FoodEstablishment:
         - format: uri
           type: string
       type: Property
-    servesCuisine:
-      type: string
-      description: 'Property. The cuisine of the restaurant. Model:''https://schema.org/servesCuisine'''
-    source:
-      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
-      type: string
+    refSeeAlso:
+      description: 'List of references to one or more related entities.'
+      items:
+        anyOf:
+          - anyOf: *foodestablishment_-_properties_-_owner_-_items_-_anyof
+            description: 'Property. Unique identifier of the entity'
+      minItems: 1
+      type: Property
+      uniqueItems: true
+      x-ngsi:
+        model: https://schema.org/URL
     type:
       description: 'NGSI Entity type. It has to be FoodEstablishment'
       enum:
         - FoodEstablishment
       type: Property
-    video:
-      type: string
-      format: uri
-      description: 'Property. URL of the video of the place. Model:''https://schema.org/URL'''
   required:
     - id
     - category
