@@ -1,6 +1,28 @@
 PointOfInterest:
   description: 'This entity contains a harmonised geographic description of a Point of Interest'
   properties:
+    name:
+      description: 'Property. The name of this item.'
+      type: string
+    contactPoint:
+      description: 'The details to contact with the item.'
+      properties:
+        contactType:
+          type: string
+        email:
+          description: 'Property. Email address of owner.'
+          format: idn-email
+          type: string
+        name:
+          type: string
+        telephone:
+          type: string
+        url:
+          format: uri
+          type: string
+      type: Property
+      x-ngsi:
+        model: https://schema.org/ContactPoint
     address:
       description: 'Property. The mailing address. Model:''https://schema.org/address'''
       properties:
@@ -25,44 +47,12 @@ PointOfInterest:
         streetAddress:
             description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
             type: string
-    aggregateRating:
-      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
-      type: object
-      properties:
-        bestRating:
-            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
-            type: integer
-        ratingCount:
-            description: 'Property. The count of total number of ratings.'
-            type: integer
-        ratingValue:
-            description: 'Property. The rating for the content.'
-            type: integer
-        worstRating:
-            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
-            type: integer
-    alternateName:
+    description:
+      description: 'A description of this item'
       type: string
-      description: 'Property. An alternative name for this item'
-    contactPoint:
-      description: 'The details to contact with the item.'
-      properties:
-        contactType:
-          type: string
-        email:
-          description: 'Property. Email address of owner.'
-          format: idn-email
-          type: string
-        name:
-          type: string
-        telephone:
-          type: string
-        url:
-          format: uri
-          type: string
-      type: Property
-      x-ngsi:
-        model: https://schema.org/ContactPoint
+    source:
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
+      type: string
     currenciesAccepted:
       description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
       type: array
@@ -250,24 +240,20 @@ PointOfInterest:
             - ZWL
       minItems: 1
       uniqueItems: true
+    paymentAccepted:
+      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      type: array
+      items:
+        type: string
+        enum:
+            - Cash
+            - Cheque
+            - Credit Card
+            - Cryptocurrency
+      minItems: 1
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
-    description:
-      description: 'A description of this item'
-      type: string
-    id:
-      anyOf: &pointofinterest_-_properties_-_owner_-_items_-_anyof
-        - description: 'Property. Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Property. Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Unique identifier of the entity'
-      type: Property
     location:
       $id: https://geojson.org/schema/Geometry.json
       $schema: "http://json-schema.org/draft-07/schema#"
@@ -415,9 +401,6 @@ PointOfInterest:
           title: 'GeoJSON MultiPolygon'
           type: object
       title: 'GeoJSON Geometry'
-    name:
-      description: 'Property. The name of this item.'
-      type: string
     openingHours:
       type: string
     openingHoursSpecification:
@@ -451,34 +434,43 @@ PointOfInterest:
       type: array
       x-ngsi:
         model: https://schema.org/openingHoursSpecification
+    id:
+      anyOf: &pointofinterest_-_properties_-_owner_-_items_-_anyof
+        - description: 'Property. Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Property. Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Unique identifier of the entity'
+      type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
       type: Property
-    paymentAccepted:
-      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
-      type: array
-      items:
-        type: string
-        enum:
-            - Cash
-            - Cheque
-            - Credit Card
-            - Cryptocurrency
-      minItems: 1
-    refSeeAlso:
-      description: 'List of references to one or more related entities.'
-      items:
-        anyOf:
-          - anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
-            description: 'Property. Unique identifier of the entity'
-      minItems: 1
-      type: Property
-      uniqueItems: true
-      x-ngsi:
-        model: https://schema.org/URL
+    alternateName:
+      type: string
+      description: 'Property. An alternative name for this item'
+    aggregateRating:
+      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      type: object
+      properties:
+        bestRating:
+            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            type: integer
+        ratingCount:
+            description: 'Property. The count of total number of ratings.'
+            type: integer
+        ratingValue:
+            description: 'Property. The rating for the content.'
+            type: integer
+        worstRating:
+            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            type: integer
     review:
       description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
@@ -522,9 +514,17 @@ PointOfInterest:
         - format: uri
           type: string
       type: Property
-    source:
-      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
-      type: string
+    refSeeAlso:
+      description: 'List of references to one or more related entities.'
+      items:
+        anyOf:
+          - anyOf: *pointofinterest_-_properties_-_owner_-_items_-_anyof
+            description: 'Property. Unique identifier of the entity'
+      minItems: 1
+      type: Property
+      uniqueItems: true
+      x-ngsi:
+        model: https://schema.org/URL
   required:
     - id
     - category
