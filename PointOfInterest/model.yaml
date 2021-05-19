@@ -525,14 +525,7 @@ PointOfInterest:
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
-    type:
-      description: 'NGSI Entity type. It has to be PointOfInterest'
-      enum:
-        - PointOfInterest
-      type: Property
   required:
     - id
     - category
     - name
-    - type
-  type: object
