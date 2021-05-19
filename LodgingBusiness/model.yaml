@@ -33,9 +33,6 @@ LodgingBusiness:
       type: Property
       x-ngsi:
         model: https://schema.org/ContactPoint
-    acceptsReservations:
-      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made'
-      type: string
     address:
       description: 'Property. The mailing address. Model:''https://schema.org/address'''
       properties:
@@ -65,6 +62,9 @@ LodgingBusiness:
       type: string
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
+      type: string
+    acceptsReservations:
+      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made'
       type: string
     amenityFeature:
       type: array
