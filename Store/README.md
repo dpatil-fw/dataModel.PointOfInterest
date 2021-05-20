@@ -1,8 +1,8 @@
-# PointOfInterest
+# Store
 
 ## Description 
 
-This entity contains a harmonised geographic description of a Point of Interest
+This entity contains a Store
 ### Specification
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/swagger.yaml)

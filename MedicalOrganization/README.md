@@ -1,8 +1,8 @@
-# PointOfInterest
+# MedicalOrganization
 
 ## Description 
 
-This entity contains a harmonised geographic description of a Point of Interest
+This entity type models healthcare organizations like Hospitals, Pharmacy etc.
 ### Specification
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/MedicalOrganization/swagger.yaml)

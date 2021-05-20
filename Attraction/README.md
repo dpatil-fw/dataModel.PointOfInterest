@@ -1,8 +1,8 @@
-# PointOfInterest
+# Attraction
 
 ## Description 
 
-This entity contains a harmonised geographic description of a Point of Interest
+This entity contains a place or a tourist attraction in a city
 ### Specification
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Attraction/swagger.yaml)

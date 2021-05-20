@@ -1,8 +1,8 @@
-# PointOfInterest
+# FoodEstablishment
 
 ## Description 
 
-This entity contains a harmonised geographic description of a Point of Interest
+A place where food is served, like a restaurant, cafe, bakery etc
 ### Specification
 
 Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/swagger.yaml)
