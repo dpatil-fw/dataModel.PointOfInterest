@@ -27,7 +27,7 @@
                     "enum":[
                         "Bakery", "BarOrPub", "Brewery", "CafeOrCoffeeShop", "Distillery", "FastFoodRestaurant", "IceCreamShop", "Restaurant", "Winery"
                     ],
-                    "description":"Property. Model:'https://schema.org/Text'. Type of Lodging Business. Enumerated type."
+                    "description":"Property. Model:'https://schema.org/Text'. Type of Food Establishment. Enumerated type."
                 },
                 "hasDriveThroughService":{
                     "type":"boolean",

@@ -16,7 +16,7 @@ FoodEstablishment:
         - IceCreamShop
         - Restaurant
         - Winery
-      description: 'Property. Model:''https://schema.org/Text''. Type of Lodging Business. Enumerated type.'
+      description: 'Property. Model:''https://schema.org/Text''. Type of Food Establishment. Enumerated type.'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
