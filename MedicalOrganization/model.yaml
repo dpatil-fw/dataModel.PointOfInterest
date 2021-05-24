@@ -114,7 +114,7 @@ MedicalOrganization:
               uri: "https://schema.org/streetAddress"
               uri-prefix: "https://schema.org/"
       x-ngsi: 
-        uri: "https://schema.org/PostalAddress"
+        uri: "https://schema.org/address"
         uri-prefix: "https://schema.org/"
     description:
       description: 'A description of this item'
@@ -203,10 +203,8 @@ MedicalOrganization:
         - Toxicologic
         - Urologic
       x-ngsi: 
-        model: "https://schema.org/Text"
+        model: "https://schema.org/MedicalSpecialty"
         type: Property
-        uri: "https://schema.org/MedicalSpecialty"
-        uri-prefix: "https://schema.org/"
     medicineSystem:
       description: 'Property. Model:''https://schema.org/MedicineSystem''. Systems of medical practice. Enumerated type.'
       type: string
@@ -218,10 +216,8 @@ MedicalOrganization:
         - TraditionalChinese
         - WesternConventional
       x-ngsi: 
-        model: "https://schema.org/Text"
+        model: "https://schema.org/MedicineSystem"
         type: Property
-        uri: "https://schema.org/MedicineSystem"
-        uri-prefix: "https://schema.org/"
     testingFacility:
       type: array
       description: 'Property. Model:''https://schema.org/Text''. Types of tests available - CovidTesting, Blood Test'
@@ -647,10 +643,6 @@ MedicalOrganization:
               uri-prefix: "https://schema.org/"
       minItems: 1
       type: array
-      x-ngsi:
-        type: Property
-        uri: "https://schema.org/OpeningHoursSpecification"
-        uri-prefix: "https://schema.org/"
     id:
       anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'
@@ -713,10 +705,6 @@ MedicalOrganization:
               type: Property
               uri: "https://schema.org/worstRating"
               uri-prefix: "https://schema.org/"
-      x-ngsi: 
-        type: Property
-        uri: "https://schema.org/AggregateRating"
-        uri-prefix: "https://schema.org/"
     review:
       description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
@@ -782,10 +770,6 @@ MedicalOrganization:
               uri: "https://schema.org/reviewRating"
               uri-prefix: "https://schema.org/"
       minItems: 1
-      x-ngsi: 
-        type: Property
-        uri: "https://schema.org/Review"
-        uri-prefix: "https://schema.org/"
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:

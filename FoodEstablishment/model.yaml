@@ -115,7 +115,7 @@ FoodEstablishment:
               uri: "https://schema.org/streetAddress"
               uri-prefix: "https://schema.org/"
       x-ngsi: 
-        uri: "https://schema.org/PostalAddress"
+        uri: "https://schema.org/address"
         uri-prefix: "https://schema.org/"
     description:
       description: 'A description of this item'
@@ -603,10 +603,6 @@ FoodEstablishment:
               uri-prefix: "https://schema.org/"
       minItems: 1
       type: array
-      x-ngsi:
-        type: Property
-        uri: "https://schema.org/OpeningHoursSpecification"
-        uri-prefix: "https://schema.org/"
     id:
       anyOf: &foodestablishment_-_properties_-_owner_-_items_-_anyof
         - description: 'Property. Identifier format of any NGSI entity'
@@ -669,10 +665,6 @@ FoodEstablishment:
               type: Property
               uri: "https://schema.org/worstRating"
               uri-prefix: "https://schema.org/"
-      x-ngsi: 
-        type: Property
-        uri: "https://schema.org/AggregateRating"
-        uri-prefix: "https://schema.org/"
     review:
       description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
       type: array
@@ -738,10 +730,6 @@ FoodEstablishment:
               uri: "https://schema.org/reviewRating"
               uri-prefix: "https://schema.org/"
       minItems: 1
-      x-ngsi: 
-        type: Property
-        uri: "https://schema.org/Review"
-        uri-prefix: "https://schema.org/"
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
