@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     Store: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/model.yaml#/Store"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/model.yaml#/Store"
 info:
-  description:  |
-    This entity Type models stores/shops in the city.
+  description: "This entity Type models stores/shops in the city."
   title: Store
   version: "1.0.0"
 openapi: "3.0.0"

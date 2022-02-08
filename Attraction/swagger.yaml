@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     Attraction: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Attraction/model.yaml#/Attraction"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Attraction/model.yaml#/Attraction"
 info:
-  description:  |
-    This entity Type models Food Attractions in the city.
+  description: "This entity Type models Food Attractions in the city."
   title: Attraction
   version: "1.0.0"
 openapi: "3.0.0"

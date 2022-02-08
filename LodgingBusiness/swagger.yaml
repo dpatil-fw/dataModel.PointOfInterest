@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     LodgingBusiness: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/LodgingBusiness/model.yaml#/LodgingBusiness"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/LodgingBusiness/model.yaml#/LodgingBusiness"
 info:
-  description:  |
-    This entity Type models Lodging Business in the city.
+  description:  "This entity Type models Lodging Business in the city."
   title: LodgingBusiness
   version: "1.0.0"
 openapi: "3.0.0"

@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     FoodEstablishment: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/model.yaml#/FoodEstablishment"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/model.yaml#/FoodEstablishment"
 info:
-  description:  |
-    This entity Type models Food Establishments in the city.
+  description: "This entity Type models Food Establishments in the city."
   title: FoodEstablishment
   version: "1.0.0"
 openapi: "3.0.0"

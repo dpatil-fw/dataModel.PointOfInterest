@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     PointOfInterest: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/model.yaml#/PointOfInterest"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/model.yaml#/PointOfInterest"
 info:
-  description:  |
-    This entity contains a harmonised geographic description of a Point of Interest
+  description:  "This entity contains a harmonised geographic description of a Point of Interest"
   title: PointOfInterest
   version: "1.0.0"
 openapi: "3.0.0"
@@ -37,12 +34,12 @@ paths:
                   summary: "Key-Values Pairs"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example.json"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example.json"
                 normalized: 
                   summary: "Normalized NGSI-LD"
                   value: 
                     - 
-                      $ref: "https://github.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example-normalized.jsonld"
+                      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/examples/example-normalized.jsonld"
           description: OK
       tags: 
         - ngsi-ld

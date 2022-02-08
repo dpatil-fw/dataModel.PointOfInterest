@@ -1,15 +1,12 @@
 ---
-# Copyleft (c) 2021 Contributors to Smart Data Models initiative
-# 
-
-
 components:
   schemas: 
     MedicalOrganization: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/MedicalOrganization/model.yaml#/MedicalOrganization"
+      allOf: 
+        - 
+          $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/MedicalOrganization/model.yaml#/MedicalOrganization"
 info:
-  description:  |
-    This entity Type models Medical Organizations in the city.
+  description: "This entity Type models Medical Organizations in the city."
   title: MedicalOrganization
   version: "1.0.0"
 openapi: "3.0.0"

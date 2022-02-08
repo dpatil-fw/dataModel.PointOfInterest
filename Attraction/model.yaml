@@ -47,9 +47,10 @@ Attraction:
             type: Property
             uri: "https://schema.org/URL"
             uri-prefix: "https://schema.org/"
-      type: Property
+      type: object
       x-ngsi:
-        model: "https://schema.org/ContactPoint"
+        model: https://schema.org/ContactPoint
+        type: Property
     address:
       description: 'Property. The mailing address. Model:''https://schema.org/address'''
       properties:
@@ -165,8 +166,7 @@ Attraction:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
     location:
-      $id: https://geojson.org/schema/Geometry.json
-      $schema: "http://json-schema.org/draft-07/schema#"
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
         - properties:
             bbox:
@@ -310,18 +310,8 @@ Attraction:
             - coordinates
           title: 'GeoJSON MultiPolygon'
           type: object
-      title: 'GeoJSON Geometry'
-      x-ngsi: 
-        model: 
-          - "https://purl.org/geojson/vocab#Point"
-          - "https://purl.org/geojson/vocab#LineString"
-          - "https://purl.org/geojson/vocab#Polygon"
-          - "https://purl.org/geojson/vocab#MultiPoint"
-          - "https://purl.org/geojson/vocab#MultiLineString"
-          - "https://purl.org/geojson/vocab#MultiPolygon"
-        type: GeoProperty
-        uri: "https://uri.etsi.org/ngsi-ld/location"
-        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+      x-ngsi:
+        type: Geoproperty
     openingHours:
       type: string
       x-ngsi: 
@@ -393,13 +383,16 @@ Attraction:
           format: uri
           type: string
       description: 'Unique identifier of the entity'
-      type: Property
+      x-ngsi:
+        type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *attraction_-_properties_-_owner_-_items_-_anyof
         description: 'Property. Unique identifier of the entity'
-      type: Property
+      type: array
+      x-ngsi:
+        type: Property
     alternateName:
       type: string
       description: 'Property. An alternative name for this item'
@@ -516,26 +509,30 @@ Attraction:
           - anyOf: *attraction_-_properties_-_owner_-_items_-_anyof
             description: 'Property. Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
-        model: https://schema.org/URL
+        model: "https://schema.org/URL"
+        type: Property
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            - format: uri
-              type: string
+            format: uri
+            type: string
           minItems: 1
           type: array
         - format: uri
           type: string
-      type: Property
+      x-ngsi:
+        type: Property
     type:
       description: 'NGSI Entity type. It has to be Attraction'
       enum:
         - Attraction
-      type: Property
+      type: string
+      x-ngsi:
+        type: Property
   required:
     - id
     - category
