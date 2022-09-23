@@ -17,7 +17,7 @@ LodgingBusiness:
         - Hotel
         - Motel
         - Resort
-      description: 'Property. Model:''https://schema.org/Text''. Type of Lodging Business. Enumerated type.'
+      description: 'Property. Model:"https://schema.org/Text". Type of Lodging Business. Enumerated type.'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -56,13 +56,13 @@ LodgingBusiness:
             uri-prefix: "https://schema.org/"
       type: object
       x-ngsi:
-        model: https://schema.org/ContactPoint
+        model: "https://schema.org/ContactPoint"
         type: Property
     address:
-      description: 'Property. The mailing address. Model:''https://schema.org/address'''
+      description: 'Property. The mailing address. Model:"https://schema.org/address"'
       properties:
         addressCountry:
-            description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''
+            description: 'Property. The country. For example, Spain. Model:"https://schema.org/addressCountry"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -70,7 +70,7 @@ LodgingBusiness:
               uri: "https://schema.org/addressCountry"
               uri-prefix: "https://schema.org/"
         addressLocality:
-            description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''
+            description: 'Property. The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -78,7 +78,7 @@ LodgingBusiness:
               uri: "https://schema.org/addressLocality"
               uri-prefix: "https://schema.org/"
         addressRegion:
-            description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''
+            description: 'Property. The region in which the locality is, and which is in the country. Model:"https://schema.org/addressRegion"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -86,7 +86,7 @@ LodgingBusiness:
               uri: "https://schema.org/addressRegion"
               uri-prefix: "https://schema.org/"
         areaServed:
-            description: 'Property. The geographic area where a service or offered item is provided. Model:''https://schema.org/areaServed'''
+            description: 'Property. The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -94,7 +94,7 @@ LodgingBusiness:
               uri: "https://schema.org/areaServed"
               uri-prefix: "https://schema.org/"
         postOfficeBoxNumber:
-            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''
+            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:"https://schema.org/postOfficeBoxNumber"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -102,10 +102,10 @@ LodgingBusiness:
               uri: "https://schema.org/postOfficeBoxNumber"
               uri-prefix: "https://schema.org/"
         postalCode:
-            description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/postalCode'''
+            description: 'Property. The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
             type: string
         streetAddress:
-            description: 'Property. The street address. Model:''https://schema.org/streetAddress'''
+            description: 'Property. The street address. Model:"https://schema.org/streetAddress"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -127,7 +127,7 @@ LodgingBusiness:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
     acceptsReservations:
-      description: 'Property. Model:''https://schema.org/acceptsReservations''. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made'
+      description: 'Property. Model:"https://schema.org/acceptsReservations". Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made'
       type: string
       x-ngsi: 
         model: "https://schema.org/Text"
@@ -136,7 +136,7 @@ LodgingBusiness:
         uri-prefix: "https://schema.org/"
     amenityFeature:
       type: array
-      description: 'Property. Model:''https://schema.org/amenityFeature''. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free'
+      description: 'Property. Model:"https://schema.org/amenityFeature". An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free'
       items:
         type: string
         enum:
@@ -154,7 +154,7 @@ LodgingBusiness:
     checkinTime:
       type: string
       format: date-time
-      description: 'Property. Model:''https://schema.org/checkinTime''. The earliest someone may check into a lodging establishment.'
+      description: 'Property. Model:"https://schema.org/checkinTime". The earliest someone may check into a lodging establishment.'
       x-ngsi: 
         model: "https://schema.org/DateTime"
         type: Property
@@ -163,7 +163,7 @@ LodgingBusiness:
     checkoutTime:
       type: string
       format: date-time
-      description: 'Property. Model:''https://schema.org/checkoutTime''. The latest someone may check out of a lodging establishment.'
+      description: 'Property. Model:"https://schema.org/checkoutTime". The latest someone may check out of a lodging establishment.'
       x-ngsi: 
         model: "https://schema.org/DateTime"
         type: Property
@@ -171,7 +171,7 @@ LodgingBusiness:
         uri-prefix: "https://schema.org/"
     numberOfRooms:
       type: number
-      description: 'Property. Model:''https://schema.org/numberOfRooms''. The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.'
+      description: 'Property. Model:"https://schema.org/numberOfRooms". The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.'
       x-ngsi: 
         model: "https://schema.org/Number"
         type: Property
@@ -179,7 +179,7 @@ LodgingBusiness:
         uri-prefix: "https://schema.org/"
     petsAllowed:
       type: boolean
-      description: 'Property. Model:''https://schema.org/petsAllowed''. Indicates whether pets are allowed to enter the accommodation or lodging business.'
+      description: 'Property. Model:"https://schema.org/petsAllowed". Indicates whether pets are allowed to enter the accommodation or lodging business.'
       x-ngsi: 
         model: "https://schema.org/Boolean"
         type: Property
@@ -187,14 +187,14 @@ LodgingBusiness:
         uri-prefix: "https://schema.org/"
     priceRange:
       type: string
-      description: 'Property. The price range of the business, for example $$$. Model:''https://schema.org/priceRange'''
+      description: 'Property. The price range of the business, for example $$$. Model:"https://schema.org/priceRange"'
       x-ngsi: 
         model: "https://schema.org/Text"
         type: Property
         uri: "https://schema.org/priceRange"
         uri-prefix: "https://schema.org/"
     currenciesAccepted:
-      description: 'Property. Model:''https://es.wikipedia.org/wiki/ISO_4217'''
+      description: 'Property. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
       type: array
       items:
         type: string
@@ -210,7 +210,7 @@ LodgingBusiness:
       minItems: 1
       uniqueItems: true
     paymentAccepted:
-      description: 'Property. Model:''https://schema.org/Text''. Payment method accepted in this store.'
+      description: 'Property. Model:"https://schema.org/Text". Payment method accepted in this store.'
       type: array
       items:
         type: string
@@ -461,7 +461,7 @@ LodgingBusiness:
         uri: "https://schema.org/alternateName"
         uri-prefix: "https://schema.org/"
     aggregateRating:
-      description: 'Property. Model:''https://schema.org/AggregateRating''. The average rating based on multiple ratings or reviews.'
+      description: 'Property. Model:"https://schema.org/AggregateRating". The average rating based on multiple ratings or reviews.'
       type: object
       properties:
         bestRating:
@@ -497,13 +497,13 @@ LodgingBusiness:
               uri: "https://schema.org/worstRating"
               uri-prefix: "https://schema.org/"
     review:
-      description: 'Property. Model:''https://schema.org/Review''. A review of an item - for example, of a restaurant, movie, or store.'
+      description: 'Property. Model:"https://schema.org/Review". A review of an item - for example, of a restaurant, movie, or store.'
       type: array
       items:
         properties:
           author:
             type: string
-            description: 'Property. Model:''https://schema.org/Text''. The author of this content or rating.'
+            description: 'Property. Model:"https://schema.org/Text". The author of this content or rating.'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -511,7 +511,7 @@ LodgingBusiness:
               uri-prefix: "https://schema.org/"
           datePublished:
             type: string
-            description: 'Property. Model:''https://schema.org/Text''. Date of first broadcast/publication.'
+            description: 'Property. Model:"https://schema.org/Text". Date of first broadcast/publication.'
             format: date-time
             x-ngsi: 
               model: "https://schema.org/DateTime"
@@ -522,7 +522,7 @@ LodgingBusiness:
             $ref: "https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name"
           reviewBody:
             type: string
-            description: 'Property. Model:''https://schema.org/Text''. The actual body of the review.'
+            description: 'Property. Model:"https://schema.org/Text". The actual body of the review.'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -530,7 +530,7 @@ LodgingBusiness:
               uri-prefix: "https://schema.org/"
           reviewRating:
             type: object
-            description: 'Property. Model:''https://schema.org/Rating''. A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+            description: 'Property. Model:"https://schema.org/Rating". A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
             properties:
               bestRating:
                 type: number
@@ -583,7 +583,7 @@ LodgingBusiness:
       type: array
       uniqueItems: true
       x-ngsi:
-        model: https://schema.org/URL
+        model: "https://schema.org/URL"
     type:
       description: 'NGSI Entity type. It has to be LodgingBusiness'
       enum:
