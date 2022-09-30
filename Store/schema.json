@@ -16,16 +16,17 @@
                     "enum":[
                         "Store"
                     ],
-                    "description":"Property. NGSI Entity type. It has to be Store"
+                    "description":"NGSI Entity type. It has to be Store"
                 },
                 "logo":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/URL'. An associated logo for this store. ",
+                    "description":"An associated logo for this store. Model:'https://schema.org/URL'",
                     "format":"uri"
                 },
                 "category":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/Text'. Category of the store as described in the enumeration",
+                    "description":"Category of the store as described in the enumeration. Model:'https://schema.org/Text'",
+                    "default": "GroceryStore",
                     "enum":[
                         "AutoPartsStore", "BikeStore", "BookStore", "ClothingStore", "ComputerStore", "ConvenienceStore", "DepartmentStore", "ElectronicsStore", "Florist", "FurnitureStore", "GardenStore", "GroceryStore", "HardwareStore", "HobbyShop", "HomeGoodsStore", "JewelryStore", "LiquorStore", "MensClothingStore", "MobilePhoneStore", "MovieRentalStore", "MusicStore", "OfficeEquipmentStore", "OutletStore", "PawnShop", "PetStore", "ShoeStore", "SportingGoodsStore", "TireShop", "ToyStore", "WholesaleStore"
                     ]

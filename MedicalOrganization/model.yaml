@@ -2,7 +2,7 @@ MedicalOrganization:
   description: 'This entity type models healthcare organizations like Hospitals, Pharmacy etc.'
   properties:
     name:
-      description: 'Property. The name of this item.'
+      description: 'The name of this item.'
       type: string
       x-ngsi: 
         type: Property
@@ -10,6 +10,7 @@ MedicalOrganization:
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
     category:
       type: string
+      default: 'Hospital'
       enum:
         - Dentist
         - DiagnosticLab
@@ -19,7 +20,7 @@ MedicalOrganization:
         - Physician
         - VeterinaryCare
         - EyeCare
-      description: 'Property. Model:"https://schema.org/Text". Type of medical organization. Enumerated type.'
+      description: 'Type of medical organization. Enumerated type. Model:"https://schema.org/Text"'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -31,7 +32,7 @@ MedicalOrganization:
             uri: "https://schema.org/contactType"
             uri-prefix: "https://schema.org/"
         email:
-          description: 'Property. Email address of owner.'
+          description: 'Email address of owner.'
           format: idn-email
           type: string
           x-ngsi: 
@@ -40,7 +41,11 @@ MedicalOrganization:
             uri: "https://schema.org/email"
             uri-prefix: "https://schema.org/"
         name:
-          $ref: "https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name"
+          type: string
+          description: 'The name of the contact. Model:"https://schema.org/Text"'
+          x-ngsi: 
+            model: "https://schema.org/Text"
+            type: Property
         telephone:
           type: string
           x-ngsi: 
@@ -60,10 +65,10 @@ MedicalOrganization:
       x-ngsi:
         model: "https://schema.org/ContactPoint"
     address:
-      description: 'Property. The mailing address. Model:"https://schema.org/address"'
+      description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
         addressCountry:
-            description: 'Property. The country. For example, Spain. Model:"https://schema.org/addressCountry"'
+            description: 'The country. For example, Spain. Model:"https://schema.org/addressCountry"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -71,7 +76,7 @@ MedicalOrganization:
               uri: "https://schema.org/addressCountry"
               uri-prefix: "https://schema.org/"
         addressLocality:
-            description: 'Property. The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
+            description: 'The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -79,7 +84,7 @@ MedicalOrganization:
               uri: "https://schema.org/addressLocality"
               uri-prefix: "https://schema.org/"
         addressRegion:
-            description: 'Property. The region in which the locality is, and which is in the country. Model:"https://schema.org/addressRegion"'
+            description: 'The region in which the locality is, and which is in the country. Model:"https://schema.org/addressRegion"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -87,7 +92,7 @@ MedicalOrganization:
               uri: "https://schema.org/addressRegion"
               uri-prefix: "https://schema.org/"
         areaServed:
-            description: 'Property. The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
+            description: 'The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -95,7 +100,7 @@ MedicalOrganization:
               uri: "https://schema.org/areaServed"
               uri-prefix: "https://schema.org/"
         postOfficeBoxNumber:
-            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:"https://schema.org/postOfficeBoxNumber"'
+            description: 'The post office box number for PO box addresses. For example, 03578. Model:"https://schema.org/postOfficeBoxNumber"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -103,10 +108,10 @@ MedicalOrganization:
               uri: "https://schema.org/postOfficeBoxNumber"
               uri-prefix: "https://schema.org/"
         postalCode:
-            description: 'Property. The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
+            description: 'The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
             type: string
         streetAddress:
-            description: 'Property. The street address. Model:"https://schema.org/streetAddress"'
+            description: 'The street address. Model:"https://schema.org/streetAddress"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -129,12 +134,12 @@ MedicalOrganization:
       type: string
     facilities:
       type: array
-      description: 'Property. Model:"https://schema.org/Text". Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT'
+      description: 'Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT. Model:"https://schema.org/Text"'
       items:
         type: string
       minItems: 1
     hasDriveThroughService:
-      description: 'Property. Model:"https://schema.org/hasDriveThroughService". Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.'
+      description: 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users. Model:"https://schema.org/hasDriveThroughService"'
       type: boolean
       x-ngsi: 
         model: "https://schema.org/Boolean"
@@ -142,7 +147,7 @@ MedicalOrganization:
         uri: "https://schema.org/hasDriveThroughService"
         uri-prefix: "https://schema.org/"
     healthPlanNetworkId:
-      description: 'Property. Model:"https://schema.org/healthPlanNetworkId". Name or unique ID of network.'
+      description: 'Name or unique ID of network. Model:"https://schema.org/healthPlanNetworkId". '
       type: string
       x-ngsi: 
         model: "https://schema.org/Text"
@@ -150,7 +155,7 @@ MedicalOrganization:
         uri: "https://schema.org/healthPlanNetworkId"
         uri-prefix: "https://schema.org/"
     isAcceptingNewPatients:
-      description: 'Property. Model:"https://schema.org/isAcceptingNewPatients". Whether the provider is accepting new patients.'
+      description: 'Whether the provider is accepting new patients. Model:"https://schema.org/isAcceptingNewPatients"'
       type: boolean
       x-ngsi: 
         model: "https://schema.org/Boolean"
@@ -158,7 +163,8 @@ MedicalOrganization:
         uri: "https://schema.org/isAcceptingNewPatients"
         uri-prefix: "https://schema.org/"
     medicalSpeciality:
-      description: 'Property. Model:"https://schema.org/MedicalSpecialty". Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type.'
+      description: 'Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. Model:"https://schema.org/MedicalSpecialty"'
+      default: 'PrimaryCare'
       type: string
       enum:
         - Anesthesia
@@ -206,9 +212,11 @@ MedicalOrganization:
         model: "https://schema.org/MedicalSpecialty"
         type: Property
     medicineSystem:
-      description: 'Property. Model:"https://schema.org/MedicineSystem". Systems of medical practice. Enumerated type.'
+      description: 'Systems of medical practice. Enumerated type. Model:"https://schema.org/MedicineSystem"'
       type: string
+      default: 'Allopathic'
       enum:
+        - Allopathic
         - Ayurvedic
         - Chiropractic
         - Homeopathic
@@ -220,31 +228,34 @@ MedicalOrganization:
         type: Property
     testingFacility:
       type: array
-      description: 'Property. Model:"https://schema.org/Text". Types of tests available - CovidTesting, Blood Test'
+      description: 'Types of tests available - CovidTesting, Blood Test. Model:"https://schema.org/Text"'
       items:
         type: string
       minItems: 1
     currenciesAccepted:
-      description: 'Property. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
+      description: 'Currencies accepted for payment. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
       type: array
       items:
         type: string
+        default: 'ALL'
         enum:
-            - AED
             - ALL
+            - AED
             - AUD
             - EUR
             - GBP
+            - INR
             - JPY
             - SGD
             - USD
       minItems: 1
       uniqueItems: true
     paymentAccepted:
-      description: 'Property. Model:"https://schema.org/Text". Payment method accepted in this store.'
+      description: 'Payment method accepted in this store. Model:"https://schema.org/Text"'
       type: array
       items:
         type: string
+        default: 'Cash'
         enum:
             - Cash
             - Cheque
@@ -474,12 +485,12 @@ MedicalOrganization:
       type: array
     id:
       anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: 'Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: 'Identifier format of any NGSI entity'
           format: uri
           type: string
       description: 'Unique identifier of the entity'
@@ -488,22 +499,22 @@ MedicalOrganization:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
-        description: 'Property. Unique identifier of the entity'
+        description: 'Unique identifier of the entity'
       type: Property
     alternateName:
       type: string
-      description: 'Property. An alternative name for this item'
+      description: 'An alternative name for this item'
       x-ngsi: 
         model: "https://schema.org/Text"
         type: Property
         uri: "https://schema.org/alternateName"
         uri-prefix: "https://schema.org/"
     aggregateRating:
-      description: 'Property. Model:"https://schema.org/AggregateRating". The average rating based on multiple ratings or reviews.'
+      description: 'The average rating based on multiple ratings or reviews. Model:"https://schema.org/AggregateRating"'
       type: object
       properties:
         bestRating:
-            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -511,7 +522,7 @@ MedicalOrganization:
               uri: "https://schema.org/bestRating"
               uri-prefix: "https://schema.org/"
         ratingCount:
-            description: 'Property. The count of total number of ratings.'
+            description: 'The count of total number of ratings.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -519,7 +530,7 @@ MedicalOrganization:
               uri: "https://schema.org/ratingCount"
               uri-prefix: "https://schema.org/"
         ratingValue:
-            description: 'Property. The rating for the content.'
+            description: 'The rating for the content.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -527,7 +538,7 @@ MedicalOrganization:
               uri: "https://schema.org/ratingValue"
               uri-prefix: "https://schema.org/"
         worstRating:
-            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -535,13 +546,13 @@ MedicalOrganization:
               uri: "https://schema.org/worstRating"
               uri-prefix: "https://schema.org/"
     review:
-      description: 'Property. Model:"https://schema.org/Review". A review of an item - for example, of a restaurant, movie, or store.'
+      description: 'A review of an item - for example, of a restaurant, movie, or store. Model:"https://schema.org/Review"'
       type: array
       items:
         properties:
           author:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". The author of this content or rating.'
+            description: 'The author of this content or rating. Model:"https://schema.org/Text"'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -549,7 +560,7 @@ MedicalOrganization:
               uri-prefix: "https://schema.org/"
           datePublished:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". Date of first broadcast/publication.'
+            description: 'Date of first broadcast/publication. Model:"https://schema.org/Text"'
             format: date-time
             x-ngsi: 
               model: "https://schema.org/DateTime"
@@ -557,10 +568,14 @@ MedicalOrganization:
               uri: "https://schema.org/datePublished"
               uri-prefix: "https://schema.org/"
           name:
-            $ref: "https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name"
+            type: string
+            description: 'The title of this review. Model:"https://schema.org/Text"'
+            x-ngsi: 
+              model: "https://schema.org/Text"
+              type: Property
           reviewBody:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". The actual body of the review.'
+            description: 'The actual body of the review. Model:"https://schema.org/Text"'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -568,11 +583,11 @@ MedicalOrganization:
               uri-prefix: "https://schema.org/"
           reviewRating:
             type: object
-            description: 'Property. Model:"https://schema.org/Rating". A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+            description: 'A rating is an evaluation on a numeric scale, such as 1 to 5 stars. Model:"https://schema.org/Rating"'
             properties:
               bestRating:
                 type: number
-                description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+                description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -580,7 +595,7 @@ MedicalOrganization:
                   uri-prefix: "https://schema.org/"
               ratingValue:
                 type: number
-                description: 'Property. The rating for the content.'
+                description: 'The rating for the content.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -588,7 +603,7 @@ MedicalOrganization:
                   uri-prefix: "https://schema.org/"
               worstRating:
                 type: number
-                description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+                description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -615,7 +630,7 @@ MedicalOrganization:
       items:
         anyOf:
           - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
-            description: 'Property. Unique identifier of the entity'
+            description: 'Unique identifier of the entity'
       minItems: 1
       type: Property
       uniqueItems: true

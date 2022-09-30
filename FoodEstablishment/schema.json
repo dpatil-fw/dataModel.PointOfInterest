@@ -16,38 +16,39 @@
                     "enum":[
                         "FoodEstablishment"
                     ],
-                    "description":"Property. NGSI Entity type. It has to be FoodEstablishment"
+                    "description":"NGSI Entity type. It has to be FoodEstablishment"
                 },
                 "acceptsReservations":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/acceptsReservations'. Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made"
+                    "description":"Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, a URL at which reservations can be made. Model:'https://schema.org/acceptsReservations'"
                 },
                 "category":{
                     "type":"string",
+                    "default": "Restaurant",
                     "enum":[
                         "Bakery", "BarOrPub", "Brewery", "CafeOrCoffeeShop", "Distillery", "FastFoodRestaurant", "IceCreamShop", "Restaurant", "Winery"
                     ],
-                    "description":"Property. Model:'https://schema.org/Text'. Type of Food Establishment. Enumerated type."
+                    "description":"Type of Food Establishment. Enumerated type. Model:'https://schema.org/Text'"
                 },
                 "hasDriveThroughService":{
                     "type":"boolean",
-                    "description":"Property. Model:'https://schema.org/hasDriveThroughService'. Indicates whether some facility offers a service that can be used by driving through in a car."
+                    "description":"Indicates whether some facility offers a service that can be used by driving through in a car. Model:'https://schema.org/hasDriveThroughService'"
                 },
                 "hasMenu":{
                     "type":"string",
-                    "description":"Property. Either the actual menu as as text, or a URL of the menu. Model:'https://schema.org/hasMenu'"
+                    "description":"Either the actual menu as as text, or a URL of the menu. Model:'https://schema.org/hasMenu'"
                 },
                 "recommendedItems":{
                     "type":"string",
-                    "description":"Property. Speciality food recommendations at the facility. Model:'https://schema.org/hasMenu'"
+                    "description":"Speciality food recommendations at the facility. Model:'https://schema.org/hasMenu'"
                 },
                 "servesCuisine":{
                     "type":"string",
-                    "description":"Property. The cuisine of the restaurant. Model:'https://schema.org/servesCuisine'"
+                    "description":"The cuisine of the restaurant. Model:'https://schema.org/servesCuisine'"
                 },
                 "refSeeAlso":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/URL'. List of references to one or more related entities.",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
                     "items":{
                         "anyOf":[
                             {

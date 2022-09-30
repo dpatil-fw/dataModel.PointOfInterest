@@ -16,29 +16,33 @@
                     "enum":[
                         "Attraction"
                     ],
-                    "description":"Property. NGSI Entity type. It has to be Attraction"
+                    "description":"NGSI Entity type. It has to be Attraction"
                 },
                 "category":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/Text'. Type of Tourist Attraction Place. Could be - Museum, Beach, Park, Amusement Park, National Park, Religious Structure, Heritage Site, Monument, Castle etc"
+                    "default": "Monument",
+                    "enum":[
+                        "Museum", "Beach", "Park", "Amusement Park", "National Park", "Religious Structure", "Heritage Site", "Monument", "Castle"
+                    ],
+                    "description":"Type of Tourist Attraction Place. Model:'https://schema.org/Text'"
                 },
                 "publicAccess":{
                     "type":"boolean",
-                    "description":"Property. Model:'https://schema.org/publicAccess'. A flag to signal that the Place is open to public visitors."
+                    "description":"A flag to signal that the Place is open to public visitors. Model:'https://schema.org/publicAccess'"
                 },
                 "photo":{
                     "type":"string",
                     "format":"uri",
-                    "description":"Property. URL of the image of the place. Model:'https://schema.org/URL'"
+                    "description":"URL of the image of the place. Model:'https://schema.org/URL'"
                 },
                 "video":{
                     "type":"string",
                     "format":"uri",
-                    "description":"Property. URL of the video of the place. Model:'https://schema.org/URL'"
+                    "description":"URL of the video of the place. Model:'https://schema.org/URL'"
                 },
                 "refSeeAlso":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/URL'. List of references to one or more related entities.",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
                     "items":{
                         "anyOf":[
                             {

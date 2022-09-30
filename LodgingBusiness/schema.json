@@ -16,54 +16,56 @@
                     "enum":[
                         "LodgingBusiness"
                     ],
-                    "description":"Property. NGSI Entity type. It has to be LodgingBusiness"
+                    "description":"NGSI Entity type. It has to be LodgingBusiness"
                 },
                 "amenityFeature":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/amenityFeature'. An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free",
+                    "description":"An amenity feature (e.g. a characteristic or service) of the Accommodation like Wifi, Laundry, Gym, Inhouse Doctor, Parking, Breakfast Free. Model:'https://schema.org/amenityFeature'",
                     "items":{
                         "type":"string",
+                        "default": "Wifi",
                         "enum":[
-                            "Wifi", "Laundry", "Gym", "Inhouse Doctor", "Parking", "Breakfast Free"
+                            "Breakfast Free", "Gym", "Inhouse Doctor", "Laundry", "Parking", "Wifi"
                         ]
                     }
                 },
                 "acceptsReservations":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/acceptsReservations'. Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made"
+                    "description":"Indicates whether a LodgingBusiness accepts reservations. Values can be a string or URL at which reservations can be made. Model:'https://schema.org/acceptsReservations'"
                 },
                 "category":{
                     "type":"string",
+                    "default": "Hotel",
                     "enum":[
                         "BedAndBreakfast", "Campground", "Hostel", "Hotel", "Motel", "Resort"
                     ],
-                    "description":"Property. Model:'https://schema.org/Text'. Type of Lodging Business. Enumerated type."
+                    "description":"Type of Lodging Business. Enumerated type. Model:'https://schema.org/Text'"
                 },
                 "checkinTime":{
                     "type":"string",
                     "format":"date-time",
-                    "description":"Property. Model:'https://schema.org/checkinTime'. The earliest someone may check into a lodging establishment."
+                    "description":"The earliest someone may check into a lodging establishment. Model:'https://schema.org/checkinTime'"
                 },
                 "checkoutTime":{
                     "type":"string",
                     "format":"date-time",
-                    "description":"Property. Model:'https://schema.org/checkoutTime'. The latest someone may check out of a lodging establishment."
+                    "description":"The latest someone may check out of a lodging establishment. Model:'https://schema.org/checkoutTime'"
                 },
                 "numberOfRooms":{
-                    "type":"number",
-                    "description":"Property. Model:'https://schema.org/numberOfRooms'. The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business. "
+                    "type":"integer",
+                    "description":"The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business. Model:'https://schema.org/numberOfRooms'"
                 },
                 "petsAllowed":{
                     "type":"boolean",
-                    "description":"Property. Model:'https://schema.org/petsAllowed'. Indicates whether pets are allowed to enter the accommodation or lodging business."
+                    "description":"Indicates whether pets are allowed to enter the accommodation or lodging business. Model:'https://schema.org/petsAllowed'"
                 },
                 "priceRange":{
                     "type":"string",
-                    "description":"Property. The price range of the business, for example $$$. Model:'https://schema.org/priceRange'"
+                    "description":"The price range of the business, for example $$$. Model:'https://schema.org/priceRange'"
                 },
                 "refSeeAlso":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/URL'. List of references to one or more related entities.",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
                     "items":{
                         "anyOf":[
                             {

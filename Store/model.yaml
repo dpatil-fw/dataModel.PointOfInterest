@@ -2,7 +2,7 @@ Store:
   description: 'This entity contains a Store'
   properties:
     name:
-      description: 'Property. The name of this item.'
+      description: 'The name of this item.'
       type: string
       x-ngsi: 
         type: Property
@@ -10,7 +10,8 @@ Store:
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
     category:
       type: string
-      description: 'Property. Model:"https://schema.org/Text". Category of the store as described in the enumeration'
+      description: 'Category of the store as described in the enumeration. Model:"https://schema.org/Text"'
+      default: 'GroceryStore'
       enum:
         - AutoPartsStore
         - BikeStore
@@ -53,7 +54,7 @@ Store:
             uri: "https://schema.org/contactType"
             uri-prefix: "https://schema.org/"
         email:
-          description: 'Property. Email address of owner.'
+          description: 'Email address of owner.'
           format: idn-email
           type: string
           x-ngsi: 
@@ -62,7 +63,11 @@ Store:
             uri: "https://schema.org/email"
             uri-prefix: "https://schema.org/"
         name:
-          $ref: "https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name"
+          type: string
+          description: 'The name of the contact. Model:"https://schema.org/Text"'
+          x-ngsi: 
+            model: "https://schema.org/Text"
+            type: Property
         telephone:
           type: string
           x-ngsi: 
@@ -83,10 +88,10 @@ Store:
         model: "https://schema.org/ContactPoint"
         type: Property
     address:
-      description: 'Property. The mailing address. Model:"https://schema.org/address"'
+      description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
         addressCountry:
-            description: 'Property. The country. For example, Spain. Model:"https://schema.org/addressCountry"'
+            description: 'The country. For example, Spain. Model:"https://schema.org/addressCountry"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -94,7 +99,7 @@ Store:
               uri: "https://schema.org/addressCountry"
               uri-prefix: "https://schema.org/"
         addressLocality:
-            description: 'Property. The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
+            description: 'The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -102,7 +107,7 @@ Store:
               uri: "https://schema.org/addressLocality"
               uri-prefix: "https://schema.org/"
         addressRegion:
-            description: 'Property. The region in which the locality is, and which is in the country. Model:"https://schema.org/addressRegion"'
+            description: 'The region in which the locality is, and which is in the country. Model:"https://schema.org/addressRegion"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -110,7 +115,7 @@ Store:
               uri: "https://schema.org/addressRegion"
               uri-prefix: "https://schema.org/"
         areaServed:
-            description: 'Property. The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
+            description: 'The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -118,7 +123,7 @@ Store:
               uri: "https://schema.org/areaServed"
               uri-prefix: "https://schema.org/"
         postOfficeBoxNumber:
-            description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:"https://schema.org/postOfficeBoxNumber"'
+            description: 'The post office box number for PO box addresses. For example, 03578. Model:"https://schema.org/postOfficeBoxNumber"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -126,10 +131,10 @@ Store:
               uri: "https://schema.org/postOfficeBoxNumber"
               uri-prefix: "https://schema.org/"
         postalCode:
-            description: 'Property. The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
+            description: 'The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
             type: string
         streetAddress:
-            description: 'Property. The street address. Model:"https://schema.org/streetAddress"'
+            description: 'The street address. Model:"https://schema.org/streetAddress"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
@@ -152,29 +157,32 @@ Store:
       type: string
     logo:
       type: string
-      description: 'Property. Model:"https://schema.org/URL". An associated logo for this store.'
+      description: 'An associated logo for this store. Model:"https://schema.org/URL"'
       format: uri
     currenciesAccepted:
-      description: 'Property. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
+      description: 'Currencies accepted for payment. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
       type: array
       items:
         type: string
+        default: 'ALL'
         enum:
-            - AED
             - ALL
+            - AED
             - AUD
             - EUR
             - GBP
+            - INR
             - JPY
             - SGD
             - USD
       minItems: 1
       uniqueItems: true
     paymentAccepted:
-      description: 'Property. Model:"https://schema.org/Text". Payment method accepted in this store.'
+      description: 'Payment method accepted in this store. Model:"https://schema.org/Text"'
       type: array
       items:
         type: string
+        default: 'Cash'
         enum:
             - Cash
             - Cheque
@@ -393,12 +401,12 @@ Store:
       type: array
     id:
       anyOf: &store_-_properties_-_owner_-_items_-_anyof
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: 'Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: 'Identifier format of any NGSI entity'
           format: uri
           type: string
       description: 'Unique identifier of the entity'
@@ -408,24 +416,24 @@ Store:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
         anyOf: *store_-_properties_-_owner_-_items_-_anyof
-        description: 'Property. Unique identifier of the entity'
+        description: 'Unique identifier of the entity'
       type: array
       x-ngsi:
         type: Property
     alternateName:
       type: string
-      description: 'Property. An alternative name for this item'
+      description: 'An alternative name for this item'
       x-ngsi: 
         model: "https://schema.org/Text"
         type: Property
         uri: "https://schema.org/alternateName"
         uri-prefix: "https://schema.org/"
     aggregateRating:
-      description: 'Property. Model:"https://schema.org/AggregateRating". The average rating based on multiple ratings or reviews.'
+      description: 'The average rating based on multiple ratings or reviews. Model:"https://schema.org/AggregateRating"'
       type: object
       properties:
         bestRating:
-            description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+            description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -433,7 +441,7 @@ Store:
               uri: "https://schema.org/bestRating"
               uri-prefix: "https://schema.org/"
         ratingCount:
-            description: 'Property. The count of total number of ratings.'
+            description: 'The count of total number of ratings.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -441,7 +449,7 @@ Store:
               uri: "https://schema.org/ratingCount"
               uri-prefix: "https://schema.org/"
         ratingValue:
-            description: 'Property. The rating for the content.'
+            description: 'The rating for the content.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -449,7 +457,7 @@ Store:
               uri: "https://schema.org/ratingValue"
               uri-prefix: "https://schema.org/"
         worstRating:
-            description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+            description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
             type: number
             x-ngsi: 
               model: "https://schema.org/Number"
@@ -457,13 +465,13 @@ Store:
               uri: "https://schema.org/worstRating"
               uri-prefix: "https://schema.org/"
     review:
-      description: 'Property. Model:"https://schema.org/Review". A review of an item - for example, of a restaurant, movie, or store.'
+      description: 'A review of an item - for example, of a restaurant, movie, or store. Model:"https://schema.org/Review"'
       type: array
       items:
         properties:
           author:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". The author of this content or rating.'
+            description: 'The author of this content or rating. Model:"https://schema.org/Text"'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -471,7 +479,7 @@ Store:
               uri-prefix: "https://schema.org/"
           datePublished:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". Date of first broadcast/publication.'
+            description: 'Date of first broadcast/publication. Model:"https://schema.org/Text"'
             format: date-time
             x-ngsi: 
               model: "https://schema.org/DateTime"
@@ -479,10 +487,14 @@ Store:
               uri: "https://schema.org/datePublished"
               uri-prefix: "https://schema.org/"
           name:
-            $ref: "https://smart-data-models.github.io/data-models/ngsi-ld.yaml#/name"
+            type: string
+            description: 'The title of this review. Model:"https://schema.org/Text"'
+            x-ngsi: 
+              model: "https://schema.org/Text"
+              type: Property
           reviewBody:
             type: string
-            description: 'Property. Model:"https://schema.org/Text". The actual body of the review.'
+            description: 'The actual body of the review. Model:"https://schema.org/Text"'
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
@@ -490,11 +502,11 @@ Store:
               uri-prefix: "https://schema.org/"
           reviewRating:
             type: object
-            description: 'Property. Model:"https://schema.org/Rating". A rating is an evaluation on a numeric scale, such as 1 to 5 stars.'
+            description: 'A rating is an evaluation on a numeric scale, such as 1 to 5 stars. Model:"https://schema.org/Rating"'
             properties:
               bestRating:
                 type: number
-                description: 'Property. The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
+                description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -502,7 +514,7 @@ Store:
                   uri-prefix: "https://schema.org/"
               ratingValue:
                 type: number
-                description: 'Property. The rating for the content.'
+                description: 'The rating for the content.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -510,7 +522,7 @@ Store:
                   uri-prefix: "https://schema.org/"
               worstRating:
                 type: number
-                description: 'Property. The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
+                description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
                 x-ngsi: 
                   model: "https://schema.org/Number"
                   type: Property
@@ -538,7 +550,7 @@ Store:
       items:
         anyOf:
           - anyOf: *store_-_properties_-_owner_-_items_-_anyof
-            description: 'Property. Unique identifier of the entity'
+            description: 'Unique identifier of the entity'
       minItems: 1
       type: array
       uniqueItems: true

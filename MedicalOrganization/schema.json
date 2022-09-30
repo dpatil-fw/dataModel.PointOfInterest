@@ -16,30 +16,31 @@
                     "enum":[
                         "MedicalOrganization"
                     ],
-                    "description":"Property. NGSI Entity type. It has to be MedicalOrganization"
+                    "description":"NGSI Entity type. It has to be MedicalOrganization"
                 },
                 "category":{
                     "type":"string",
+                    "default": "Hospital",
                     "enum":[
                         "Dentist", "DiagnosticLab", "Hospital", "MedicalClinic", "Pharmacy", "Physician", "VeterinaryCare", "EyeCare"
                     ],
-                    "description":"Property. Model:'https://schema.org/Text'. Type of medical organization. Enumerated type."
+                    "description":"Type of medical organization. Enumerated type. Model:'https://schema.org/Text'"
                 },
                 "hasDriveThroughService":{
                     "type":"boolean",
-                    "description":"Property. Model:'https://schema.org/hasDriveThroughService'. Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users."
+                    "description":"Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users. Model:'https://schema.org/hasDriveThroughService'"
                 },
                 "healthPlanNetworkId":{
                     "type":"string",
-                    "description":"Property. Model:'https://schema.org/healthPlanNetworkId'. Name or unique ID of network."
+                    "description":"Name or unique ID of network. Model:'https://schema.org/healthPlanNetworkId'"
                 },
                 "isAcceptingNewPatients":{
                     "type":"boolean",
-                    "description":"Property. Model:'https://schema.org/isAcceptingNewPatients'. Whether the provider is accepting new patients."
+                    "description":"Whether the provider is accepting new patients. Model:'https://schema.org/isAcceptingNewPatients'"
                 },
                 "facilities":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/Text'. Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT",
+                    "description":"Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT. Model:'https://schema.org/Text'",
                     "items":{
                         "type":"string"
                     },
@@ -47,19 +48,21 @@
                 },
                 "medicalSpeciality":{
                     "type":"string",
-                    "enum": ["Anesthesia", "Cardiovascular", "CommunityHealth", "Dentistry", "Dermatology", "DietNutrition", "Emergency", "Endocrine", "Gastroenterologic", "Genetic", "Geriatric", "Gynecologic", "Hematologic", "Infectious", "LaboratoryScience", "Midwifery", "Musculoskeletal", "Neurologic", "Nursing", "Obstetric", "Oncologic", "Optometric", "Otolaryngologic", "Pathology", "Pediatric", "PharmacySpecialty", "Physiotherapy", "PlasticSurgery", "Podiatric", "PrimaryCare", "Psychiatric", "PublicHealth", "Pulmonary", "Radiography", "Renal", "RespiratoryTherapy", "Rheumatologic", "SpeechPathology", "Surgical", "Toxicologic", "Urologic"],
-                    "description":"Property. Model:'https://schema.org/MedicalSpecialty'. Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type."
+                    "default": "PrimaryCare",
+                    "enum": ["PrimaryCare", "Anesthesia", "Cardiovascular", "CommunityHealth", "Dentistry", "Dermatology", "DietNutrition", "Emergency", "Endocrine", "Gastroenterologic", "Genetic", "Geriatric", "Gynecologic", "Hematologic", "Infectious", "LaboratoryScience", "Midwifery", "Musculoskeletal", "Neurologic", "Nursing", "Obstetric", "Oncologic", "Optometric", "Otolaryngologic", "Pathology", "Pediatric", "PharmacySpecialty", "Physiotherapy", "PlasticSurgery", "Podiatric", "Psychiatric", "PublicHealth", "Pulmonary", "Radiography", "Renal", "RespiratoryTherapy", "Rheumatologic", "SpeechPathology", "Surgical", "Toxicologic", "Urologic"],
+                    "description":"Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. Model:'https://schema.org/MedicalSpecialty'"
                 },
                 "medicineSystem":{
                     "type":"string",
+                    "default": "Allopathic",
                     "enum":[
-                        "Ayurvedic", "Chiropractic", "Homeopathic", "Osteopathic", "TraditionalChinese", "WesternConventional"
+                        "Allopathic", "Ayurvedic", "Chiropractic", "Homeopathic", "Osteopathic", "TraditionalChinese", "WesternConventional"
                     ],
-                    "description":"Property. Model:'https://schema.org/MedicineSystem'. Systems of medical practice. Enumerated type."
+                    "description":"Systems of medical practice. Enumerated type. Model:'https://schema.org/MedicineSystem'"
                 },
                 "testingFacility":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/Text'. Types of tests available - CovidTesting, Blood Test",
+                    "description":"Types of tests available - CovidTesting, Blood Test. Model:'https://schema.org/Text'",
                     "items":{
                         "type":"string"
                     },
@@ -67,7 +70,7 @@
                 },
                 "refSeeAlso":{
                     "type":"array",
-                    "description":"Property. Model:'https://schema.org/URL'. List of references to one or more related entities.",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
                     "items":{
                         "anyOf":[
                             {
