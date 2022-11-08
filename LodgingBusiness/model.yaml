@@ -66,13 +66,13 @@ LodgingBusiness:
     address:
       description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
-        addressCountry:
-            description: 'The country. For example, Spain. Model:"https://schema.org/addressCountry"'
+        streetAddress:
+            description: 'The street address. Model:"https://schema.org/streetAddress"'
             type: string
             x-ngsi: 
               model: "https://schema.org/Text"
               type: Property
-              uri: "https://schema.org/addressCountry"
+              uri: "https://schema.org/streetAddress"
               uri-prefix: "https://schema.org/"
         addressLocality:
             description: 'The locality in which the street address is, and which is in the region. Model:"https://schema.org/addressLocality"'
@@ -90,6 +90,17 @@ LodgingBusiness:
               type: Property
               uri: "https://schema.org/addressRegion"
               uri-prefix: "https://schema.org/"
+        addressCountry:
+            description: 'The country. For example, Spain. Model:"https://schema.org/addressCountry"'
+            type: string
+            x-ngsi: 
+              model: "https://schema.org/Text"
+              type: Property
+              uri: "https://schema.org/addressCountry"
+              uri-prefix: "https://schema.org/"
+        postalCode:
+            description: 'The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
+            type: string
         areaServed:
             description: 'The geographic area where a service or offered item is provided. Model:"https://schema.org/areaServed"'
             type: string
@@ -105,17 +116,6 @@ LodgingBusiness:
               model: "https://schema.org/Text"
               type: Property
               uri: "https://schema.org/postOfficeBoxNumber"
-              uri-prefix: "https://schema.org/"
-        postalCode:
-            description: 'The postal code. For example, 24004. Model:"https://schema.org/postalCode"'
-            type: string
-        streetAddress:
-            description: 'The street address. Model:"https://schema.org/streetAddress"'
-            type: string
-            x-ngsi: 
-              model: "https://schema.org/Text"
-              type: Property
-              uri: "https://schema.org/streetAddress"
               uri-prefix: "https://schema.org/"
       x-ngsi: 
         uri: "https://schema.org/address"
@@ -146,9 +146,9 @@ LodgingBusiness:
         type: string
         default: 'Wifi'
         enum:
-          - Breakfast Free
+          - BreakfastFree
           - Gym
-          - Inhouse Doctor
+          - InhouseDoctor
           - Laundry
           - Parking
           - Wifi
@@ -226,7 +226,7 @@ LodgingBusiness:
         enum:
             - Cash
             - Cheque
-            - Credit Card
+            - CreditCard
             - Cryptocurrency
       minItems: 1
     dataProvider:
