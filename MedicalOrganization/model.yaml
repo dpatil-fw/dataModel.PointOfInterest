@@ -145,7 +145,7 @@ MedicalOrganization:
             - Laboratory Services
             - ECG Services
             - Pharmacy
-            - Radiology/X-ray Facility
+            - Radiology
             - Ambulance Services
             - OT
       minItems: 1
