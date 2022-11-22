@@ -162,14 +162,6 @@ FoodEstablishment:
       type: string
       format: uri
       description: 'URL of the image of the place. Model:"https://schema.org/URL"'
-    publicAccess:
-      type: boolean
-      description: 'A flag to signal that the Place is open to public visitors. Model:"https://schema.org/publicAccess"'
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-        uri: "https://schema.org/publicAccess"
-        uri-prefix: "https://schema.org/"
     servesCuisine:
       type: string
       description: 'The cuisine of the restaurant. Model:"https://schema.org/servesCuisine"'
@@ -380,25 +372,23 @@ FoodEstablishment:
       description: 'A structured value providing information about the opening hours of a place or a certain service inside a place'
       items:
         properties:
-          closes:
-            format: time
-            type: string
-            x-ngsi: 
-              model: "https://schema.org/Time"
-              type: Property
-              uri: "https://schema.org/closes"
-              uri-prefix: "https://schema.org/"
           dayOfWeek:
-            enum:
-              - Monday
-              - Tuesday
-              - Wednesday
-              - Thursday
-              - Friday
-              - Saturday
-              - Sunday
-              - PublicHolidays
-            type: string
+            type: array
+            items:
+              type: string
+              default: 'All'
+              enum:
+                - Monday
+                - Tuesday
+                - Wednesday
+                - Thursday
+                - Friday
+                - Saturday
+                - Sunday
+                - PublicHolidays
+                - All
+            minItems: 1
+            uniqueItems: true
             x-ngsi: 
               model: "https://schema.org/DayOfWeek"
               type: Property
@@ -411,6 +401,14 @@ FoodEstablishment:
               model: "https://schema.org/Time"
               type: Property
               uri: "https://schema.org/opens"
+              uri-prefix: "https://schema.org/"
+          closes:
+            format: time
+            type: string
+            x-ngsi: 
+              model: "https://schema.org/Time"
+              type: Property
+              uri: "https://schema.org/closes"
               uri-prefix: "https://schema.org/"
           validFrom:
             format: date-time
