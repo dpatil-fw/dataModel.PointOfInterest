@@ -379,7 +379,7 @@ GovernmentOrganization:
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
-        anyOf: *governmentOrganization_-_properties_-_owner_-_items_-_anyof
+        anyOf: *governmentorganization_-_properties_-_owner_-_items_-_anyof
         description: 'Unique identifier of the entity'
       type: array
       x-ngsi:
