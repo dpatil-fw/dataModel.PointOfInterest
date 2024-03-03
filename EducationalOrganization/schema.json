@@ -61,19 +61,6 @@
                         "type":"string"
                     },
                     "minItems":1                    
-                },
-                "refSeeAlso":{
-                    "type":"array",
-                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
-                    "items":{
-                        "anyOf":[
-                            {
-                                "$ref":"https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-                            }
-                        ]
-                    },
-                    "minItems":1,
-                    "uniqueItems":true
                 }
             }
         }

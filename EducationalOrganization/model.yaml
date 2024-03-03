@@ -391,6 +391,7 @@ EducationalOrganization:
           format: uri
           type: string
       description: 'Unique identifier of the entity'
+      x-ngsi:
       type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
@@ -412,12 +413,13 @@ EducationalOrganization:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            - format: uri
+            format: uri
               type: string
           minItems: 1
           type: array
         - format: uri
           type: string
+      x-ngsi:
       type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
@@ -426,7 +428,7 @@ EducationalOrganization:
           - anyOf: *educationalorganization_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
         model: "https://schema.org/URL"

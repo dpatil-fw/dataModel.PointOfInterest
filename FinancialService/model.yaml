@@ -534,12 +534,13 @@ FinancialService:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            - format: uri
+            format: uri
               type: string
           minItems: 1
           type: array
         - format: uri
           type: string
+      x-ngsi:
       type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
@@ -548,7 +549,7 @@ FinancialService:
           - anyOf: *financialservice_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
         model: "https://schema.org/URL"
