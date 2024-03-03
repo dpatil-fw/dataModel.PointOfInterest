@@ -402,7 +402,8 @@ GovernmentOrganization:
           type: array
         - format: uri
           type: string
-      type: Property
+      x-ngsi:
+        type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
@@ -410,7 +411,7 @@ GovernmentOrganization:
           - anyOf: *governmentorganization_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
         model: "https://schema.org/URL"
