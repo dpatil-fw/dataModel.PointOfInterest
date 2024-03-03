@@ -541,7 +541,7 @@ FinancialService:
         - format: uri
           type: string
       x-ngsi:
-      type: Property
+        type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
