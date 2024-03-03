@@ -535,7 +535,7 @@ FinancialService:
       oneOf:
         - items:
             format: uri
-              type: string
+            type: string
           minItems: 1
           type: array
         - format: uri
