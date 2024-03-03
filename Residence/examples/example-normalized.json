@@ -1,0 +1,29 @@
+{
+    "id": "urn:ngsi-ld:Residence:House1",
+    "type": "Residence",
+    "category": {
+        "value": "IndependentBungalow"
+    },
+    "name": {
+        "value": "House1"
+    },
+    "description": {
+        "value": "Residential Area house"
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -3.8077562,
+                43.4628255
+            ]
+        },
+        "type": "geo:json"
+    },
+    "source": {
+        "value": "self"
+    },
+    "dataProvider": {
+        "value": ""
+    }
+}

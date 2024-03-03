@@ -1,46 +1,52 @@
 {
-    "id": "FinancialService-Bank-SBI1",
+    "id": "urn:ngsi-ld:FinancialService-Bank-SBI1",
     "type": "FinancialService", 
     "category": {
+        "type": "Property",
         "value": "Bank"
     },
     "name": {
+        "type": "Property",
         "value": "SBI1"
     },
     "address": {
+        "type": "Property",
         "value": {
             "addressCountry": "IN",
             "addressLocality": "Chennai",
             "postalCode": "600006",
             "streetAddress": "21 Greams Lane, Off, Greams Road, Thousand Lights"
-        },
-        "type": "PostalAddress"
+        }
     },
     "currenciesAccepted": {
+        "type": "Property",
         "value": [
             "INR"
         ]
     },
     "description": {
+        "type": "Property",
         "value": "SBI Bank Main"
     },
     "location": {
+        "type": "GeoProperty",
         "value": {
             "type": "Point",
             "coordinates": [
                 13.0827,
                 80.2707
             ]
-        },
-        "type": "geo:json"
+        }
     },
     "paymentAccepted": {
+        "type": "Property",
         "value": [
             "CreditCard",
             "Cash"
         ]
     },
     "facilities": {
+        "type": "Property",
         "value": [
             "Bank",
             "MoneyTransfer",
@@ -49,6 +55,7 @@
         ]
     },
     "institutionCode": {
+        "type": "Property",
         "value": "SBI123456"
     },
     "@context": [

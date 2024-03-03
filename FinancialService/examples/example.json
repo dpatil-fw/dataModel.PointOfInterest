@@ -1,0 +1,27 @@
+{
+    "id": "FinancialService-Bank-SBI1",
+    "type": "FinancialService", 
+    "category": "Bank", 
+    "name": "SBI1",
+    "address": {
+        "addressCountry": "IN",
+        "addressLocality": "Chennai",
+        "postalCode": "600006",
+        "streetAddress": "21 Greams Lane, Off, Greams Road, Thousand Lights"
+    },
+    "currenciesAccepted": [
+        "INR"
+    ],
+    "description": "SBI Bank Main",
+    "location": {
+        "type": "Point",
+        "coordinates": [13.0827, 80.2707] 
+    },
+    "paymentAccepted": [
+        "CreditCard", "Cash"
+    ],
+    "facilities": [
+        "Bank", "MoneyTransfer", "PaymentCentre", "ATM"
+    ],
+    "institutionCode": "SBI123456"
+}

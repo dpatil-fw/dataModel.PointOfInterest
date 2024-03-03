@@ -1,0 +1,29 @@
+{
+    "id": "urn:ngsi-ld:GovernmentOrganization:Office1",
+    "type": "GovernmentOrganization",
+    "category": {
+        "value": "Office"
+    },
+    "name": {
+        "value": "Office1"
+    },
+    "description": {
+        "value": "Government Office"
+    },
+    "location": {
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -3.8077562,
+                43.4628255
+            ]
+        },
+        "type": "geo:json"
+    },
+    "source": {
+        "value": "self"
+    },
+    "dataProvider": {
+        "value": ""
+    }
+}

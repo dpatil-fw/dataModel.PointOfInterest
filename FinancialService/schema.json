@@ -1,0 +1,63 @@
+{
+    "$schema":"http://json-schema.org/schema#",
+    "$schemaVersion":"0.0.1",
+    "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/FinancialService/schema.json",
+    "title":"Financial Service schema",
+    "description":"This entity contains a Financial Service",
+    "type":"object",
+    "allOf":[
+        {
+            "$ref":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/schema.json"
+        },
+        {
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "enum":[
+                        "FinancialService"
+                    ],
+                    "description":"NGSI Entity type. It has to be FinancialService"
+                },
+                "category":{
+                    "type":"string",
+                    "default": "Bank",
+                    "enum":[
+                        "Bank", "MoneyTransfer", "PaymentCentre", "ATM", "CurrencyExchange", "CreditUnion", "StockMarket", "Office", "MutualFunds"
+                    ],
+                    "description":"Type of financial service. Enumerated type. Model:'https://schema.org/Text'"
+                },
+                "facilities":{
+                    "type":"array",
+                    "description":"Facilities at this Financial Service. Allowed values: Bank, MoneyTransfer, PaymentCentre, ATM, CurrencyExchange, CreditUnion, StockMarket, Office, MutualFunds. Model:'https://schema.org/Text'",
+                    "items":{
+                        "type":"string"
+                    },
+                    "minItems":1
+                },
+                "institutionCode":{
+                    "type":"string",
+                    "description":"A unique code belonging to the financial institution."
+                },
+                "refSeeAlso":{
+                    "type":"array",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
+                    "items":{
+                        "anyOf":[
+                            {
+                                "$ref":"https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                            }
+                        ]
+                    },
+                    "minItems":1,
+                    "uniqueItems":true
+                }
+            }
+        }
+    ],
+    "required":[
+        "id",
+        "type",
+        "category",
+        "name"
+    ]
+}

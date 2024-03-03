@@ -1,0 +1,87 @@
+{
+    "$schema":"http://json-schema.org/schema#",
+    "$schemaVersion":"0.0.1",
+    "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/EducationalOrganization/schema.json",
+    "title":"Educational Organization schema",
+    "description":"This entity contains an Educational Organization",
+    "type":"object",
+    "allOf":[
+        {
+            "$ref":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/schema.json"
+        },
+        {
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "enum":[
+                        "EducationalOrganization"
+                    ],
+                    "description":"NGSI Entity type. It has to be EducationalOrganization"
+                },
+                "category":{
+                    "type":"string",
+                    "default": "School",
+                    "enum":[
+                        "College", "University", "ElementarySchool", "HighSchool", "MiddleSchool", "Preschool", "School"
+                    ],
+                    "description":"Type of educational organization. Enumerated type. Model:'https://schema.org/Text'"
+                },
+                "genderType":{
+                    "type":"string",
+                    "default": "Coed",
+                    "enum":[
+                        "Male", "Female", "Coed"
+                    ],
+                    "description":"Gender type of educational organization. Enumerated type. Model:'https://schema.org/Text'"
+                },
+                "aidedBy":{
+                    "type":"string",
+                    "default": "Private",
+                    "enum":[
+                        "Private", "Government"
+                    ],
+                    "description":"Funding received by the educational organization. Enumerated type. Model:'https://schema.org/Text'"
+                },
+                "grades":{
+                    "type":"string",
+                    "description":"Grades present in this educational organization. Model:'https://schema.org/hasMenu'"
+                },
+                "courseOfferred":{
+                    "type":"string",
+                    "description":"Courses offerred at this educational organization. Model:'https://schema.org/hasMenu'",
+                    "items":{
+                        "type":"string"
+                    },
+                    "minItems":1
+                },
+                "streams":{
+                    "type":"string",
+                    "description":"Streams available at this educationa organization. Model:'https://schema.org/servesCuisine'",
+                    "items":{
+                        "type":"string"
+                    },
+                    "minItems":1                    
+                },
+                "refSeeAlso":{
+                    "type":"array",
+                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
+                    "items":{
+                        "anyOf":[
+                            {
+                                "$ref":"https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                            }
+                        ]
+                    },
+                    "minItems":1,
+                    "uniqueItems":true
+                }
+            }
+        }
+    ],
+    "required":[
+        "id",
+        "type",
+        "category",
+        "name"
+    ]
+}

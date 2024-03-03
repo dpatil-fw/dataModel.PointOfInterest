@@ -1,5 +1,5 @@
-MedicalOrganization:
-  description: 'This entity type models healthcare organizations like Hospitals, Pharmacy etc.'
+EducationalOrganization:
+  description: 'This entity contains an Educational Organization'
   properties:
     name:
       description: 'The name of this item.'
@@ -10,17 +10,14 @@ MedicalOrganization:
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
     category:
       type: string
-      default: 'Hospital'
+      default: 'School'
       enum:
-        - Dentist
-        - DiagnosticLab
-        - Hospital
-        - MedicalClinic
-        - Pharmacy
-        - Physician
-        - VeterinaryCare
-        - EyeCare
-      description: 'Type of medical organization. Enumerated type. Model:"https://schema.org/Text"'
+        - School
+        - Training
+        - College
+        - University
+        - Kindergarten
+      description: 'Type of Educational Organization. Enumerated type. Model:"https://schema.org/Text"'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -61,9 +58,10 @@ MedicalOrganization:
             type: Property
             uri: "https://schema.org/URL"
             uri-prefix: "https://schema.org/"
-      type: Property
+      type: object
       x-ngsi:
         model: "https://schema.org/ContactPoint"
+        type: Property
     address:
       description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
@@ -132,153 +130,45 @@ MedicalOrganization:
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
-    facilities:
-      type: array
-      description: 'Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT. Model:"https://schema.org/Text"'
-      items:
-        type: string
-        default: 'Cash'
-        enum:
-            - OPD
-            - Minor OT
-            - Physiotherapy
-            - Laboratory Services
-            - ECG Services
-            - Pharmacy
-            - Radiology
-            - Ambulance Services
-            - OT
-      minItems: 1
-    hasDriveThroughService:
-      description: 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users. Model:"https://schema.org/hasDriveThroughService"'
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-        uri: "https://schema.org/hasDriveThroughService"
-        uri-prefix: "https://schema.org/"
-    healthPlanNetworkId:
-      description: 'Name or unique ID of network. Model:"https://schema.org/healthPlanNetworkId". '
+    genderType:
       type: string
-      x-ngsi: 
-        model: "https://schema.org/Text"
-        type: Property
-        uri: "https://schema.org/healthPlanNetworkId"
-        uri-prefix: "https://schema.org/"
-    isAcceptingNewPatients:
-      description: 'Whether the provider is accepting new patients. Model:"https://schema.org/isAcceptingNewPatients"'
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-        uri: "https://schema.org/isAcceptingNewPatients"
-        uri-prefix: "https://schema.org/"
-    medicalSpeciality:
-      description: 'Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. Model:"https://schema.org/MedicalSpecialty"'
-      default: 'PrimaryCare'
-      type: string
+      default: 'Coed'
       enum:
-        - Anesthesia
-        - Cardiovascular
-        - CommunityHealth
-        - Dentistry
-        - Dermatology
-        - DietNutrition
-        - Emergency
-        - Endocrine
-        - Gastroenterologic
-        - Genetic
-        - Geriatric
-        - Gynecologic
-        - Hematologic
-        - Infectious
-        - LaboratoryScience
-        - Midwifery
-        - Musculoskeletal
-        - Neurologic
-        - Nursing
-        - Obstetric
-        - Oncologic
-        - Optometric
-        - Otolaryngologic
-        - Pathology
-        - Pediatric
-        - PharmacySpecialty
-        - Physiotherapy
-        - PlasticSurgery
-        - Podiatric
-        - PrimaryCare
-        - Psychiatric
-        - PublicHealth
-        - Pulmonary
-        - Radiography
-        - Renal
-        - RespiratoryTherapy
-        - Rheumatologic
-        - SpeechPathology
-        - Surgical
-        - Toxicologic
-        - Urologic
-      x-ngsi: 
-        model: "https://schema.org/MedicalSpecialty"
-        type: Property
-    medicineSystem:
-      description: 'Systems of medical practice. Enumerated type. Model:"https://schema.org/MedicineSystem"'
+        - Coed
+        - Female
+        - Male
+    aidedBy:
       type: string
-      default: 'Allopathic'
+      default: 'Private'
       enum:
-        - Allopathic
-        - Ayurvedic
-        - Chiropractic
-        - Homeopathic
-        - Osteopathic
-        - TraditionalChinese
-        - WesternConventional
+        - Private
+        - Government
+    grades:
+      type: array
+      description: 'Grades present in this educational organization. Model:"https://schema.org/Text"'
+      items:
+        type: string
+    streams:
+      description: 'Streams available at this educational organization.'
+      type: array
+      items:
+        type: string
+    coursesOfferred:
+      description: 'Courses offerred at this educational organization.'
+      type: string
+    foundingDate:
+      format: date-time
+      type: string
       x-ngsi: 
-        model: "https://schema.org/MedicineSystem"
+        model: "https://schema.org/DateTime"
         type: Property
-    testingFacility:
-      type: array
-      description: 'Types of tests available - CovidTesting, Blood Test. Model:"https://schema.org/Text"'
-      items:
-        type: string
-      minItems: 1
-    currenciesAccepted:
-      description: 'Currencies accepted for payment. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
-      type: array
-      items:
-        type: string
-        default: 'ALL'
-        enum:
-            - ALL
-            - AED
-            - AUD
-            - EUR
-            - GBP
-            - INR
-            - JPY
-            - SGD
-            - USD
-      minItems: 1
-      uniqueItems: true
-    paymentAccepted:
-      description: 'Payment method accepted in this store. Model:"https://schema.org/Text"'
-      type: array
-      items:
-        type: string
-        default: 'Cash'
-        enum:
-            - Cash
-            - Cheque
-            - CreditCard
-            - Cryptocurrency
-      minItems: 1
+        uri: "https://schema.org/foundingDate"
+        uri-prefix: "https://schema.org/"
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
     location:
-      $id: https://geojson.org/schema/Geometry.json
-      $schema: "http://json-schema.org/draft-07/schema#"
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
         - properties:
             bbox:
@@ -422,18 +312,8 @@ MedicalOrganization:
             - coordinates
           title: 'GeoJSON MultiPolygon'
           type: object
-      title: 'GeoJSON Geometry'
-      x-ngsi: 
-        model: 
-          - "https://purl.org/geojson/vocab#Point"
-          - "https://purl.org/geojson/vocab#LineString"
-          - "https://purl.org/geojson/vocab#Polygon"
-          - "https://purl.org/geojson/vocab#MultiPoint"
-          - "https://purl.org/geojson/vocab#MultiLineString"
-          - "https://purl.org/geojson/vocab#MultiPolygon"
-        type: GeoProperty
-        uri: "https://uri.etsi.org/ngsi-ld/location"
-        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+      x-ngsi:
+        type: Geoproperty
     openingHours:
       type: string
       x-ngsi: 
@@ -501,7 +381,7 @@ MedicalOrganization:
       minItems: 1
       type: array
     id:
-      anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
+      anyOf: &educationalorganization_-_properties_-_owner_-_items_-_anyof
         - description: 'Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
@@ -511,13 +391,16 @@ MedicalOrganization:
           format: uri
           type: string
       description: 'Unique identifier of the entity'
-      type: Property
+      x-ngsi:
+        type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
-        anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
+        anyOf: *educationalorganization_-_properties_-_owner_-_items_-_anyof
         description: 'Unique identifier of the entity'
-      type: Property
+      type: array
+      x-ngsi:
+        type: Property
     alternateName:
       type: string
       description: 'An alternative name for this item'
@@ -526,127 +409,23 @@ MedicalOrganization:
         type: Property
         uri: "https://schema.org/alternateName"
         uri-prefix: "https://schema.org/"
-    aggregateRating:
-      description: 'The average rating based on multiple ratings or reviews. Model:"https://schema.org/AggregateRating"'
-      type: object
-      properties:
-        bestRating:
-            description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
-            type: number
-            x-ngsi: 
-              model: "https://schema.org/Number"
-              type: Property
-              uri: "https://schema.org/bestRating"
-              uri-prefix: "https://schema.org/"
-        ratingCount:
-            description: 'The count of total number of ratings.'
-            type: number
-            x-ngsi: 
-              model: "https://schema.org/Number"
-              type: Property
-              uri: "https://schema.org/ratingCount"
-              uri-prefix: "https://schema.org/"
-        ratingValue:
-            description: 'The rating for the content.'
-            type: number
-            x-ngsi: 
-              model: "https://schema.org/Number"
-              type: Property
-              uri: "https://schema.org/ratingValue"
-              uri-prefix: "https://schema.org/"
-        worstRating:
-            description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
-            type: number
-            x-ngsi: 
-              model: "https://schema.org/Number"
-              type: Property
-              uri: "https://schema.org/worstRating"
-              uri-prefix: "https://schema.org/"
-    review:
-      description: 'A review of an item - for example, of a restaurant, movie, or store. Model:"https://schema.org/Review"'
-      type: array
-      items:
-        properties:
-          author:
-            type: string
-            description: 'The author of this content or rating. Model:"https://schema.org/Text"'
-            x-ngsi: 
-              model: "https://schema.org/Text"
-              type: Property
-              uri: "https://schema.org/author"
-              uri-prefix: "https://schema.org/"
-          datePublished:
-            type: string
-            description: 'Date of first broadcast/publication. Model:"https://schema.org/Text"'
-            format: date-time
-            x-ngsi: 
-              model: "https://schema.org/DateTime"
-              type: Property
-              uri: "https://schema.org/datePublished"
-              uri-prefix: "https://schema.org/"
-          name:
-            type: string
-            description: 'The title of this review. Model:"https://schema.org/Text"'
-            x-ngsi: 
-              model: "https://schema.org/Text"
-              type: Property
-          reviewBody:
-            type: string
-            description: 'The actual body of the review. Model:"https://schema.org/Text"'
-            x-ngsi: 
-              model: "https://schema.org/Text"
-              type: Property
-              uri: "https://schema.org/reviewBody"
-              uri-prefix: "https://schema.org/"
-          reviewRating:
-            type: object
-            description: 'A rating is an evaluation on a numeric scale, such as 1 to 5 stars. Model:"https://schema.org/Rating"'
-            properties:
-              bestRating:
-                type: number
-                description: 'The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.'
-                x-ngsi: 
-                  model: "https://schema.org/Number"
-                  type: Property
-                  uri: "https://schema.org/bestRating"
-                  uri-prefix: "https://schema.org/"
-              ratingValue:
-                type: number
-                description: 'The rating for the content.'
-                x-ngsi: 
-                  model: "https://schema.org/Number"
-                  type: Property
-                  uri: "https://schema.org/ratingValue"
-                  uri-prefix: "https://schema.org/"
-              worstRating:
-                type: number
-                description: 'The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.'
-                x-ngsi: 
-                  model: "https://schema.org/Number"
-                  type: Property
-                  uri: "https://schema.org/worstRating"
-                  uri-prefix: "https://schema.org/"
-            x-ngsi: 
-              type: Property
-              uri: "https://schema.org/reviewRating"
-              uri-prefix: "https://schema.org/"
-      minItems: 1
     seeAlso:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            - format: uri
-              type: string
+            format: uri
+            type: string
           minItems: 1
           type: array
         - format: uri
           type: string
-      type: Property
+      x-ngsi:
+        type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
         anyOf:
-          - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
+          - anyOf: *educationalorganization_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
       type: Property
@@ -654,12 +433,12 @@ MedicalOrganization:
       x-ngsi:
         model: "https://schema.org/URL"
     type:
-      description: 'NGSI Entity type. It has to be MedicalOrganization'
+      description: 'NGSI Entity type. It has to be EducationalOrganization'
       enum:
-        - MedicalOrganization
+        - EducationalOrganization
       type: string
       x-ngsi:
-      type: Property
+        type: Property
   required:
     - id
     - category

@@ -1,0 +1,34 @@
+{
+    "id": "urn:ngsi-ld:GovernmentOrganization:Office1",
+    "type": "GovernmentOrganization",
+    "category": {
+        "type": "Property",
+        "value": "Office"
+    },
+    "name": {
+        "type": "Property",
+        "value": "Office1"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Government Office"
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -3.8077562,
+                43.4628255
+            ]
+        }
+    },
+    "source": {
+        "type": "Property",
+        "value": "self"
+    },
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

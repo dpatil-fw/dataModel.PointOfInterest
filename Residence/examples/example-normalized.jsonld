@@ -1,0 +1,34 @@
+{
+    "id": "urn:ngsi-ld:Residence:House1",
+    "type": "Residence",
+    "category": {
+        "type": "Property",
+        "value": "Residence"
+    },
+    "name": {
+        "type": "Property",
+        "value": "House1"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Residential Area house"
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [
+                -3.8077562,
+                43.4628255
+            ]
+        }
+    },
+    "source": {
+        "type": "Property",
+        "value": "self"
+    },
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

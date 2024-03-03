@@ -1,0 +1,38 @@
+{
+    "$schema":"http://json-schema.org/schema#",
+    "$schemaVersion":"0.0.1",
+    "$id":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/Residence/schema.json",
+    "title":"Residence schema",
+    "description":"This entity Type models residential places in the city.",
+    "type":"object",
+    "allOf":[
+        {
+            "$ref":"https://github.com/dpatil-fw/dataModel.PointOfInterest/blob/master/PointOfInterest/schema.json"
+        },
+        {
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "enum":[
+                        "Residence"
+                    ],
+                    "description":"NGSI Entity type. It has to be Residence"
+                },
+                "category":{
+                    "type":"string",
+                    "description":"Category of the residence as described in the enumeration. Model:'https://schema.org/Text'",
+                    "default": "ApartmentComplex",
+                    "enum":[
+                        "IndependentBungalow", "Chawl", "ApartmentComplex", "Condo", "GatedCommunity", "Duplex", "InformalSettlement"
+                    ]
+                }
+            }
+        }
+    ],
+    "required":[
+        "id",
+        "type",
+        "category",
+        "name"
+    ]
+}

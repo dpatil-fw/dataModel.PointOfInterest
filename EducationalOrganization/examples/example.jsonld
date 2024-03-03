@@ -1,0 +1,25 @@
+{
+    "id": "urn:ngsi-ld:EducationalOrganization:EducationalOrganization-School-123456",
+    "type": "EducationalOrganization",
+    "category": "School", 
+    "name": "Kendriya Vidyalaya 1",
+    "address": {
+      "addressLocality": "Belgaum",
+      "addressRegion": "Karnataka",
+      "addressCountry": "India",
+      "postalCode": "590009",
+      "streetAddress": "First Street"
+    },
+    "description": "Best school in Belgaum.",
+    "location": {
+        "type": "Point",
+        "coordinates": [-8.768460000000001, 42.60214472222222]
+    },
+    "genderType": "Coed",
+    "aidedBy": "Government",
+    "grades": "1-12",
+    "@context": [
+      "https://smartdatamodels.org/context.jsonld",
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

@@ -1,5 +1,5 @@
-MedicalOrganization:
-  description: 'This entity type models healthcare organizations like Hospitals, Pharmacy etc.'
+FinancialService:
+  description: 'This entity contains a Financial Service'
   properties:
     name:
       description: 'The name of this item.'
@@ -10,17 +10,17 @@ MedicalOrganization:
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
     category:
       type: string
-      default: 'Hospital'
+      default: 'Bank'
       enum:
-        - Dentist
-        - DiagnosticLab
-        - Hospital
-        - MedicalClinic
-        - Pharmacy
-        - Physician
-        - VeterinaryCare
-        - EyeCare
-      description: 'Type of medical organization. Enumerated type. Model:"https://schema.org/Text"'
+        - Bank
+        - MoneyTransfer
+        - PaymentCentre
+        - ATM
+        - CurrencyExchange
+        - CreditUnion
+        - StockMarket
+        - Office
+      description: 'Type of Financial service. Enumerated type. Model:"https://schema.org/Text"'        
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -61,9 +61,10 @@ MedicalOrganization:
             type: Property
             uri: "https://schema.org/URL"
             uri-prefix: "https://schema.org/"
-      type: Property
+      type: object
       x-ngsi:
         model: "https://schema.org/ContactPoint"
+        type: Property
     address:
       description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
@@ -134,114 +135,17 @@ MedicalOrganization:
       type: string
     facilities:
       type: array
-      description: 'Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT. Model:"https://schema.org/Text"'
+      description: 'Facilities at this Financial Service. Allowed values: Cash, ATM, Cheque Deposit Machine, Passbook Printing Machine, Loans Available, Accessible. Model:"https://schema.org/Text"'
       items:
         type: string
         default: 'Cash'
         enum:
-            - OPD
-            - Minor OT
-            - Physiotherapy
-            - Laboratory Services
-            - ECG Services
-            - Pharmacy
-            - Radiology
-            - Ambulance Services
-            - OT
-      minItems: 1
-    hasDriveThroughService:
-      description: 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users. Model:"https://schema.org/hasDriveThroughService"'
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-        uri: "https://schema.org/hasDriveThroughService"
-        uri-prefix: "https://schema.org/"
-    healthPlanNetworkId:
-      description: 'Name or unique ID of network. Model:"https://schema.org/healthPlanNetworkId". '
-      type: string
-      x-ngsi: 
-        model: "https://schema.org/Text"
-        type: Property
-        uri: "https://schema.org/healthPlanNetworkId"
-        uri-prefix: "https://schema.org/"
-    isAcceptingNewPatients:
-      description: 'Whether the provider is accepting new patients. Model:"https://schema.org/isAcceptingNewPatients"'
-      type: boolean
-      x-ngsi: 
-        model: "https://schema.org/Boolean"
-        type: Property
-        uri: "https://schema.org/isAcceptingNewPatients"
-        uri-prefix: "https://schema.org/"
-    medicalSpeciality:
-      description: 'Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. Model:"https://schema.org/MedicalSpecialty"'
-      default: 'PrimaryCare'
-      type: string
-      enum:
-        - Anesthesia
-        - Cardiovascular
-        - CommunityHealth
-        - Dentistry
-        - Dermatology
-        - DietNutrition
-        - Emergency
-        - Endocrine
-        - Gastroenterologic
-        - Genetic
-        - Geriatric
-        - Gynecologic
-        - Hematologic
-        - Infectious
-        - LaboratoryScience
-        - Midwifery
-        - Musculoskeletal
-        - Neurologic
-        - Nursing
-        - Obstetric
-        - Oncologic
-        - Optometric
-        - Otolaryngologic
-        - Pathology
-        - Pediatric
-        - PharmacySpecialty
-        - Physiotherapy
-        - PlasticSurgery
-        - Podiatric
-        - PrimaryCare
-        - Psychiatric
-        - PublicHealth
-        - Pulmonary
-        - Radiography
-        - Renal
-        - RespiratoryTherapy
-        - Rheumatologic
-        - SpeechPathology
-        - Surgical
-        - Toxicologic
-        - Urologic
-      x-ngsi: 
-        model: "https://schema.org/MedicalSpecialty"
-        type: Property
-    medicineSystem:
-      description: 'Systems of medical practice. Enumerated type. Model:"https://schema.org/MedicineSystem"'
-      type: string
-      default: 'Allopathic'
-      enum:
-        - Allopathic
-        - Ayurvedic
-        - Chiropractic
-        - Homeopathic
-        - Osteopathic
-        - TraditionalChinese
-        - WesternConventional
-      x-ngsi: 
-        model: "https://schema.org/MedicineSystem"
-        type: Property
-    testingFacility:
-      type: array
-      description: 'Types of tests available - CovidTesting, Blood Test. Model:"https://schema.org/Text"'
-      items:
-        type: string
+            - Cash
+            - ATM
+            - Cheque Deposit Machine
+            - Passbook Printing Machine
+            - Loans Available
+            - Accessible
       minItems: 1
     currenciesAccepted:
       description: 'Currencies accepted for payment. Model:"https://es.wikipedia.org/wiki/ISO_4217"'
@@ -276,9 +180,11 @@ MedicalOrganization:
     dataProvider:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
+    institutionCode:
+      description: 'A unique code belonging to the financial institution.'
+      type: string
     location:
-      $id: https://geojson.org/schema/Geometry.json
-      $schema: "http://json-schema.org/draft-07/schema#"
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
         - properties:
             bbox:
@@ -422,18 +328,8 @@ MedicalOrganization:
             - coordinates
           title: 'GeoJSON MultiPolygon'
           type: object
-      title: 'GeoJSON Geometry'
       x-ngsi: 
-        model: 
-          - "https://purl.org/geojson/vocab#Point"
-          - "https://purl.org/geojson/vocab#LineString"
-          - "https://purl.org/geojson/vocab#Polygon"
-          - "https://purl.org/geojson/vocab#MultiPoint"
-          - "https://purl.org/geojson/vocab#MultiLineString"
-          - "https://purl.org/geojson/vocab#MultiPolygon"
-        type: GeoProperty
-        uri: "https://uri.etsi.org/ngsi-ld/location"
-        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+        type: Geoproperty
     openingHours:
       type: string
       x-ngsi: 
@@ -501,7 +397,7 @@ MedicalOrganization:
       minItems: 1
       type: array
     id:
-      anyOf: &medicalorganization_-_properties_-_owner_-_items_-_anyof
+      anyOf: &financialservice_-_properties_-_owner_-_items_-_anyof
         - description: 'Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
@@ -511,13 +407,16 @@ MedicalOrganization:
           format: uri
           type: string
       description: 'Unique identifier of the entity'
-      type: Property
+      x-ngsi:
+        type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
-        anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
+        anyOf: *financialservice_-_properties_-_owner_-_items_-_anyof
         description: 'Unique identifier of the entity'
-      type: Property
+      type: array
+      x-ngsi:
+        type: Property
     alternateName:
       type: string
       description: 'An alternative name for this item'
@@ -635,31 +534,33 @@ MedicalOrganization:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            - format: uri
-              type: string
+            format: uri
+            type: string
           minItems: 1
           type: array
         - format: uri
           type: string
+      x-ngsi:
       type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
         anyOf:
-          - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
+          - anyOf: *financialservice_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
         model: "https://schema.org/URL"
+        type: Property
     type:
-      description: 'NGSI Entity type. It has to be MedicalOrganization'
+      description: 'NGSI Entity type. It has to be FinancialService'
       enum:
-        - MedicalOrganization
+        - FinancialService
       type: string
       x-ngsi:
-      type: Property
+        type: Property
   required:
     - id
     - category
