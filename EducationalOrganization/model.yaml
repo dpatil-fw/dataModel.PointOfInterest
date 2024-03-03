@@ -391,8 +391,7 @@ EducationalOrganization:
           format: uri
           type: string
       description: 'Unique identifier of the entity'
-      x-ngsi:
-        type: Property
+      type: Property
     owner:
       description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'
       items:
