@@ -22,15 +22,9 @@ components:
     # This is a base definition of a City Store
     Store: 
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/model.yaml#/Store"
-    # This is a base definition of a City FinancialService
-    FinancialService: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FinancialService/model.yaml#/FinancialService"
-    # This is a base definition of a City Residence
-    Residence: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Residence/model.yaml#/Residence"
-    # This is a base definition of a City EducationalOrganization
-    EducationalOrganization: 
-      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/EducationalOrganization/model.yaml#/EducationalOrganization"
+    # This is a base definition of a City GovernmentOrganization
+    GovernmentOrganization: 
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/GovernmentOrganization/model.yaml#/GovernmentOrganization"
 
 info: 
   description: "Base Model Definitions from Smart Data Models"
