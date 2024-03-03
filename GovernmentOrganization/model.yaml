@@ -364,7 +364,7 @@ GovernmentOrganization:
       minItems: 1
       type: array
     id:
-      anyOf: &governmentOrganization_-_properties_-_owner_-_items_-_anyof
+      anyOf: &governmentorganization_-_properties_-_owner_-_items_-_anyof
         - description: 'Identifier format of any NGSI entity'
           maxLength: 256
           minLength: 1
