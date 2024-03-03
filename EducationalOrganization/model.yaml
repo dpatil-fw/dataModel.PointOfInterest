@@ -412,14 +412,13 @@ EducationalOrganization:
       description: 'list of uri pointing to additional resources about the item'
       oneOf:
         - items:
-            format: uri
-            type: string
+            - format: uri
+              type: string
           minItems: 1
           type: array
         - format: uri
           type: string
-      x-ngsi:
-        type: Property
+      type: Property
     refSeeAlso:
       description: 'List of references to one or more related entities.'
       items:
