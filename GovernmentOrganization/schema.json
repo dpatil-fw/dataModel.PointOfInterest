@@ -29,20 +29,7 @@
                 "publicAccess":{
                     "type":"boolean",
                     "description":"A flag to signal that the Place is open to public visitors. Model:'https://schema.org/publicAccess'"
-                },
-                "refSeeAlso":{
-                    "type":"array",
-                    "description":"List of references to one or more related entities. Model:'https://schema.org/URL'",
-                    "items":{
-                        "anyOf":[
-                            {
-                                "$ref":"https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
-                            }
-                        ]
-                    },
-                    "minItems":1,
-                    "uniqueItems":true
-                }                
+                }
             }
         }
     ],
