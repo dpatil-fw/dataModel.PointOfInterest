@@ -659,7 +659,7 @@ MedicalOrganization:
         - MedicalOrganization
       type: string
       x-ngsi:
-      type: Property
+        type: Property
   required:
     - id
     - category
