@@ -510,7 +510,7 @@ MedicalOrganization:
         description: 'Unique identifier of the entity'
       type: array
       x-ngsi:
-      type: Property
+        type: Property
     alternateName:
       type: string
       description: 'An alternative name for this item'
