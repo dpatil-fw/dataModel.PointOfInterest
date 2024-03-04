@@ -25,6 +25,7 @@
         "alternateName": "schema:alternateName",
         "amenityFeature": "schema:amenityFeature",
         "areaServed": "schema:areaServed",
+        "bankFacilities": "fiware:bankFacilities",
         "bestRating": "schema:bestRating",
         "category": "fiware:category",
         "checkinTime": "schema:checkinTime",
