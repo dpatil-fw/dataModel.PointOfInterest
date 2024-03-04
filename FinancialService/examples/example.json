@@ -20,7 +20,7 @@
     "paymentAccepted": [
         "CreditCard", "Cash"
     ],
-    "facilities": [
+    "bankFacilities": [
         "Bank", "MoneyTransfer", "PaymentCentre", "ATM"
     ],
     "institutionCode": "SBI123456"

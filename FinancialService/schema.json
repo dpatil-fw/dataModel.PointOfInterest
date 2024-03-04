@@ -26,7 +26,7 @@
                     ],
                     "description":"Type of financial service. Enumerated type. Model:'https://schema.org/Text'"
                 },
-                "facilities":{
+                "bankFacilities":{
                     "type":"array",
                     "description":"Facilities at this Financial Service. Allowed values: Bank, MoneyTransfer, PaymentCentre, ATM, CurrencyExchange, CreditUnion, StockMarket, Office, MutualFunds. Model:'https://schema.org/Text'",
                     "items":{

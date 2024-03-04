@@ -133,7 +133,7 @@ FinancialService:
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
-    facilities:
+    bankFacilities:
       type: array
       description: 'Facilities at this Financial Service. Allowed values: Cash, ATM, Cheque Deposit Machine, Passbook Printing Machine, Loans Available, Accessible. Model:"https://schema.org/Text"'
       items:

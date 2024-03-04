@@ -45,7 +45,7 @@
             "Cash"
         ]
     },
-    "facilities": {
+    "bankFacilities": {
         "type": "Property",
         "value": [
             "Bank",

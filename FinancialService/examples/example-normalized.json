@@ -40,7 +40,7 @@
             "Cash"
         ]
     },
-    "facilities": {
+    "bankFacilities": {
         "value": [
             "Bank",
             "MoneyTransfer",
