@@ -1,32 +1,41 @@
 --- 
-components: 
-  schemas: 
+components:
+  schemas:
 
     # This is the base definition of a PointOfInterest
-    PointOfInterest: 
+    PointOfInterest:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/PointOfInterest/model.yaml#/PointOfInterest"
 
 
     # This is a base definition of a City Attraction
-    Attraction: 
+    Attraction:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Attraction/model.yaml#/Attraction"
     # This is a base definition of a City FoodEstablishment
-    FoodEstablishment: 
+    FoodEstablishment:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FoodEstablishment/model.yaml#/FoodEstablishment"
     # This is a base definition of a City LodgingBusiness
-    LodgingBusiness: 
+    LodgingBusiness:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/LodgingBusiness/model.yaml#/LodgingBusiness"
     # This is a base definition of a City MedicalOrganization
-    MedicalOrganization: 
+    MedicalOrganization:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/MedicalOrganization/model.yaml#/MedicalOrganization"
     # This is a base definition of a City Store
-    Store: 
+    Store:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Store/model.yaml#/Store"
     # This is a base definition of a City GovernmentOrganization
-    GovernmentOrganization: 
+    GovernmentOrganization:
       $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/GovernmentOrganization/model.yaml#/GovernmentOrganization"
+    # This is a base definition of a City FinancialService
+    FinancialService:
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/FinancialService/model.yaml#/FinancialService"
+    # This is a base definition of a City Residence
+    Residence:
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/Residence/model.yaml#/Residence"
+    # This is a base definition of a City EducationalOrganization
+    EducationalOrganization:
+      $ref: "https://raw.githubusercontent.com/dpatil-fw/dataModel.PointOfInterest/master/EducationalOrganization/model.yaml#/EducationalOrganization"
 
-info: 
+info:
   description: "Base Model Definitions from Smart Data Models"
   title: Baseline Models
   version: "1.0.0"
@@ -34,14 +43,14 @@ openapi: "3.0.0"
 
 
 # These paths are merely representative.
-paths: 
-  /ngsi-ld/v1/entities: 
-    get: 
-      responses: 
+paths:
+  /ngsi-ld/v1/entities:
+    get:
+      responses:
         ? "200"
-        : 
+        :
           description:  OK
-          content: 
-            application/ld+json: 
-              schema: 
+          content:
+            application/ld+json:
+              schema:
                 type: object
