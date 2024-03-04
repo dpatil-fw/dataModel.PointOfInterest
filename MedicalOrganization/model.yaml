@@ -10,6 +10,7 @@ MedicalOrganization:
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
     category:
       type: string
+      description: 'Type of medical organization. Enumerated type. Model:"https://schema.org/Text"'
       default: 'Hospital'
       enum:
         - Dentist
@@ -20,7 +21,6 @@ MedicalOrganization:
         - Physician
         - VeterinaryCare
         - EyeCare
-      description: 'Type of medical organization. Enumerated type. Model:"https://schema.org/Text"'
     contactPoint:
       description: 'The details to contact with the item.'
       properties:
@@ -61,9 +61,10 @@ MedicalOrganization:
             type: Property
             uri: "https://schema.org/URL"
             uri-prefix: "https://schema.org/"
-      type: Property
+      type: object
       x-ngsi:
         model: "https://schema.org/ContactPoint"
+        type: Property
     address:
       description: 'The mailing address. Model:"https://schema.org/address"'
       properties:
@@ -132,6 +133,14 @@ MedicalOrganization:
     source:
       description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'
       type: string
+    healthPlanNetworkId:
+      type: string
+      description: 'Name or unique ID of network. Model:"https://schema.org/healthPlanNetworkId". '
+      x-ngsi: 
+        model: "https://schema.org/Text"
+        type: Property
+        uri: "https://schema.org/healthPlanNetworkId"
+        uri-prefix: "https://schema.org/"
     facilities:
       type: array
       description: 'Facilities at this Medical Organization. Allowed values: OPD, Minor OT, Physiotherapy, Laboratory Services, ECG Services, Pharmacy, Radiology/X-ray Facility, Ambulance Services, OT. Model:"https://schema.org/Text"'
@@ -156,14 +165,6 @@ MedicalOrganization:
         model: "https://schema.org/Boolean"
         type: Property
         uri: "https://schema.org/hasDriveThroughService"
-        uri-prefix: "https://schema.org/"
-    healthPlanNetworkId:
-      description: 'Name or unique ID of network. Model:"https://schema.org/healthPlanNetworkId". '
-      type: string
-      x-ngsi: 
-        model: "https://schema.org/Text"
-        type: Property
-        uri: "https://schema.org/healthPlanNetworkId"
         uri-prefix: "https://schema.org/"
     isAcceptingNewPatients:
       description: 'Whether the provider is accepting new patients. Model:"https://schema.org/isAcceptingNewPatients"'
@@ -277,8 +278,7 @@ MedicalOrganization:
       description: 'A sequence of characters identifying the provider of the harmonised data entity.'
       type: string
     location:
-      $id: https://geojson.org/schema/Geometry.json
-      $schema: "http://json-schema.org/draft-07/schema#"
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
       oneOf:
         - properties:
             bbox:
@@ -422,18 +422,8 @@ MedicalOrganization:
             - coordinates
           title: 'GeoJSON MultiPolygon'
           type: object
-      title: 'GeoJSON Geometry'
       x-ngsi: 
-        model: 
-          - "https://purl.org/geojson/vocab#Point"
-          - "https://purl.org/geojson/vocab#LineString"
-          - "https://purl.org/geojson/vocab#Polygon"
-          - "https://purl.org/geojson/vocab#MultiPoint"
-          - "https://purl.org/geojson/vocab#MultiLineString"
-          - "https://purl.org/geojson/vocab#MultiPolygon"
-        type: GeoProperty
-        uri: "https://uri.etsi.org/ngsi-ld/location"
-        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+        type: Geoproperty
     openingHours:
       type: string
       x-ngsi: 
@@ -518,6 +508,8 @@ MedicalOrganization:
       items:
         anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
         description: 'Unique identifier of the entity'
+      type: array
+      x-ngsi:
       type: Property
     alternateName:
       type: string
@@ -651,7 +643,7 @@ MedicalOrganization:
           - anyOf: *medicalorganization_-_properties_-_owner_-_items_-_anyof
             description: 'Unique identifier of the entity'
       minItems: 1
-      type: Property
+      type: array
       uniqueItems: true
       x-ngsi:
         model: "https://schema.org/URL"

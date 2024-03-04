@@ -18,14 +18,6 @@
                     ],
                     "description":"NGSI Entity type. It has to be MedicalOrganization"
                 },
-                "category":{
-                    "type":"string",
-                    "default": "Hospital",
-                    "enum":[
-                        "Dentist", "DiagnosticLab", "Hospital", "MedicalClinic", "Pharmacy", "Physician", "VeterinaryCare", "EyeCare"
-                    ],
-                    "description":"Type of medical organization. Enumerated type. Model:'https://schema.org/Text'"
-                },
                 "hasDriveThroughService":{
                     "type":"boolean",
                     "description":"Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users. Model:'https://schema.org/hasDriveThroughService'"
@@ -67,6 +59,14 @@
                         "type":"string"
                     },
                     "minItems":1
+                },
+                "category":{
+                    "type":"string",
+                    "description":"Type of medical organization. Enumerated type. Model:'https://schema.org/Text'",
+                    "default": "Hospital",
+                    "enum":[
+                        "Dentist", "DiagnosticLab", "Hospital", "MedicalClinic", "Pharmacy", "Physician", "VeterinaryCare", "EyeCare"
+                    ]
                 }
             }
         }
